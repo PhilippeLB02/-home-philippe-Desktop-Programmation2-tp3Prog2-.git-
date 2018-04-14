@@ -9,6 +9,8 @@ public class Test {
 
     private String name;
     private Integer nbQuestion;
+    //TODO a expliquer sont existence
+    //Philippe: je pense qu'il est redondant d'avoir une variable enoncer quand on a les questions en arraylist.
     private String enonce;
     private ArrayList<String> question = new ArrayList();
     private ArrayList<String> choixReponse = new ArrayList();
@@ -44,6 +46,10 @@ public class Test {
 
     public ArrayList<String> getQuestion() {
         return this.question;
+    }
+
+    public String getQuestion(int i){
+        return question.get(i);
     }
 
     public void setQuestion(ArrayList<String> question) {

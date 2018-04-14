@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
+import java.util.ArrayList;
 
 public class FenetreNewTests {
 
@@ -50,9 +51,6 @@ public class FenetreNewTests {
     //Ecouteur
     private ActionListener ecouteur;
 
-    //Sauvegarde
-    private File SAUVEGARDETEST = new File("/home/philippe/Desktop/Programmation2/tp3Prog2/src/SauvegardeDeTest.txt");
-    private String test;
 
     /**
      * Contructeur qui initialise la fenetre de creation
@@ -83,7 +81,7 @@ public class FenetreNewTests {
         fenetreNewTests.getContentPane().add(nomTests);
 
         //Enoncer
-        enoncer = new JLabel("Énoncer");
+        enoncer = new JLabel("Énoncé");
         question = new JTextArea("");
         question.setLineWrap(true);
         question.setEditable(false);
@@ -166,32 +164,96 @@ public class FenetreNewTests {
             @Override
             public void actionPerformed(ActionEvent evenement) {
 
+                Test test = new Test();
+                ArrayList questions = new ArrayList();
+                ArrayList listeReponse = new ArrayList();
+                ArrayList<Integer> reponse = new ArrayList<>();
+                int conteurDeQuestion = 0;
+
                 if (evenement.getSource() == boutonAjoutQuestion){
 
+                    //TODO sauvegarder les info des tests .
+                    if (!nomTests.getText().trim().isEmpty()){
+                        JOptionPane.showMessageDialog(null, "Erreur votre test doit avoir un nom.");
+                    }
+                    if (!question.getText().trim().isEmpty()){
+                        JOptionPane.showMessageDialog(null, "Erreur énoucé invalide.");
+                    }
+                    if (!reponseUn.getText().trim().isEmpty() && !reponseDeux.getText().trim().isEmpty() && !reponseTrois.getText().isEmpty() && !reponseQuatre.getText().trim().isEmpty()){
+                        JOptionPane.showMessageDialog(null, "Erreur reponse invalide.");
+                    }
+                    if (!repBout1.isSelected() && !repBout2.isSelected() && !repBout3.isSelected() && !repBout4.isSelected()){
+                        JOptionPane.showMessageDialog(null, "Erreur aucune bonne reponse de selectionner.");
+                    } else {
+                        //TODO éventuellement le metre dans une méthode a par.
+                        questions.add(question.getText().trim());
+                        test.setQuestion(questions);
+                        listeReponse.add(listeReponse.size(), reponseUn.getText().trim());
+                        listeReponse.add(listeReponse.size(), reponseDeux.getText().trim());
+                        listeReponse.add(listeReponse.size(), reponseTrois.getText().trim());
+                        listeReponse.add(listeReponse.size(), reponseQuatre.getText().trim());
+                        test.setChoixReponse(listeReponse);
+                        if (repBout1.isSelected()) {
+                            reponse.add(reponse.size(), 1);
+                        } else if (repBout2.isSelected()) {
+                            reponse.add(reponse.size(), 2);
+                        } else if (repBout3.isSelected()) {
+                            reponse.add(reponse.size(), 3);
+                        } else {
+                            reponse.add(reponse.size(), 4);
+                        }
+                        test.setRepones(reponse);
+                        test.setNbQuestion(conteurDeQuestion ++);
+                        test.setQuestionCourante(test.getQuestion().size() - 1);
+                    }
                 }
-
                 if (evenement.getSource() == boutonSave){
 
-                    if (nomTests.getText().trim().isEmpty()){
-                        test = JOptionPane.showInputDialog("Entrez un nom pour votre test");
-                    } else {
-                        test = nomTests.getText();
+                    //TODO prendre la arraylist et la sauvegarder dans le fichier.
+                    if (!nomTests.getText().trim().isEmpty()){
+                        JOptionPane.showMessageDialog(null, "Erreur votre test doit avoir un nom.");
                     }
-                    try {
-                        if (!SAUVEGARDETEST.exists()){
-                            SAUVEGARDETEST.createNewFile();
+                    if (!question.getText().trim().isEmpty()){
+                        JOptionPane.showMessageDialog(null, "Erreur énoucé invalide.");
+                    }
+                    if (!reponseUn.getText().trim().isEmpty() && !reponseDeux.getText().trim().isEmpty() && !reponseTrois.getText().isEmpty() && !reponseQuatre.getText().trim().isEmpty()){
+                        JOptionPane.showMessageDialog(null, "Erreur reponse invalide.");
+                    }
+                    if (!repBout1.isSelected() && !repBout2.isSelected() && !repBout3.isSelected() && !repBout4.isSelected()){
+                        JOptionPane.showMessageDialog(null, "Erreur aucune bonne reponse de selectionner.");
+                    } else {
+
+                        if (question.getText().trim() != test.getQuestion(test.getQuestionCourante())){
+                            //TODO éventuellement le metre dans une méthode a par.
+                            questions.add(question.getText().trim());
+                            test.setQuestion(questions);
+                            listeReponse.add(listeReponse.size(), reponseUn.getText().trim());
+                            listeReponse.add(listeReponse.size(), reponseDeux.getText().trim());
+                            listeReponse.add(listeReponse.size(), reponseTrois.getText().trim());
+                            listeReponse.add(listeReponse.size(), reponseQuatre.getText().trim());
+                            test.setChoixReponse(listeReponse);
+                            if (repBout1.isSelected()) {
+                                reponse.add(reponse.size(), 1);
+                            } else if (repBout2.isSelected()) {
+                                reponse.add(reponse.size(), 2);
+                            } else if (repBout3.isSelected()) {
+                                reponse.add(reponse.size(), 3);
+                            } else {
+                                reponse.add(reponse.size(), 4);
+                            }
+                            test.setRepones(reponse);
+                            test.setNbQuestion(conteurDeQuestion ++);
+                            test.setQuestionCourante(test.getQuestion().size() - 1);
                         }
 
-                        FileWriter fw = new FileWriter(SAUVEGARDETEST, true);
-                        BufferedWriter bw = new BufferedWriter(fw);
-                        PrintWriter pw = new PrintWriter(bw);
-
-                        pw.println(test);
-                        pw.close();
-                    }catch (IOException e){
-                        e.printStackTrace();
+                        try {
+                            LectureEtEcritureFichier.ecriture(test);
+                        }catch (IOException e){
+                            e.printStackTrace();
+                        }
+                        fenetreNewTests.dispose();
                     }
-                    fenetreNewTests.dispose();
+
                 }
             }
         };

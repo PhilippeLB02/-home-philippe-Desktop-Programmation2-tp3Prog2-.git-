@@ -1,4 +1,6 @@
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -6,98 +8,111 @@ import java.io.IOException;
 
 public class GenerateurTests {
 
+    private final static int LARGEUX_FENTRE = 380;
+    private final static int HAUTEUR_FENETRE = 360;
+    private final static int LARG_BTN = 300;
+    private final static int HAUT_BTN = 30;
 
-    public static void main (String[]args){
-        final String SÉPARATEUR_TESTS = "=====";
-        final String SÉPARATEUR_QUESTIONS = "-----";
-        final String SÉPARATEUR_CHOIX_REPONSES = "<>";
+    //Fenetre principale
+    private JFrame fenetre;
 
-        Test v = new Test();
+    //Boutons
+    private JButton boutonNewTests;
+    private JButton boutonFaireTests;
+    private JButton boutonSuppTests;
 
-        String tests = GenerateurTests.class.getProtectionDomain().getCodeSource().getLocation().getPath()+"tests2.txt";
-        String line = null;
+    //Liste deroulante
+    private JComboBox listeTests;
 
+    //Ecouteur
+    private ActionListener ecouteur;
+
+
+    /**
+     * Constructeur qui initialise la fenetre
+     */
+    public GenerateurTests() {
+        initMenu();
+    }
+
+    private void initMenu()  {
+
+        fenetre = new JFrame("Générateur de tests");
+
+        //Dimention et position de la fenetre
+        fenetre.setBounds(400,300,LARGEUX_FENTRE,HAUTEUR_FENETRE);
+        fenetre.setResizable(false);
+        fenetre.setLocationRelativeTo(null);
+
+        fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        fenetre.setLayout(null);
+
+        //Boutons
+        boutonNewTests = new JButton("Créer un nouveau test");
+        boutonFaireTests = new JButton("Passer le test sélectionné");
+        boutonSuppTests = new JButton("Supprimer le test sélectionné");
+
+        boutonNewTests.setBounds(fenetre.getWidth() / 2 - LARG_BTN / 2, fenetre.getHeight() / 7 - HAUT_BTN,
+                LARG_BTN, HAUT_BTN);
+        boutonFaireTests.setBounds(fenetre.getWidth() / 2 - LARG_BTN / 2, fenetre.getHeight() / 7 * 5 - HAUT_BTN,
+                LARG_BTN, HAUT_BTN);
+        boutonSuppTests.setBounds(fenetre.getWidth() / 2 - LARG_BTN / 2, fenetre.getHeight() / 7 * 6 - HAUT_BTN,
+                LARG_BTN, HAUT_BTN);
+
+        fenetre.getContentPane().add(boutonNewTests);
+        fenetre.getContentPane().add(boutonFaireTests);
+        fenetre.getContentPane().add(boutonSuppTests);
+
+        //Liste deroulante
+        listeTests = new JComboBox();
+        listeTests.setBounds(fenetre.getWidth() / 2 - LARG_BTN / 2, fenetre.getHeight() / 7 * 3 - HAUT_BTN,
+                LARG_BTN, HAUT_BTN);
+        fenetre.getContentPane().add(listeTests);
+
+        //TODO il faut etre capable de lire les nom des tests.
         try {
-            // FileReader reads text files in the default encoding.
-            FileReader fileReader =
-                    new FileReader(tests);
-            // Always wrap FileReader in BufferedReader.
-            BufferedReader bufferedReader =
-                    new BufferedReader(fileReader);
-
-            //lire un test a la fois
-            line = bufferedReader.readLine();
-            if(line != null){
-                v.setName(line);
-            }
-            line = bufferedReader.readLine();
-            if(line != null){
-                v.setNbQuestion(Integer.parseInt(line));
-            }
-            line = bufferedReader.readLine(); // ----
-            line = bufferedReader.readLine();
-            v.setEnonce(line);
-
-
-            line = bufferedReader.readLine();
-
-            if(line.isEmpty()){
-                line = bufferedReader.readLine();
-            }
-            int nbLigneTest = 6* v.getNbQuestion();
-
-            int ligneLu = 1;
-            for(int j=1; j<=nbLigneTest;j++){
-                /*if(line != null){
-                    v.getQuestion().add(line);
+            if (LectureEtEcritureFichier.lecture() != null) {
+                for (int i = 0; i < 100; i++) {
+                    listeTests.addItem(LectureEtEcritureFichier.lecture().getName());
                 }
-                line = bufferedReader.readLine();
-                if(line != null){
-                    v.getChoixReponse().add(line);
-                }
-                line = bufferedReader.readLine();
-                if(line != null){
-                    v.getRepones().add(Integer.parseInt(line));
-                }*/
-                switch (ligneLu) {
-                    case 1:     if(line != null){v.getQuestion().add(line);}
-                        break;
-                    case 3:     if(line != null){v.getChoixReponse().add(line);}
-                        break;
-                    case 5:     if(line != null){v.getRepones().add(Integer.parseInt(line));}
-                        break;
-                    case 6:     ligneLu = 0;
-                        break;
-                }
-                line = bufferedReader.readLine();
-                ligneLu++;
-
             }
-            // Always close files.
-            try {
-                bufferedReader.close();
-            } catch (IOException e) {
-                e.printStackTrace();
+        }catch (IOException e){
+
+        }
+        //Ecouteur
+        ecouteur = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evenement) {
+
+                if (evenement.getSource() == boutonNewTests){
+                    new FenetreNewTests();
+                }else if (evenement.getSource() == boutonFaireTests){
+                    Object selected = listeTests.getSelectedItem();
+                    if (selected != null) {
+                        new FenetreFaireTests();
+                    }else {
+                        JOptionPane.showMessageDialog(null, "Aucun test sélectionner!");
+                    }
+                }else if (evenement.getSource() == boutonSuppTests){
+                    Object selected = listeTests.getSelectedItem();
+                    if (selected != null){
+                        listeTests.removeItem(selected);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Aucun test sélectionner!");
+                    }
+                }
             }
-        }
-        catch(FileNotFoundException ex) {
-            System.out.println(
-                    "Unable to open file '" +
-                            tests + "'");
-        }
-        catch(IOException ex) {
-            System.out.println(
-                    "Error reading file '"
-                            + tests + "'");
-            // Or we could just do this:
-            // ex.printStackTrace();
-        }
+        };
+
+        boutonNewTests.addActionListener(ecouteur);
+        boutonFaireTests.addActionListener(ecouteur);
+        boutonSuppTests.addActionListener(ecouteur);
+
+        fenetre.setVisible(true);
+    }
+    public static void main (String[]args){
 
 
-
-        System.out.println("enonces "+v.getEnonce());
-        System.out.println("reponses "+v.getRepones());
-        System.out.println("questions "+v.getQuestion());
-        new FenetreMenu(v);
+        new GenerateurTests();
     }
 }
