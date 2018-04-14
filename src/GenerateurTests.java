@@ -1,9 +1,11 @@
+import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
 public class GenerateurTests {
+
 
     public static void main (String[]args){
         final String SÉPARATEUR_TESTS = "=====";
@@ -91,9 +93,11 @@ public class GenerateurTests {
             // ex.printStackTrace();
         }
 
+
+
         System.out.println("enonces "+v.getEnonce());
         System.out.println("reponses "+v.getRepones());
         System.out.println("questions "+v.getQuestion());
-        //new FenetreMenu();
+        new FenetreMenu(v);
     }
 }

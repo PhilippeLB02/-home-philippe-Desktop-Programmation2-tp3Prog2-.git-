@@ -6,6 +6,7 @@
 import java.util.ArrayList;
 
 public class Test {
+
     private String name;
     private Integer nbQuestion;
     private String enonce;
@@ -73,3 +74,4 @@ public class Test {
         this.questionCourante = questionCourante;
     }
 }
+

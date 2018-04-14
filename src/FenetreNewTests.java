@@ -191,6 +191,7 @@ public class FenetreNewTests {
                     }catch (IOException e){
                         e.printStackTrace();
                     }
+                    fenetreNewTests.dispose();
                 }
             }
         };

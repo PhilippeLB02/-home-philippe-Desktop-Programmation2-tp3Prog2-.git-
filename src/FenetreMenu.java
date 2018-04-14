@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class FenetreMenu {
 
@@ -24,18 +25,19 @@ public class FenetreMenu {
     //Ecouteur
     private ActionListener ecouteur;
 
+
     /**
      * Constructeur qui initialise la fenetre
      */
-    public FenetreMenu(){
-        initMenu();
+    public FenetreMenu(Test listeTest){
+        initMenu(listeTest);
     }
 
     public JComboBox getListeTests() {
         return listeTests;
     }
 
-    private void initMenu(){
+    private void initMenu(Test listeTest){
 
         fenetre = new JFrame("Générateur de tests");
 
@@ -68,7 +70,11 @@ public class FenetreMenu {
         listeTests.setBounds(fenetre.getWidth() / 2 - LARG_BTN / 2, fenetre.getHeight() / 7 * 3 - HAUT_BTN,
                 LARG_BTN, HAUT_BTN);
         fenetre.getContentPane().add(listeTests);
-
+        if (listeTest != null) {
+            for (int i = 0; i < 100; i++) {
+                listeTests.addItem(listeTest.getName());
+            }
+        }
         //Ecouteur
         ecouteur = new ActionListener() {
             @Override
