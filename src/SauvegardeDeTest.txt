@@ -1,96 +1,93 @@
-testing 1 2 1 2 testing
-testing 1 2 1 2 testing
-testing 1 2 1 2 testing
-tiu
-wety
-
-wety
-
-tst
-tst
-tesdt
-null
-=====
-null
+Les couleurs
+15
+-----
+Sachant cela, quelle couleur donne le mélange de rouge et de bleu ?
+-----
+Orange<>Bleu<>Violet<>Turquoise
+-----
+2
+-----
+Quelle est la couleur chaude, parmi les suivantes ?
+-----
+Vert<>Bleu<>Violet<>Orange
+-----
+3
+-----
+Quelle est la couleur complémentaire de vert ?
+-----
+Rouge<>Orange<>Bleu<>Violet
+-----
 0
 -----
-null
+Parmi les couleurs suivantes, laquelle est une couleur primaire ?
 -----
-wtreyh?
+Orange<>Bleu<>Vert<>Violet
 -----
-qtre<>twert<>sdfgcvxb<>vxcb
+1
 -----
-2
+Parmi les couleurs suivantes, laquelle est une couleur secondaire ?
 -----
-=====
-qwer
+Violet<>Bleu<>Jaune<>Rouge
+-----
 0
 -----
-null
+Quelle couleur donne le mélange de blanc et de noir ?
 -----
-asdf?
+Brun<>Turquoise<>Vert<>Gris
 -----
-zxcv<>tyui<>ghjk<>bnm,
+3
 -----
-2
+En quelle année fut inventé le premier cercle chromatique (par Isaac Newton) ?
 -----
-=====
-qwer
-1
------
-null
------
-asdf?
------
-zxcv<>tyui<>fghj<>bnm,
------
-1
------
-=====
-erwt
-1
------
-wert ?sdfg
------
-sdsdgfsd<>xcvzb<>bvcxytrd<>98o5r
+1956<>1965<>1966<>1971
 -----
 2
 -----
-=====
-asdfas
+Quelle est la couleur complémentaire de Orange ?
+-----
+Brun<>Bleu<>Jaune<>Turquoise
+-----
 1
 -----
-asdfsdfgrag
+Parmi les couleurs suivantes, laquelle n'est pas une couleur secondaire ?
 -----
-sgdfhgdgfsh<>zxfvcb<>yhgjytre<>xfgnmgj
+Brun<>Orange<>Vert<>Violet
+-----
+0
+-----
+Quelle couleur donne le mélange de jaune et de bleu ?
+-----
+Violet<>Turquoise<>Vert<>Orange
 -----
 2
 -----
-=====
-arsdfg
+En RVB, quelle est la couleur 255, 255, 255 ?
+-----
+Brun<>turquoise<>Vert<>blanc
+-----
+3
+-----
+Parmi les couleurs suivantes, laquelle est une teinte ?
+-----
+Turquoise<>Rose<>Vert<>Orange
+-----
 1
 -----
-szdfgaerd?
+Quelle est la couleur de l'espérance ?
 -----
-fasdg<>dfabzc<>dsganbzv<>aethdfc456t
+Vert<>Rose<>Violet<>Orange
 -----
-4
+0
 -----
-weRSGAD
-1
+Quelle couleur, parmi les suivantes, est une couleur froide ?
 -----
-AERGDSFGA?
------
-ertwhdf<>tqhabfzgd<>jywhsfgv<>w5emynhgdf
+Orange<>Jaune<>Violet<>Rouge
 -----
 2
-=====
-wthsdgf
-1
 -----
-dhfgvcbwfd?
+Quelle est la couleur de la peur ?
 -----
-sthdg<>jhrgsfd<>u3wtjygfsv<>umedfgsvncb
+Rouge<>Bleu<>Brun<>Jaune
 -----
 1
 =====

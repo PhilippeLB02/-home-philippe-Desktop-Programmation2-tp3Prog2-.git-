@@ -2,7 +2,6 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
-import java.sql.Array;
 import java.util.ArrayList;
 
 public class FenetreNewTests {
@@ -199,7 +198,9 @@ public class FenetreNewTests {
                 Test test = new Test();
                 ArrayList<Test> arrayListTest = new ArrayList<>();
 
-                if (evenement.getSource() == boutonAjoutQuestion){
+                if (evenement.getSource() == buttonPrecedent){
+
+                } else if (evenement.getSource() == boutonAjoutQuestion){
 
                     if (nomTests.getText().trim().isEmpty()){
                         JOptionPane.showMessageDialog(null, "Erreur votre test doit avoir un nom.");
@@ -213,7 +214,11 @@ public class FenetreNewTests {
                         arrayListTest.add(arrayListTest.size(), sauvegarde());
                     }
 
-                }else if (evenement.getSource() == boutonSave){
+                } else if (evenement.getSource() == boutonSuppQuestion){
+
+                } else if (evenement.getSource() == boutonSuivant){
+
+                } else if (evenement.getSource() == boutonSave){
 
                     if (nomTests.getText().trim().isEmpty()){
                         JOptionPane.showMessageDialog(null, "Erreur votre test doit avoir un nom.");

@@ -112,7 +112,12 @@ public class GenerateurTests {
     }
     public static void main (String[]args){
 
+        try {
+            LectureEtEcritureFichier.ecriture(LectureEtEcritureFichier.lecture());
+        } catch (IOException e){
+            e.printStackTrace();
+        }
 
-        new GenerateurTests();
+        //new GenerateurTests();
     }
 }

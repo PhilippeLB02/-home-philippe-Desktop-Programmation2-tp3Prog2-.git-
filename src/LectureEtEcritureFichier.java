@@ -10,9 +10,9 @@ public class LectureEtEcritureFichier {
     private static File SAUVEGARDETEST = new File("/home/philippe/Desktop/Programmation2/tp3Prog2/src/SauvegardeDeTest.txt");
 
 
-    public static void ecriture(Test test) throws IOException{
+    public static void ecriture(Test test) throws IOException {
 
-        if (!SAUVEGARDETEST.exists()){
+        if (!SAUVEGARDETEST.exists()) {
             SAUVEGARDETEST.createNewFile();
         }
 
@@ -38,28 +38,22 @@ public class LectureEtEcritureFichier {
         int y = 0;
         int x = 4;
         int z = 1;
-        for (int i = 0; i < test.getQuestion().size(); i ++ ){
+        for (int i = 0; i < test.getQuestion().size(); i ++) {
             question = test.getQuestion().get(i);
             pw.println(question);
             pw.println(SÉPARATEUR_QUESTIONS);
-            while (j < x){
-                choixReponse = test.getChoixReponse().get(j);
-                pw.print(choixReponse);
-                if (j != test.getChoixReponse().size() -1) {
-                    pw.print(SÉPARATEUR_CHOIX_REPONSES);
-                } else {
-                    pw.println();
-                    pw.println(SÉPARATEUR_QUESTIONS);
-                }
+            while (j < z) {
+                choixReponse = test.getChoixReponse().get(y);
+                pw.println(choixReponse);
+                pw.println(SÉPARATEUR_QUESTIONS);
                 j ++;
             }
-            x = x + 4;
-            while (y < z){
+            while (y < z) {
                 reponse = test.getRepones().get(y);
                 pw.println(reponse);
                 if (test.getRepones().size() - 1 != y) {
                     pw.println(SÉPARATEUR_QUESTIONS);
-                }else {
+                } else {
                     pw.println(SÉPARATEUR_TESTS);
                 }
                 y ++;
@@ -75,7 +69,7 @@ public class LectureEtEcritureFichier {
     //Lecture des fichiers
     //TODO arrenger la lecture pour quelle la totaliter du fichier fonctionne pas avec le fichier tests.txt du prof
     //elle lit juste le premier test.
-    public static Test lecture() throws IOException{
+    public static Test lecture() throws IOException {
 
         String tests = GenerateurTests.class.getProtectionDomain().getCodeSource().getLocation().getPath() + "tests2.txt";
         String line;
@@ -149,9 +143,9 @@ public class LectureEtEcritureFichier {
             }
 
             //TODO doit etre placer dans une liste ou arrayliste
-            System.out.println("enonces "+listeTests.getEnonce());
-            System.out.println("reponses "+listeTests.getRepones());
-            System.out.println("questions "+listeTests.getQuestion());
+            System.out.println("enonces " + listeTests.getEnonce());
+            System.out.println("reponses " + listeTests.getRepones());
+            System.out.println("questions " + listeTests.getQuestion());
 
         }
 
