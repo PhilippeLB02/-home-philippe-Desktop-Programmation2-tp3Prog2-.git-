@@ -196,14 +196,9 @@ public class FenetreNewTests {
             public void actionPerformed(ActionEvent evenement) {
 
                 Test test = new Test();
-                ArrayList questions = new ArrayList();
-                ArrayList listeReponse = new ArrayList();
-                ArrayList<Integer> reponse = new ArrayList<>();
-                int conteurDeQuestion = 1;
 
                 if (evenement.getSource() == boutonAjoutQuestion){
 
-                    //TODO sauvegarder les info des tests .
                     if (nomTests.getText().trim().isEmpty()){
                         JOptionPane.showMessageDialog(null, "Erreur votre test doit avoir un nom.");
                     } else if (question.getText().trim().isEmpty()){
@@ -213,13 +208,11 @@ public class FenetreNewTests {
                     } else if (repBout1.isSelected() && repBout2.isSelected() && repBout3.isSelected() && repBout4.isSelected()){
                         JOptionPane.showMessageDialog(null, "Erreur aucune bonne reponse de selectionner.");
                     } else {
-                        //TODO éventuellement le metre dans une méthode a par.
                         test = sauvegarde();
                     }
                 }
                 if (evenement.getSource() == boutonSave){
 
-                    //TODO prendre la arraylist et la sauvegarder dans le fichier.
                     if (nomTests.getText().trim().isEmpty()){
                         JOptionPane.showMessageDialog(null, "Erreur votre test doit avoir un nom.");
                     } else if (question.getText().trim().isEmpty()){
@@ -232,7 +225,6 @@ public class FenetreNewTests {
                         if (test.getNbQuestion() == null){
                             test = sauvegarde();
                         } else if (question.getText().trim() != test.getQuestion(test.getQuestionCourante())){
-                            //TODO éventuellement le metre dans une méthode a par.
                             test = sauvegarde();
                         }
 
