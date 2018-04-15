@@ -11,15 +11,17 @@ public class FenetreFaireTests {
 
     private JFrame fenetreFaireTest;
 
+    private JLabel nomDuTest;
+
     private JButton boutonPrecedent;
     private JButton boutonSuivant;
     private JButton boutonCorrection;
 
-    public FenetreFaireTests(){
-        init();
+    public FenetreFaireTests(String nomTest){
+        init(nomTest);
     }
 
-    private void init(){
+    private void init(String nomTest){
 
         fenetreFaireTest = new JFrame("Faire un test");
         fenetreFaireTest.setBounds(400,300,LARGEUX_FENTRE,HAUTEUR_FENETRE);
@@ -29,6 +31,12 @@ public class FenetreFaireTests {
         fenetreFaireTest.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         fenetreFaireTest.setLayout(null);
 
+        //nom du test a faire
+        nomDuTest = new JLabel(nomTest);
+
+        nomDuTest.setBounds(fenetreFaireTest.getWidth() / 12, fenetreFaireTest.getHeight() / 13 - HAUT_BTN,
+                LARG_BTN_CORR, HAUT_BTN);
+        fenetreFaireTest.getContentPane().add(nomDuTest);
 
         //Boutons
         boutonPrecedent = new JButton("<");

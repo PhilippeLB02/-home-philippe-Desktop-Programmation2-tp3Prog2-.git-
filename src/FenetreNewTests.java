@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
+import java.sql.Array;
 import java.util.ArrayList;
 
 public class FenetreNewTests {
@@ -196,6 +197,7 @@ public class FenetreNewTests {
             public void actionPerformed(ActionEvent evenement) {
 
                 Test test = new Test();
+                ArrayList<Test> arrayListTest = new ArrayList<>();
 
                 if (evenement.getSource() == boutonAjoutQuestion){
 
@@ -208,10 +210,10 @@ public class FenetreNewTests {
                     } else if (repBout1.isSelected() && repBout2.isSelected() && repBout3.isSelected() && repBout4.isSelected()){
                         JOptionPane.showMessageDialog(null, "Erreur aucune bonne reponse de selectionner.");
                     } else {
-                        test = sauvegarde();
+                        arrayListTest.add(arrayListTest.size(), sauvegarde());
                     }
-                }
-                if (evenement.getSource() == boutonSave){
+
+                }else if (evenement.getSource() == boutonSave){
 
                     if (nomTests.getText().trim().isEmpty()){
                         JOptionPane.showMessageDialog(null, "Erreur votre test doit avoir un nom.");
@@ -223,13 +225,16 @@ public class FenetreNewTests {
                         JOptionPane.showMessageDialog(null, "Erreur aucune bonne reponse de selectionner.");
                     } else {
                         if (test.getNbQuestion() == null){
-                            test = sauvegarde();
+                            arrayListTest.add(arrayListTest.size(), sauvegarde());
                         } else if (question.getText().trim() != test.getQuestion(test.getQuestionCourante())){
-                            test = sauvegarde();
+                            arrayListTest.add(arrayListTest.size(), sauvegarde());
                         }
 
                         try {
-                            LectureEtEcritureFichier.ecriture(test);
+                            for (int i = 0; i < arrayListTest.size(); i ++) {
+                                test = arrayListTest.get(i);
+                                LectureEtEcritureFichier.ecriture(test);
+                            }
                         }catch (IOException e){
                             e.printStackTrace();
                         }

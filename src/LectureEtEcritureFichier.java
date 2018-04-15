@@ -20,7 +20,6 @@ public class LectureEtEcritureFichier {
         BufferedWriter bw = new BufferedWriter(fw);
         PrintWriter pw = new PrintWriter(bw);
 
-        pw.println(SÉPARATEUR_TESTS);
         String nomTest = test.getName();
         pw.println(nomTest);
         int nbQuestion = test.getNbQuestion();
@@ -58,7 +57,11 @@ public class LectureEtEcritureFichier {
             while (y < z){
                 reponse = test.getRepones().get(y);
                 pw.println(reponse);
-                pw.println(SÉPARATEUR_QUESTIONS);
+                if (test.getRepones().size() - 1 != y) {
+                    pw.println(SÉPARATEUR_QUESTIONS);
+                }else {
+                    pw.println(SÉPARATEUR_TESTS);
+                }
                 y ++;
             }
             z ++;
@@ -70,11 +73,11 @@ public class LectureEtEcritureFichier {
     }
 
     //Lecture des fichiers
-    //TODO arrenger la lecture pour quelle la totaliter du fichier
+    //TODO arrenger la lecture pour quelle la totaliter du fichier fonctionne pas avec le fichier tests.txt du prof
     //elle lit juste le premier test.
     public static Test lecture() throws IOException{
 
-        String tests = GenerateurTests.class.getProtectionDomain().getCodeSource().getLocation().getPath() + "tests.txt";
+        String tests = GenerateurTests.class.getProtectionDomain().getCodeSource().getLocation().getPath() + "tests2.txt";
         String line;
         Test listeTests = new Test();
 
@@ -144,12 +147,6 @@ public class LectureEtEcritureFichier {
                 ligneLu++;
 
             }
-            // Always close files.
-            try {
-                bufferedReader.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
 
             //TODO doit etre placer dans une liste ou arrayliste
             System.out.println("enonces "+listeTests.getEnonce());
@@ -158,6 +155,12 @@ public class LectureEtEcritureFichier {
 
         }
 
+        // Always close files.
+        try {
+            bufferedReader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return listeTests;
     }
 

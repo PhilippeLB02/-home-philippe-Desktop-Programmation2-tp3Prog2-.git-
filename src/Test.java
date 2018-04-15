@@ -68,6 +68,10 @@ public class Test {
         return this.repones;
     }
 
+    public int getRponse(int i){
+        return repones.get(i);
+    }
+
     public void setRepones(ArrayList<Integer> repones) {
         this.repones = repones;
     }

@@ -77,7 +77,7 @@ public class GenerateurTests {
                 }
             }
         }catch (IOException e){
-
+            e.printStackTrace();
         }
         //Ecouteur
         ecouteur = new ActionListener() {
@@ -89,7 +89,7 @@ public class GenerateurTests {
                 }else if (evenement.getSource() == boutonFaireTests){
                     Object selected = listeTests.getSelectedItem();
                     if (selected != null) {
-                        new FenetreFaireTests();
+                        new FenetreFaireTests((String) selected);
                     }else {
                         JOptionPane.showMessageDialog(null, "Aucun test sélectionner!");
                     }
