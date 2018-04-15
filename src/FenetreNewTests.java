@@ -51,6 +51,38 @@ public class FenetreNewTests {
     //Ecouteur
     private ActionListener ecouteur;
 
+    //sauvegarde des fichier
+    private Test sauvegarde(){
+        Test test = new Test();
+        ArrayList questions = new ArrayList();
+        ArrayList listeReponse = new ArrayList();
+        ArrayList<Integer> reponse = new ArrayList<>();
+        int conteurDeQuestion = 1;
+
+        test.setName(nomTests.getText().trim());
+        questions.add(question.getText().trim());
+        test.setQuestion(questions);
+        listeReponse.add(listeReponse.size(), reponseUn.getText().trim());
+        listeReponse.add(listeReponse.size(), reponseDeux.getText().trim());
+        listeReponse.add(listeReponse.size(), reponseTrois.getText().trim());
+        listeReponse.add(listeReponse.size(), reponseQuatre.getText().trim());
+        test.setChoixReponse(listeReponse);
+        if (repBout1.isSelected()) {
+            reponse.add(reponse.size(), 1);
+        } else if (repBout2.isSelected()) {
+            reponse.add(reponse.size(), 2);
+        } else if (repBout3.isSelected()) {
+            reponse.add(reponse.size(), 3);
+        } else {
+            reponse.add(reponse.size(), 4);
+        }
+        test.setRepones(reponse);
+        test.setNbQuestion(conteurDeQuestion ++);
+        test.setQuestionCourante(test.getQuestion().size() - 1);
+
+        return  test;
+    }
+
     /**
      * Contructeur qui initialise la fenetre de creation
      */
@@ -182,26 +214,7 @@ public class FenetreNewTests {
                         JOptionPane.showMessageDialog(null, "Erreur aucune bonne reponse de selectionner.");
                     } else {
                         //TODO éventuellement le metre dans une méthode a par.
-                        test.setName(nomTests.getText().trim());
-                        questions.add(question.getText().trim());
-                        test.setQuestion(questions);
-                        listeReponse.add(listeReponse.size(), reponseUn.getText().trim());
-                        listeReponse.add(listeReponse.size(), reponseDeux.getText().trim());
-                        listeReponse.add(listeReponse.size(), reponseTrois.getText().trim());
-                        listeReponse.add(listeReponse.size(), reponseQuatre.getText().trim());
-                        test.setChoixReponse(listeReponse);
-                        if (repBout1.isSelected()) {
-                            reponse.add(reponse.size(), 1);
-                        } else if (repBout2.isSelected()) {
-                            reponse.add(reponse.size(), 2);
-                        } else if (repBout3.isSelected()) {
-                            reponse.add(reponse.size(), 3);
-                        } else {
-                            reponse.add(reponse.size(), 4);
-                        }
-                        test.setRepones(reponse);
-                        test.setNbQuestion(conteurDeQuestion ++);
-                        test.setQuestionCourante(test.getQuestion().size() - 1);
+                        test = sauvegarde();
                     }
                 }
                 if (evenement.getSource() == boutonSave){
@@ -217,48 +230,10 @@ public class FenetreNewTests {
                         JOptionPane.showMessageDialog(null, "Erreur aucune bonne reponse de selectionner.");
                     } else {
                         if (test.getNbQuestion() == null){
-                            test.setName(nomTests.getText().trim());
-                            questions.add(question.getText().trim());
-                            test.setQuestion(questions);
-                            listeReponse.add(listeReponse.size(), reponseUn.getText().trim());
-                            listeReponse.add(listeReponse.size(), reponseDeux.getText().trim());
-                            listeReponse.add(listeReponse.size(), reponseTrois.getText().trim());
-                            listeReponse.add(listeReponse.size(), reponseQuatre.getText().trim());
-                            test.setChoixReponse(listeReponse);
-                            if (repBout1.isSelected()) {
-                                reponse.add(reponse.size(), 1);
-                            } else if (repBout2.isSelected()) {
-                                reponse.add(reponse.size(), 2);
-                            } else if (repBout3.isSelected()) {
-                                reponse.add(reponse.size(), 3);
-                            } else {
-                                reponse.add(reponse.size(), 4);
-                            }
-                            test.setRepones(reponse);
-                            test.setNbQuestion(conteurDeQuestion ++);
-                            test.setQuestionCourante(test.getQuestion().size() - 1);
+                            test = sauvegarde();
                         } else if (question.getText().trim() != test.getQuestion(test.getQuestionCourante())){
                             //TODO éventuellement le metre dans une méthode a par.
-                            test.setName(nomTests.getText().trim());
-                            questions.add(question.getText().trim());
-                            test.setQuestion(questions);
-                            listeReponse.add(listeReponse.size(), reponseUn.getText().trim());
-                            listeReponse.add(listeReponse.size(), reponseDeux.getText().trim());
-                            listeReponse.add(listeReponse.size(), reponseTrois.getText().trim());
-                            listeReponse.add(listeReponse.size(), reponseQuatre.getText().trim());
-                            test.setChoixReponse(listeReponse);
-                            if (repBout1.isSelected()) {
-                                reponse.add(reponse.size(), 1);
-                            } else if (repBout2.isSelected()) {
-                                reponse.add(reponse.size(), 2);
-                            } else if (repBout3.isSelected()) {
-                                reponse.add(reponse.size(), 3);
-                            } else {
-                                reponse.add(reponse.size(), 4);
-                            }
-                            test.setRepones(reponse);
-                            test.setNbQuestion(conteurDeQuestion ++);
-                            test.setQuestionCourante(test.getQuestion().size() - 1);
+                            test = sauvegarde();
                         }
 
                         try {

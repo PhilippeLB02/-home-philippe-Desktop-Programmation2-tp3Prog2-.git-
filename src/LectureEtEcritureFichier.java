@@ -26,9 +26,10 @@ public class LectureEtEcritureFichier {
         int nbQuestion = test.getNbQuestion();
         pw.println(nbQuestion);
         pw.println(SÉPARATEUR_QUESTIONS);
-        String enoncer = test.getEnonce();
-        pw.println(enoncer);
-        pw.println(SÉPARATEUR_QUESTIONS);
+        //TODO Enoncer n'est jamais utilisier
+        //String enoncer = test.getEnonce();
+        //pw.println(enoncer);
+        //pw.println(SÉPARATEUR_QUESTIONS);
         String question;
         String choixReponse;
         int reponse;
