@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.ArrayList;
 
 
 public class LectureEtEcritureFichier {
@@ -8,7 +9,7 @@ public class LectureEtEcritureFichier {
     private static final String SÉPARATEUR_QUESTIONS = "-----";
     private static final String SÉPARATEUR_CHOIX_REPONSES = "<>";
     private static File SAUVEGARDETEST = new File("/home/philippe/Desktop/Programmation2/tp3Prog2/src/SauvegardeDeTest.txt");
-
+    private static File NOMTEST = new File(GenerateurTests.class.getProtectionDomain().getCodeSource().getLocation().getPath() + "nomDesTests");
 
     public static void ecriture(Test test) throws IOException {
 
@@ -36,7 +37,6 @@ public class LectureEtEcritureFichier {
         //boucle for print question et choix de reponses
         int j = 0;
         int y = 0;
-        int x = 4;
         int z = 1;
         for (int i = 0; i < test.getQuestion().size(); i ++) {
             question = test.getQuestion().get(i);
@@ -66,12 +66,28 @@ public class LectureEtEcritureFichier {
 
     }
 
+    public static void ecritureTitre(Test test) throws IOException {
+
+
+        if (!NOMTEST.exists()){
+            NOMTEST.createNewFile();
+        }
+
+        FileWriter fw = new FileWriter(NOMTEST, true);
+        BufferedWriter bw = new BufferedWriter(fw);
+        PrintWriter pw = new PrintWriter(bw);
+
+        pw.println(test.getName());
+
+        pw.close();
+    }
+
     //Lecture des fichiers
     //TODO arrenger la lecture pour quelle la totaliter du fichier fonctionne pas avec le fichier tests.txt du prof
     //elle lit juste le premier test.
     public static Test lecture() throws IOException {
 
-        String tests = GenerateurTests.class.getProtectionDomain().getCodeSource().getLocation().getPath() + "tests2.txt";
+        String tests = GenerateurTests.class.getProtectionDomain().getCodeSource().getLocation().getPath() + "tests.txt";
         String line;
         Test listeTests = new Test();
 
@@ -156,6 +172,28 @@ public class LectureEtEcritureFichier {
             e.printStackTrace();
         }
         return listeTests;
+    }
+
+    //TODO boucle infinie ne veux pas sortir de la methode
+    public static ArrayList<String> lectureTitre() throws IOException {
+        ArrayList<String> nomTest = new ArrayList<>();
+        String ligne;
+        String testName = GenerateurTests.class.getProtectionDomain().getCodeSource().getLocation().getPath() + "nomDesTests";
+
+        FileReader fr = new FileReader(testName);
+        BufferedReader br = new BufferedReader(fr);
+        if (!testName.isEmpty()) {
+            while (br.ready()) {
+                ligne = br.readLine();
+                if (ligne != null) {
+                    nomTest.add(nomTest.size(), ligne);
+                }
+            }
+        }
+
+        br.close();
+
+        return nomTest;
     }
 
 }

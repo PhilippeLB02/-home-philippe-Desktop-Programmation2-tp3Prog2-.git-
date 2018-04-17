@@ -73,7 +73,7 @@ public class FenetreNewTests {
             reponse.add(reponse.size(), 2);
         } else if (repBout3.isSelected()) {
             reponse.add(reponse.size(), 3);
-        } else {
+        } else if (repBout4.isSelected()){
             reponse.add(reponse.size(), 4);
         }
         test.setRepones(reponse);
@@ -240,6 +240,7 @@ public class FenetreNewTests {
                                 test = arrayListTest.get(i);
                                 LectureEtEcritureFichier.ecriture(test);
                             }
+                            LectureEtEcritureFichier.ecritureTitre(test);
                         }catch (IOException e){
                             e.printStackTrace();
                         }

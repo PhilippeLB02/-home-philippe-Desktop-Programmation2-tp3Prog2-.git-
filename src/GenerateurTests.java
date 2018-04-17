@@ -70,15 +70,17 @@ public class GenerateurTests {
         fenetre.getContentPane().add(listeTests);
 
         //TODO il faut etre capable de lire les nom des tests.
+        /*
         try {
-            if (LectureEtEcritureFichier.lecture() != null) {
-                for (int i = 0; i < 100; i++) {
-                    listeTests.addItem(LectureEtEcritureFichier.lecture().getName());
+            if (LectureEtEcritureFichier.lectureTitre() != null) {
+                while (LectureEtEcritureFichier.lectureTitre() != null){
+                    listeTests.addItem(LectureEtEcritureFichier.lectureTitre());
                 }
             }
         }catch (IOException e){
             e.printStackTrace();
         }
+        */
         //Ecouteur
         ecouteur = new ActionListener() {
             @Override
@@ -112,12 +114,7 @@ public class GenerateurTests {
     }
     public static void main (String[]args){
 
-        try {
-            LectureEtEcritureFichier.ecriture(LectureEtEcritureFichier.lecture());
-        } catch (IOException e){
-            e.printStackTrace();
-        }
 
-        //new GenerateurTests();
+        new GenerateurTests();
     }
 }
