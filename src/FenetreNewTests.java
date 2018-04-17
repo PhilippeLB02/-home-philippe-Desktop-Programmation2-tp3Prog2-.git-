@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
@@ -20,7 +21,13 @@ public class FenetreNewTests {
     private JLabel nomTest;
     private JTextField nomTests;
 
+    //JPANEL
+    private JPanel panneauDesQuestion;
+    private JPanel panneauZoneText;
+
     //Enoncer
+    private JLabel QUESTION;
+    private int numeroQuestion = 1;
     private JLabel enoncer;
     private JTextArea question;
 
@@ -95,15 +102,22 @@ public class FenetreNewTests {
         fenetreNewTests = new JFrame("Créer un nouveau test");
 
         //Dimention et position de la fenetre
-        fenetreNewTests.setBounds(400,300,LARGEUX_FENTRE,HAUTEUR_FENETRE);
+        fenetreNewTests.setSize(LARGEUX_FENTRE,HAUTEUR_FENETRE);
+        fenetreNewTests.setLocationRelativeTo(null);
         fenetreNewTests.setResizable(false);
 
         fenetreNewTests.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         fenetreNewTests.setLayout(null);
 
+        //JPANEL
+        panneauDesQuestion = new JPanel(new FlowLayout());
+        panneauDesQuestion.setBounds(50,50, 450, 350);
+        panneauDesQuestion.setBackground(Color.gray);
+
+
         //Titre test
-        nomTest = new JLabel("Nom du test");
-        nomTests = new JTextField("");
+        nomTest = new JLabel("Nom du test ");
+        nomTests = new JTextField();
 
         nomTest.setBounds(fenetreNewTests.getWidth() / 12 , fenetreNewTests.getHeight() / 13 - HAUT_BTN, 200, HAUT_BTN);
         nomTests.setBounds(fenetreNewTests.getWidth() / 12 * 3, fenetreNewTests.getHeight() / 13 - HAUT_BTN, 200, HAUT_BTN);
@@ -111,60 +125,47 @@ public class FenetreNewTests {
         fenetreNewTests.getContentPane().add(nomTest);
         fenetreNewTests.getContentPane().add(nomTests);
 
+
         //Enoncer
-        enoncer = new JLabel("Énoncé");
-        question = new JTextArea("");
+        QUESTION = new JLabel("Question " + numeroQuestion + "                                                                                          ");
+        enoncer = new JLabel("Énoncé " + "                                                                                         ");
+        question = new JTextArea();
         question.setLineWrap(true);
         question.setEditable(true);
+        question.setSize(new Dimension(400, 100));
 
-        enoncer.setBounds(fenetreNewTests.getWidth() / 12 , fenetreNewTests.getHeight() / 13 * 2 - HAUT_BTN, 200, HAUT_BTN);
-        question.setBounds(fenetreNewTests.getWidth() / 12 , fenetreNewTests.getHeight() / 13 *3 - HAUT_BTN, 450, HAUT_BTN * 2);
-
-        fenetreNewTests.getContentPane().add(enoncer);
-        fenetreNewTests.getContentPane().add(question);
+        panneauDesQuestion.add(QUESTION);
+        panneauDesQuestion.add(enoncer);
+        panneauDesQuestion.add(question);
 
         //Reponse
-        reponse = new JLabel("Choix de réponses (Cocher la bonne réponse)");
-        reponse1 = new JLabel("1)");
-        reponse2 = new JLabel("2)");
-        reponse3 = new JLabel("3)");
-        reponse4 = new JLabel("4)");
-        reponseUn = new JTextField();
-        reponseDeux = new JTextField();
-        reponseTrois = new JTextField();
-        reponseQuatre = new JTextField();
+        reponse = new JLabel("Choix de réponses (Cocher la bonne réponse) " + "                           ");
+        reponse1 = new JLabel("1) ");
+        reponse2 = new JLabel("2) ");
+        reponse3 = new JLabel("3) ");
+        reponse4 = new JLabel("4) ");
+        reponseUn = new JTextField(35);
+        reponseDeux = new JTextField(35);
+        reponseTrois = new JTextField(35);
+        reponseQuatre = new JTextField(35);
         repBout1 = new JRadioButton();
         repBout2 = new JRadioButton();
         repBout3 = new JRadioButton();
         repBout4 = new JRadioButton();
 
-        reponse.setBounds(fenetreNewTests.getWidth() / 12, fenetreNewTests.getHeight() / 13 * 5 - HAUT_BTN, 450, HAUT_BTN);
-        reponse1.setBounds(fenetreNewTests.getWidth() / 12, fenetreNewTests.getHeight() / 13 * 6 - HAUT_BTN, LARG_BTN, HAUT_BTN);
-        reponseUn.setBounds(fenetreNewTests.getWidth() / 12 * 2, fenetreNewTests.getHeight() / 13 * 6 - HAUT_BTN, 400, HAUT_BTN);
-        repBout1.setBounds(fenetreNewTests.getWidth() / 12 * 11, fenetreNewTests.getHeight() / 13 * 6 - HAUT_BTN, LARG_BTN, HAUT_BTN);
-        reponse2.setBounds(fenetreNewTests.getWidth() / 12, fenetreNewTests.getHeight() / 13 * 7 - HAUT_BTN, LARG_BTN, HAUT_BTN);
-        reponseDeux.setBounds(fenetreNewTests.getWidth() / 12 *2, fenetreNewTests.getHeight() / 13 * 7 - HAUT_BTN, 400, HAUT_BTN);
-        repBout2.setBounds(fenetreNewTests.getWidth() / 12 * 11, fenetreNewTests.getHeight() / 13 * 7 - HAUT_BTN, LARG_BTN,HAUT_BTN);
-        reponse3.setBounds(fenetreNewTests.getWidth() / 12, fenetreNewTests.getHeight() / 13 * 8 - HAUT_BTN, LARG_BTN, HAUT_BTN);
-        reponseTrois.setBounds(fenetreNewTests.getWidth() / 12 * 2, fenetreNewTests.getHeight() / 13 *8 - HAUT_BTN, 400, HAUT_BTN);
-        repBout3.setBounds(fenetreNewTests.getWidth() / 12 * 11, fenetreNewTests.getHeight() / 13 * 8 - HAUT_BTN, LARG_BTN,HAUT_BTN);
-        reponse4.setBounds(fenetreNewTests.getWidth() / 12, fenetreNewTests.getHeight() / 13 * 9 - HAUT_BTN, LARG_BTN, HAUT_BTN);
-        reponseQuatre.setBounds(fenetreNewTests.getWidth() / 12 * 2, fenetreNewTests.getHeight() /13 * 9 - HAUT_BTN, 400, HAUT_BTN);
-        repBout4.setBounds(fenetreNewTests.getWidth() / 12 * 11, fenetreNewTests.getHeight() / 13 * 9 - HAUT_BTN, LARG_BTN,HAUT_BTN);
-
-        fenetreNewTests.getContentPane().add(reponse);
-        fenetreNewTests.getContentPane().add(reponse1);
-        fenetreNewTests.getContentPane().add(reponseUn);
-        fenetreNewTests.getContentPane().add(repBout1);
-        fenetreNewTests.getContentPane().add(reponse2);
-        fenetreNewTests.getContentPane().add(reponseDeux);
-        fenetreNewTests.getContentPane().add(repBout2);
-        fenetreNewTests.getContentPane().add(reponse3);
-        fenetreNewTests.getContentPane().add(reponseTrois);
-        fenetreNewTests.getContentPane().add(repBout3);
-        fenetreNewTests.getContentPane().add(reponse4);
-        fenetreNewTests.getContentPane().add(reponseQuatre);
-        fenetreNewTests.getContentPane().add(repBout4);
+        panneauDesQuestion.add(reponse);
+        panneauDesQuestion.add(reponse1);
+        panneauDesQuestion.add(reponseUn);
+        panneauDesQuestion.add(repBout1);
+        panneauDesQuestion.add(reponse2);
+        panneauDesQuestion.add(reponseDeux);
+        panneauDesQuestion.add(repBout2);
+        panneauDesQuestion.add(reponse3);
+        panneauDesQuestion.add(reponseTrois);
+        panneauDesQuestion.add(repBout3);
+        panneauDesQuestion.add(reponse4);
+        panneauDesQuestion.add(reponseQuatre);
+        panneauDesQuestion.add(repBout4);
 
         //Boutons
         buttonPrecedent = new JButton("<");
@@ -212,9 +213,11 @@ public class FenetreNewTests {
                         JOptionPane.showMessageDialog(null, "Erreur aucune bonne reponse de selectionner.");
                     } else {
                         arrayListTest.add(arrayListTest.size(), sauvegarde());
+                        numeroQuestion ++;
                     }
 
                 } else if (evenement.getSource() == boutonSuppQuestion){
+                    numeroQuestion --;
 
                 } else if (evenement.getSource() == boutonSuivant){
 
@@ -240,7 +243,6 @@ public class FenetreNewTests {
                                 test = arrayListTest.get(i);
                                 LectureEtEcritureFichier.ecriture(test);
                             }
-                            LectureEtEcritureFichier.ecritureTitre(test);
                         }catch (IOException e){
                             e.printStackTrace();
                         }
@@ -257,6 +259,7 @@ public class FenetreNewTests {
         boutonSuivant.addActionListener(ecouteur);
         boutonSave.addActionListener(ecouteur);
 
+        fenetreNewTests.add(panneauDesQuestion);
         fenetreNewTests.setVisible(true);
     }
 }

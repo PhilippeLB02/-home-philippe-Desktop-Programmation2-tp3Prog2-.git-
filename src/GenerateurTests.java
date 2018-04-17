@@ -40,7 +40,7 @@ public class GenerateurTests {
         fenetre = new JFrame("Générateur de tests");
 
         //Dimention et position de la fenetre
-        fenetre.setBounds(400,300,LARGEUX_FENTRE,HAUTEUR_FENETRE);
+        fenetre.setSize(LARGEUX_FENTRE,HAUTEUR_FENETRE);
         fenetre.setResizable(false);
         fenetre.setLocationRelativeTo(null);
 

@@ -1,5 +1,5 @@
 import java.io.*;
-import java.util.ArrayList;
+
 
 
 public class LectureEtEcritureFichier {
@@ -9,7 +9,6 @@ public class LectureEtEcritureFichier {
     private static final String SÉPARATEUR_QUESTIONS = "-----";
     private static final String SÉPARATEUR_CHOIX_REPONSES = "<>";
     private static File SAUVEGARDETEST = new File("/home/philippe/Desktop/Programmation2/tp3Prog2/src/SauvegardeDeTest.txt");
-    private static File NOMTEST = new File(GenerateurTests.class.getProtectionDomain().getCodeSource().getLocation().getPath() + "nomDesTests");
 
     public static void ecriture(Test test) throws IOException {
 
@@ -64,22 +63,6 @@ public class LectureEtEcritureFichier {
 
         pw.close();
 
-    }
-
-    public static void ecritureTitre(Test test) throws IOException {
-
-
-        if (!NOMTEST.exists()){
-            NOMTEST.createNewFile();
-        }
-
-        FileWriter fw = new FileWriter(NOMTEST, true);
-        BufferedWriter bw = new BufferedWriter(fw);
-        PrintWriter pw = new PrintWriter(bw);
-
-        pw.println(test.getName());
-
-        pw.close();
     }
 
     //Lecture des fichiers
@@ -174,26 +157,5 @@ public class LectureEtEcritureFichier {
         return listeTests;
     }
 
-    //TODO boucle infinie ne veux pas sortir de la methode
-    public static ArrayList<String> lectureTitre() throws IOException {
-        ArrayList<String> nomTest = new ArrayList<>();
-        String ligne;
-        String testName = GenerateurTests.class.getProtectionDomain().getCodeSource().getLocation().getPath() + "nomDesTests";
-
-        FileReader fr = new FileReader(testName);
-        BufferedReader br = new BufferedReader(fr);
-        if (!testName.isEmpty()) {
-            while (br.ready()) {
-                ligne = br.readLine();
-                if (ligne != null) {
-                    nomTest.add(nomTest.size(), ligne);
-                }
-            }
-        }
-
-        br.close();
-
-        return nomTest;
-    }
 
 }
