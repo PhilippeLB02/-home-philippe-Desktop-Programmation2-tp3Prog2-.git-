@@ -1,4 +1,5 @@
 import javax.swing.*;
+import javax.swing.border.BevelBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -23,7 +24,6 @@ public class FenetreNewTests {
 
     //JPANEL
     private JPanel panneauDesQuestion;
-    private JPanel panneauZoneText;
 
     //Enoncer
     private JLabel QUESTION;
@@ -110,10 +110,10 @@ public class FenetreNewTests {
         fenetreNewTests.setLayout(null);
 
         //JPANEL
-        panneauDesQuestion = new JPanel(new FlowLayout());
+        panneauDesQuestion = new JPanel();
         panneauDesQuestion.setBounds(50,50, 450, 350);
-        panneauDesQuestion.setBackground(Color.gray);
-
+        panneauDesQuestion.setOpaque(true);
+        panneauDesQuestion.setLayout(null);
 
         //Titre test
         nomTest = new JLabel("Nom du test ");
@@ -127,31 +127,46 @@ public class FenetreNewTests {
 
 
         //Enoncer
-        QUESTION = new JLabel("Question " + numeroQuestion + "                                                                                          ");
-        enoncer = new JLabel("Énoncé " + "                                                                                         ");
+        QUESTION = new JLabel("Question " + numeroQuestion);
+        QUESTION.setBounds(10, 10, 200, HAUT_BTN);
+        enoncer = new JLabel("Énoncé ");
+        enoncer.setBounds(25, 40, 200, HAUT_BTN);
         question = new JTextArea();
         question.setLineWrap(true);
         question.setEditable(true);
-        question.setSize(new Dimension(400, 100));
+        question.setBounds(25, 80, 400, HAUT_BTN * 2);
 
         panneauDesQuestion.add(QUESTION);
         panneauDesQuestion.add(enoncer);
         panneauDesQuestion.add(question);
 
         //Reponse
-        reponse = new JLabel("Choix de réponses (Cocher la bonne réponse) " + "                           ");
+        reponse = new JLabel("Choix de réponses (Cocher la bonne réponse) ");
+        reponse.setBounds(10, 150, 400, HAUT_BTN);
         reponse1 = new JLabel("1) ");
+        reponse1.setBounds(10, 190, LARG_BTN, HAUT_BTN);
         reponse2 = new JLabel("2) ");
+        reponse2.setBounds(10, 230, LARG_BTN, HAUT_BTN);
         reponse3 = new JLabel("3) ");
+        reponse3.setBounds(10, 270, LARG_BTN, HAUT_BTN);
         reponse4 = new JLabel("4) ");
+        reponse4.setBounds(10, 310, LARG_BTN, HAUT_BTN);
         reponseUn = new JTextField(35);
+        reponseUn.setBounds(70, 190, 310, HAUT_BTN);
         reponseDeux = new JTextField(35);
+        reponseDeux.setBounds(70, 230, 310, HAUT_BTN);
         reponseTrois = new JTextField(35);
+        reponseTrois.setBounds(70, 270, 310, HAUT_BTN);
         reponseQuatre = new JTextField(35);
+        reponseQuatre.setBounds(70, 310, 310, HAUT_BTN);
         repBout1 = new JRadioButton();
+        repBout1.setBounds(390, 190, LARG_BTN, HAUT_BTN);
         repBout2 = new JRadioButton();
+        repBout2.setBounds(390, 230, LARG_BTN, HAUT_BTN);
         repBout3 = new JRadioButton();
+        repBout3.setBounds(390, 270, LARG_BTN, HAUT_BTN);
         repBout4 = new JRadioButton();
+        repBout4.setBounds(390, 310, LARG_BTN,HAUT_BTN);
 
         panneauDesQuestion.add(reponse);
         panneauDesQuestion.add(reponse1);
@@ -214,6 +229,7 @@ public class FenetreNewTests {
                     } else {
                         arrayListTest.add(arrayListTest.size(), sauvegarde());
                         numeroQuestion ++;
+                        
                     }
 
                 } else if (evenement.getSource() == boutonSuppQuestion){
