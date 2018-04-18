@@ -9,15 +9,21 @@ public class Test {
 
     private String name;
     private Integer nbQuestion;
-    //TODO a expliquer sont existence
-    //Philippe: je pense qu'il est redondant d'avoir une variable enoncer quand on a les questions en arraylist.
-    private String enonce;
+    //private String enonce;
     private ArrayList<String> question = new ArrayList();
     private ArrayList<String> choixReponse = new ArrayList();
-    private ArrayList<Integer> repones = new ArrayList();
+    private ArrayList<Integer> reponses = new ArrayList();
     private int questionCourante;
 
     public Test() {
+    }
+
+    public ArrayList<Integer> getReponses() {
+        return reponses;
+    }
+
+    public void setReponses(ArrayList<Integer> reponses) {
+        this.reponses = reponses;
     }
 
     public String getName() {
@@ -36,13 +42,13 @@ public class Test {
         this.nbQuestion = nbQuestion;
     }
 
-    public String getEnonce() {
+    /*public String getEnonce() {
         return this.enonce;
     }
 
     public void setEnonce(String enonce) {
         this.enonce = enonce;
-    }
+    }*/
 
     public ArrayList<String> getQuestion() {
         return this.question;
@@ -62,18 +68,6 @@ public class Test {
 
     public void setChoixReponse(ArrayList<String> choixReponse) {
         this.choixReponse = choixReponse;
-    }
-
-    public ArrayList<Integer> getRepones() {
-        return this.repones;
-    }
-
-    public int getRponse(int i){
-        return repones.get(i);
-    }
-
-    public void setRepones(ArrayList<Integer> repones) {
-        this.repones = repones;
     }
 
     public int getQuestionCourante() {
