@@ -5,6 +5,8 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public class GenerateurTests {
 
@@ -16,6 +18,7 @@ public class GenerateurTests {
     //Fenetre principale
     private JFrame fenetre;
 
+    private JPanel  ligne;
     //Boutons
     private JButton boutonNewTests;
     private JButton boutonFaireTests;
@@ -24,8 +27,12 @@ public class GenerateurTests {
     //Liste deroulante
     private JComboBox listeTests;
 
+    //liste des tests du fichier
+    private ArrayList<Test> lTests;
+
     //Ecouteur
     private ActionListener ecouteur;
+
 
 
     /**
@@ -38,7 +45,7 @@ public class GenerateurTests {
     private void initMenu()  {
 
         fenetre = new JFrame("Générateur de tests");
-
+        ligne   = new JPanel();
         //Dimention et position de la fenetre
         fenetre.setSize(LARGEUX_FENTRE,HAUTEUR_FENETRE);
         fenetre.setResizable(false);
@@ -63,24 +70,34 @@ public class GenerateurTests {
         fenetre.getContentPane().add(boutonFaireTests);
         fenetre.getContentPane().add(boutonSuppTests);
 
+
+        try {
+            lTests = LectureEtEcritureFichier.lecture();
+            System.out.println(lTests.size());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         //Liste deroulante
         listeTests = new JComboBox();
         listeTests.setBounds(fenetre.getWidth() / 2 - LARG_BTN / 2, fenetre.getHeight() / 7 * 3 - HAUT_BTN,
                 LARG_BTN, HAUT_BTN);
+        for(int i=0;i<lTests.size();i++){
+            String item="";
+            item = lTests.get(i).getName();
+            if(lTests.get(i).getNbQuestion() > 1)
+                item += " ("+lTests.get(i).getNbQuestion() + " questions)";
+            else
+                item += " ("+lTests.get(i).getNbQuestion() + " question)";
+
+            listeTests.addItem(item);
+        }
+
         fenetre.getContentPane().add(listeTests);
 
-        //TODO il faut etre capable de lire les nom des tests.
-        /*
-        try {
-            if (LectureEtEcritureFichier.lectureTitre() != null) {
-                while (LectureEtEcritureFichier.lectureTitre() != null){
-                    listeTests.addItem(LectureEtEcritureFichier.lectureTitre());
-                }
-            }
-        }catch (IOException e){
-            e.printStackTrace();
-        }
-        */
+
+
+
         //Ecouteur
         ecouteur = new ActionListener() {
             @Override

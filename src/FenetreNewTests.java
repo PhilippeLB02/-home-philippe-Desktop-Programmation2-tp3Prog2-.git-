@@ -83,7 +83,7 @@ public class FenetreNewTests {
         } else if (repBout4.isSelected()){
             reponse.add(reponse.size(), 4);
         }
-        test.setRepones(reponse);
+        test.setReponses(reponse);
         test.setNbQuestion(conteurDeQuestion ++);
         test.setQuestionCourante(test.getQuestion().size() - 1);
 
