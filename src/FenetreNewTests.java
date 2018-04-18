@@ -24,6 +24,9 @@ public class FenetreNewTests {
 
     //JPANEL
     private JPanel panneauDesQuestion;
+    private JPanel cadreSuperieur;
+    private JPanel cadreInferieur;
+
 
     //Enoncer
     private JLabel QUESTION;
@@ -115,7 +118,12 @@ public class FenetreNewTests {
         panneauDesQuestion.setOpaque(true);
         panneauDesQuestion.setLayout(null);
 
-        //Titre test
+        cadreSuperieur = new JPanel();
+        cadreInferieur = new JPanel();
+
+        cadreSuperieur.setBounds(50,40,300,1);
+
+                //Titre test
         nomTest = new JLabel("Nom du test ");
         nomTests = new JTextField();
 
@@ -275,6 +283,8 @@ public class FenetreNewTests {
         boutonSave.addActionListener(ecouteur);
 
         fenetreNewTests.add(panneauDesQuestion);
+        fenetreNewTests.add(cadreSuperieur);
+
         fenetreNewTests.setVisible(true);
     }
 }

@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
@@ -46,6 +47,11 @@ public class GenerateurTests {
 
         fenetre = new JFrame("Générateur de tests");
         ligne   = new JPanel();
+//        jboard.setBorder(BorderFactory.createEmptyBorder(0,10,10,10));
+        ligne.setBorder(BorderFactory.createLineBorder(Color.black,6));
+        ligne.setBounds(10,100,360,1);
+        ligne.setOpaque(false);
+
         //Dimention et position de la fenetre
         fenetre.setSize(LARGEUX_FENTRE,HAUTEUR_FENETRE);
         fenetre.setResizable(false);
@@ -94,7 +100,7 @@ public class GenerateurTests {
         }
 
         fenetre.getContentPane().add(listeTests);
-
+        fenetre.getContentPane().add(ligne);
 
 
 

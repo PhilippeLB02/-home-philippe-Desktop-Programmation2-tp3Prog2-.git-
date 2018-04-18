@@ -82,12 +82,13 @@ public class LectureEtEcritureFichier {
         BufferedReader bufferedReader =
                 new BufferedReader(fileReader);
 
-
+        //lit une série de test
         while (line != null) {
             listeTests.add(new Test());
             //lire un test a la fois
             line = bufferedReader.readLine();
-            if (line != null) {
+
+            if (line != null && !line.isEmpty()) {
                 listeTests.get(listeTests.size() - 1).setName(line);
             }else{
                 listeTests.remove(listeTests.size() - 1);
@@ -117,7 +118,7 @@ public class LectureEtEcritureFichier {
                 line = bufferedReader.readLine();
             }
 
-            //System.out.println("line? "+line);
+            System.out.println("line? "+line);
             //System.out.println("reponses " + listeTests.get(listeTests.size() - 1).getRepones().get(1));
             //System.out.println("questions " + listeTests.get(listeTests.size() - 1).getQuestion().get(1));
             //System.out.println("chx " + listeTests.get(listeTests.size() - 1).getChoixReponse());
