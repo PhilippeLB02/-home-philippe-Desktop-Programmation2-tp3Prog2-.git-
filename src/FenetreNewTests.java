@@ -229,7 +229,6 @@ public class FenetreNewTests {
                     } else {
                         arrayListTest.add(arrayListTest.size(), sauvegarde());
                         numeroQuestion ++;
-                        
                     }
 
                 } else if (evenement.getSource() == boutonSuppQuestion){
