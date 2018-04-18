@@ -221,8 +221,12 @@ public class FenetreNewTests {
 
                 Test test = new Test();
                 ArrayList<Test> arrayListTest = new ArrayList<>();
+                int questionCouante = test.getQuestionCourante();
 
                 if (evenement.getSource() == buttonPrecedent){
+                    if (questionCouante != 0){
+                        questionCouante --;
+                    }
 
                 } else if (evenement.getSource() == boutonAjoutQuestion){
 
@@ -237,12 +241,23 @@ public class FenetreNewTests {
                     } else {
                         arrayListTest.add(arrayListTest.size(), sauvegarde());
                         numeroQuestion ++;
+                        questionCouante ++;
+                        ajouterQuestion();
                     }
 
                 } else if (evenement.getSource() == boutonSuppQuestion){
+                    if (questionCouante != 0){
+                        questionCouante --;
+                    }
+                    test.setQuestionCourante(questionCouante);
+                    test.getQuestion().remove(questionCouante);
                     numeroQuestion --;
 
+
                 } else if (evenement.getSource() == boutonSuivant){
+                    if (questionCouante < test.getQuestion().size()){
+                        questionCouante ++;
+                    }
 
                 } else if (evenement.getSource() == boutonSave){
 
@@ -286,5 +301,74 @@ public class FenetreNewTests {
         fenetreNewTests.add(cadreSuperieur);
 
         fenetreNewTests.setVisible(true);
+    }
+
+    private void ajouterQuestion(){
+
+        panneauDesQuestion = new JPanel();
+        panneauDesQuestion.setBounds(50,50, 450, 350);
+        panneauDesQuestion.setOpaque(true);
+        panneauDesQuestion.setLayout(null);
+
+
+        QUESTION = new JLabel("Question " + numeroQuestion);
+        QUESTION.setBounds(10, 10, 200, HAUT_BTN);
+        enoncer = new JLabel("Énoncé ");
+        enoncer.setBounds(25, 40, 200, HAUT_BTN);
+        question = new JTextArea();
+        question.setLineWrap(true);
+        question.setEditable(true);
+        question.setBounds(25, 80, 400, HAUT_BTN * 2);
+
+        panneauDesQuestion.add(QUESTION);
+        panneauDesQuestion.add(enoncer);
+        panneauDesQuestion.add(question);
+
+        //Reponse
+        reponse = new JLabel("Choix de réponses (Cocher la bonne réponse) ");
+        reponse.setBounds(10, 150, 400, HAUT_BTN);
+        reponse1 = new JLabel("1) ");
+        reponse1.setBounds(10, 190, LARG_BTN, HAUT_BTN);
+        reponse2 = new JLabel("2) ");
+        reponse2.setBounds(10, 230, LARG_BTN, HAUT_BTN);
+        reponse3 = new JLabel("3) ");
+        reponse3.setBounds(10, 270, LARG_BTN, HAUT_BTN);
+        reponse4 = new JLabel("4) ");
+        reponse4.setBounds(10, 310, LARG_BTN, HAUT_BTN);
+        reponseUn = new JTextField(35);
+        reponseUn.setBounds(70, 190, 310, HAUT_BTN);
+        reponseDeux = new JTextField(35);
+        reponseDeux.setBounds(70, 230, 310, HAUT_BTN);
+        reponseTrois = new JTextField(35);
+        reponseTrois.setBounds(70, 270, 310, HAUT_BTN);
+        reponseQuatre = new JTextField(35);
+        reponseQuatre.setBounds(70, 310, 310, HAUT_BTN);
+        repBout1 = new JRadioButton();
+        repBout1.setBounds(390, 190, LARG_BTN, HAUT_BTN);
+        repBout2 = new JRadioButton();
+        repBout2.setBounds(390, 230, LARG_BTN, HAUT_BTN);
+        repBout3 = new JRadioButton();
+        repBout3.setBounds(390, 270, LARG_BTN, HAUT_BTN);
+        repBout4 = new JRadioButton();
+        repBout4.setBounds(390, 310, LARG_BTN,HAUT_BTN);
+
+        panneauDesQuestion.add(reponse);
+        panneauDesQuestion.add(reponse1);
+        panneauDesQuestion.add(reponseUn);
+        panneauDesQuestion.add(repBout1);
+        panneauDesQuestion.add(reponse2);
+        panneauDesQuestion.add(reponseDeux);
+        panneauDesQuestion.add(repBout2);
+        panneauDesQuestion.add(reponse3);
+        panneauDesQuestion.add(reponseTrois);
+        panneauDesQuestion.add(repBout3);
+        panneauDesQuestion.add(reponse4);
+        panneauDesQuestion.add(reponseQuatre);
+        panneauDesQuestion.add(repBout4);
+
+        fenetreNewTests.add(panneauDesQuestion);
+        panneauDesQuestion.revalidate();
+        panneauDesQuestion.repaint();
+
     }
 }
