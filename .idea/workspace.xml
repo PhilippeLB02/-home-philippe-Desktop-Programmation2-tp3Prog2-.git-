@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a1572fe-84ac-4388-93e6-9d41172bf516" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FenetreNewTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FenetreNewTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LectureEtEcritureFichier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LectureEtEcritureFichier.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,21 +17,17 @@
       <file leaf-file-name="GenerateurTests.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GenerateurTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
-              <folding>
-                <element signature="e#828#829#0" expanded="true" />
-                <element signature="e#854#855#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="738">
+              <caret line="49" column="24" selection-start-line="49" selection-start-column="24" selection-end-line="49" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FenetreNewTests.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FenetreNewTests.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FenetreNewTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
-              <caret line="360" column="40" selection-start-line="360" selection-start-column="40" selection-end-line="360" selection-end-column="40" />
+            <state relative-caret-position="495">
+              <caret line="359" column="40" selection-start-line="359" selection-start-column="40" selection-end-line="359" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#sauvegarde#0;class#FenetreNewTests#0" />
@@ -45,20 +39,29 @@
       <file leaf-file-name="Test.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+            <state relative-caret-position="-54">
+              <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LectureEtEcritureFichier.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LectureEtEcritureFichier.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/LectureEtEcritureFichier.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="414">
+              <caret line="51" column="46" lean-forward="true" selection-start-line="51" selection-start-column="46" selection-end-line="51" selection-end-column="46" />
               <folding>
-                <element signature="method#ecriture#0;class#LectureEtEcritureFichier#0" />
+                <element signature="method#lecture#0;class#LectureEtEcritureFichier#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SauvegardeDeTest.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/SauvegardeDeTest.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
             </state>
           </provider>
         </entry>
@@ -93,10 +96,10 @@
         <option value="$PROJECT_DIR$/src/Test.java" />
         <option value="$PROJECT_DIR$/src/FenetreFaireTests.java" />
         <option value="$PROJECT_DIR$/src/nomDesTests" />
-        <option value="$PROJECT_DIR$/src/LectureEtEcritureFichier.java" />
         <option value="$PROJECT_DIR$/src/GenerateurTests.java" />
         <option value="$PROJECT_DIR$/src/teste.form" />
         <option value="$PROJECT_DIR$/src/FenetreNewTests.java" />
+        <option value="$PROJECT_DIR$/src/LectureEtEcritureFichier.java" />
       </list>
     </option>
   </component>
@@ -165,7 +168,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.GenerateurTests">
+  <component name="RunManager" selected="Application.LectureEtEcritureFichier">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
@@ -185,6 +188,11 @@
     </configuration>
     <configuration name="GenerateurTests" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GenerateurTests" />
+      <module name="tp3Prog2" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="LectureEtEcritureFichier" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LectureEtEcritureFichier" />
       <module name="tp3Prog2" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -246,9 +254,11 @@
       <item itemvalue="Application.GenerateurTests" />
       <item itemvalue="Application.Exemple2DiversComposantsAvecActionListener" />
       <item itemvalue="Application.Exemple2DiversComposantsAvecActionListener (1)" />
+      <item itemvalue="Application.LectureEtEcritureFichier" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LectureEtEcritureFichier" />
         <item itemvalue="Application.GenerateurTests" />
         <item itemvalue="Application.Exemple2DiversComposantsAvecActionListener" />
         <item itemvalue="Application.Exemple2DiversComposantsAvecActionListener (1)" />
@@ -276,12 +286,12 @@
       <workItem from="1523972307690" duration="18078000" />
       <workItem from="1523991660851" duration="2810000" />
       <workItem from="1524056385666" duration="1291000" />
-      <workItem from="1524071817052" duration="2715000" />
+      <workItem from="1524071817052" duration="3465000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89744000" />
+    <option name="totallyTimeSpent" value="90494000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="-4" width="1920" height="1084" extended-state="6" />
@@ -296,12 +306,12 @@
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.25922132" />
+      <window_info anchor="bottom" id="Run" order="7" visible="true" weight="0.25922132" />
       <window_info anchor="bottom" id="Version Control" order="3" />
       <window_info anchor="bottom" id="Terminal" order="1" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="0" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.1" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.1" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
@@ -344,7 +354,7 @@
         <state relative-caret-position="18">
           <caret line="1" selection-start-line="1" selection-end-line="1" />
           <folding>
-            <element signature="method#ecriture#0;class#LectureEtEcritureFichier#0" />
+            <element signature="method#lecture#0;class#LectureEtEcritureFichier#0" />
           </folding>
         </state>
       </provider>
@@ -364,10 +374,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="756">
           <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
-          <folding>
-            <element signature="e#828#829#0" expanded="true" />
-            <element signature="e#854#855#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -383,7 +389,7 @@
         <state relative-caret-position="18">
           <caret line="1" selection-start-line="1" selection-end-line="1" />
           <folding>
-            <element signature="method#ecriture#0;class#LectureEtEcritureFichier#0" />
+            <element signature="method#lecture#0;class#LectureEtEcritureFichier#0" />
           </folding>
         </state>
       </provider>
@@ -403,10 +409,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1152">
           <caret line="72" column="10" selection-start-line="72" selection-start-column="10" selection-end-line="72" selection-end-column="10" />
-          <folding>
-            <element signature="e#828#829#0" expanded="true" />
-            <element signature="e#854#855#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -422,7 +424,7 @@
         <state relative-caret-position="18">
           <caret line="1" selection-start-line="1" selection-end-line="1" />
           <folding>
-            <element signature="method#ecriture#0;class#LectureEtEcritureFichier#0" />
+            <element signature="method#lecture#0;class#LectureEtEcritureFichier#0" />
           </folding>
         </state>
       </provider>
@@ -442,10 +444,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1152">
           <caret line="72" column="10" selection-start-line="72" selection-start-column="10" selection-end-line="72" selection-end-column="10" />
-          <folding>
-            <element signature="e#828#829#0" expanded="true" />
-            <element signature="e#854#855#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -461,7 +459,7 @@
         <state relative-caret-position="18">
           <caret line="1" selection-start-line="1" selection-end-line="1" />
           <folding>
-            <element signature="method#ecriture#0;class#LectureEtEcritureFichier#0" />
+            <element signature="method#lecture#0;class#LectureEtEcritureFichier#0" />
           </folding>
         </state>
       </provider>
@@ -481,10 +479,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2160">
           <caret line="120" column="10" selection-start-line="120" selection-start-column="10" selection-end-line="120" selection-end-column="10" />
-          <folding>
-            <element signature="e#828#829#0" expanded="true" />
-            <element signature="e#854#855#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -504,7 +498,7 @@
         <state relative-caret-position="720">
           <caret line="40" column="57" selection-start-line="40" selection-start-column="57" selection-end-line="40" selection-end-column="57" />
           <folding>
-            <element signature="method#ecriture#0;class#LectureEtEcritureFichier#0" />
+            <element signature="method#lecture#0;class#LectureEtEcritureFichier#0" />
           </folding>
         </state>
       </provider>
@@ -513,10 +507,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2070">
           <caret line="115" column="29" selection-start-line="115" selection-start-column="29" selection-end-line="115" selection-end-column="29" />
-          <folding>
-            <element signature="e#828#829#0" expanded="true" />
-            <element signature="e#854#855#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -535,10 +525,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1926">
           <caret line="115" column="29" selection-start-line="115" selection-start-column="29" selection-end-line="115" selection-end-column="29" />
-          <folding>
-            <element signature="e#828#829#0" expanded="true" />
-            <element signature="e#854#855#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -547,7 +533,7 @@
         <state relative-caret-position="234">
           <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
           <folding>
-            <element signature="method#ecriture#0;class#LectureEtEcritureFichier#0" />
+            <element signature="method#lecture#0;class#LectureEtEcritureFichier#0" />
           </folding>
         </state>
       </provider>
@@ -574,10 +560,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2070">
           <caret line="115" column="29" selection-start-line="115" selection-start-column="29" selection-end-line="115" selection-end-column="29" />
-          <folding>
-            <element signature="e#828#829#0" expanded="true" />
-            <element signature="e#854#855#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -586,7 +568,7 @@
         <state relative-caret-position="1314">
           <caret line="73" column="17" selection-start-line="73" selection-start-column="17" selection-end-line="73" selection-end-column="17" />
           <folding>
-            <element signature="method#ecriture#0;class#LectureEtEcritureFichier#0" />
+            <element signature="method#lecture#0;class#LectureEtEcritureFichier#0" />
           </folding>
         </state>
       </provider>
@@ -613,10 +595,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
-          <folding>
-            <element signature="e#828#829#0" expanded="true" />
-            <element signature="e#854#855#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -643,10 +621,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
-          <folding>
-            <element signature="e#828#829#0" expanded="true" />
-            <element signature="e#854#855#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -678,13 +652,6 @@
         <state relative-caret-position="-378" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SauvegardeDeTest.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/nomDesTests" />
     <entry file="file://$PROJECT_DIR$/src/tests.txt">
       <provider selected="true" editor-type-id="text-editor">
@@ -700,31 +667,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LectureEtEcritureFichier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-          <folding>
-            <element signature="method#ecriture#0;class#LectureEtEcritureFichier#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GenerateurTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
-          <folding>
-            <element signature="e#828#829#0" expanded="true" />
-            <element signature="e#854#855#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="738">
+          <caret line="49" column="24" selection-start-line="49" selection-start-column="24" selection-end-line="49" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -734,13 +680,37 @@
     <entry file="file://$PROJECT_DIR$/src/teste.form">
       <provider selected="true" editor-type-id="ui-designer" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/SauvegardeDeTest.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-54">
+          <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/FenetreNewTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="360" column="40" selection-start-line="360" selection-start-column="40" selection-end-line="360" selection-end-column="40" />
+        <state relative-caret-position="495">
+          <caret line="359" column="40" selection-start-line="359" selection-start-column="40" selection-end-line="359" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#sauvegarde#0;class#FenetreNewTests#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LectureEtEcritureFichier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="51" column="46" lean-forward="true" selection-start-line="51" selection-start-column="46" selection-end-line="51" selection-end-column="46" />
+          <folding>
+            <element signature="method#lecture#0;class#LectureEtEcritureFichier#0" />
           </folding>
         </state>
       </provider>
