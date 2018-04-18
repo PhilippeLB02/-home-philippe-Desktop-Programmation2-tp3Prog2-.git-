@@ -8,7 +8,7 @@ public class LectureEtEcritureFichier {
     private static final String SÉPARATEUR_TESTS = "=====";
     private static final String SÉPARATEUR_QUESTIONS = "-----";
     private static final String SÉPARATEUR_CHOIX_REPONSES = "<>";
-    private static File SAUVEGARDETEST = new File("/home/philippe/Desktop/Programmation2/tp3Prog2/src/tests2.txt");
+    private static File SAUVEGARDETEST = new File("/home/philippe/Desktop/Programmation2/tp3Prog2/src/SauvegardeDeTest.txt");
 
     public static void ecriture(Test test) throws IOException {
 
@@ -44,8 +44,12 @@ public class LectureEtEcritureFichier {
             pw.println(SÉPARATEUR_QUESTIONS);
             while (j < x) {
                 choixReponse = test.getChoixReponse().get(j);
-                pw.println(choixReponse);
-                pw.println(SÉPARATEUR_CHOIX_REPONSES);
+                pw.print(choixReponse);
+                if (j + 1 < x) {
+                    pw.print(SÉPARATEUR_CHOIX_REPONSES);
+                } else if (j + 1 == x){
+                    pw.println();
+                }
                 j ++;
             }
             x = x + 4;
@@ -71,7 +75,7 @@ public class LectureEtEcritureFichier {
     //Lecture des fichiers
     public static ArrayList<Test> lecture() throws IOException {
 
-        String tests = GenerateurTests.class.getProtectionDomain().getCodeSource().getLocation().getPath() + "tests.txt";
+        String tests = GenerateurTests.class.getProtectionDomain().getCodeSource().getLocation().getPath() + "SauvegardeDeTest.txt";
         String line="";
         String tempStr=line;
 
