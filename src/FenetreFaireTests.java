@@ -78,6 +78,7 @@ public class FenetreFaireTests {
         nomDuTest.setBounds(fenetreFaireTest.getWidth() / 12 , fenetreFaireTest.getHeight() / 13 - HAUT_BTN, 200, HAUT_BTN);
         nomTests.setBounds(fenetreFaireTest.getWidth() / 12 * 3, fenetreFaireTest.getHeight() / 13 - HAUT_BTN, 350, HAUT_BTN);
         nomTests.setText(testFenetre.getName());
+        nomTests.setEditable(false);
         fenetreFaireTest.getContentPane().add(nomDuTest);
         fenetreFaireTest.getContentPane().add(nomTests);
 
@@ -93,9 +94,6 @@ public class FenetreFaireTests {
         question.setBounds(25, 80, 400, HAUT_BTN * 2);
         question.setText(testFenetre.getQuestion().get(testFenetre.getQuestionCourante()));
 
-        JScrollPane barreNavigation = new JScrollPane(question);
-
-        barreNavigation.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 
         panneauDesQuestion = new JPanel();
         panneauDesQuestion.setBounds(50,50, 450, 350);
@@ -106,6 +104,7 @@ public class FenetreFaireTests {
         panneauDesQuestion.add(QUESTION);
         panneauDesQuestion.add(enoncer);
         panneauDesQuestion.add(question);
+
 
         //Reponse
         reponse = new JLabel("Choix de réponses (Cocher la bonne réponse) ");
@@ -194,6 +193,20 @@ public class FenetreFaireTests {
             }
         });
 
+        boutonPrecedent.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(repBout1.isSelected() || repBout2.isSelected() || repBout3.isSelected() || repBout4.isSelected()){
+
+                    if (testFenetre.getQuestionCourante() -1 < 0 )
+                        System.out.println("Petit");
+                    else
+                        testFenetre.setQuestionCourante(testFenetre.getQuestionCourante()-1);
+
+                    afficherQuestion(testFenetre.getQuestionCourante());
+                }
+            }
+        });
 
         fenetreFaireTest.getContentPane().add(boutonPrecedent);
         fenetreFaireTest.getContentPane().add(boutonSuivant);
@@ -204,7 +217,7 @@ public class FenetreFaireTests {
     }
     private void afficherQuestion(int numeroQuestion){
         //String[] chx = values.split("\\|",-1);
-        //System.out.println("question courante = "+testFenetre.getQuestionCourante());
+        System.out.println("question courante = "+testFenetre.getQuestionCourante());
         QUESTION.setText("Question "+ (testFenetre.getQuestionCourante()+1));
         question.setText(testFenetre.getQuestion(numeroQuestion));
         choixReponseTest = testFenetre.getChoixReponse().get(numeroQuestion).split("<>");
