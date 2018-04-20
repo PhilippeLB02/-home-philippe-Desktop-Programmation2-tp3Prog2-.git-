@@ -114,7 +114,15 @@ public class GenerateurTests {
                 }else if (evenement.getSource() == boutonFaireTests){
                     Object selected = listeTests.getSelectedItem();
                     if (selected != null) {
-                        new FenetreFaireTests((String) selected);
+                        String testChoisi = selected.toString().substring(0,selected.toString().lastIndexOf('(')-1);
+                        for (int i=0;i< lTests.size();i++){
+                            if(lTests.get(i).getName().equals(testChoisi)){
+                                new FenetreFaireTests(lTests.get(i));
+                                break;
+                            }
+
+                        }
+                        //new FenetreFaireTests((String) selected);
                     }else {
                         JOptionPane.showMessageDialog(null, "Aucun test sélectionner!");
                     }
