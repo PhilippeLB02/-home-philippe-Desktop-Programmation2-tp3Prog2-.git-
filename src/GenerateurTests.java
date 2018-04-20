@@ -19,7 +19,9 @@ public class GenerateurTests {
     //Fenetre principale
     private JFrame fenetre;
 
+    //Ligne
     private JPanel  ligne;
+
     //Boutons
     private JButton boutonNewTests;
     private JButton boutonFaireTests;
@@ -33,8 +35,6 @@ public class GenerateurTests {
 
     //Ecouteur
     private ActionListener ecouteur;
-
-
 
     /**
      * Constructeur qui initialise la fenetre
@@ -135,8 +135,8 @@ public class GenerateurTests {
 
         fenetre.setVisible(true);
     }
-    public static void main (String[]args){
 
+    public static void main (String[]args){
 
         new GenerateurTests();
     }

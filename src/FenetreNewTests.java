@@ -124,7 +124,7 @@ public class FenetreNewTests {
 
         cadreSuperieur.setBounds(50,40,300,1);
 
-                //Titre test
+        //Titre test
         nomTest = new JLabel("Nom du test ");
         nomTests = new JTextField();
 
@@ -310,7 +310,7 @@ public class FenetreNewTests {
         panneauDesQuestion.setBounds(50,50, 450, 350);
         panneauDesQuestion.setOpaque(true);
         panneauDesQuestion.setLayout(null);
-
+        panneauDesQuestion.setBorder(BorderFactory.createLineBorder(Color.black, 1));
 
         QUESTION = new JLabel("Question " + numeroQuestion);
         QUESTION.setBounds(10, 10, 200, HAUT_BTN);
