@@ -1,11 +1,12 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class FenetreFaireTests {
 
-    private final static int LARGEUX_FENTRE = 550;
+    private final static int LARGEUR_FENTRE = 550;
     private final static int HAUTEUR_FENETRE = 540;
     private final static int LARG_BTN = 50;
     private final static int HAUT_BTN = 30;
@@ -20,17 +21,22 @@ public class FenetreFaireTests {
 
     //JPANEL
     private JPanel panneauDesQuestion;
+    private JPanel encadreHaut;
+    private JPanel panRes;
+    private JPanel ligne;
 
 
     private JButton boutonPrecedent;
     private JButton boutonSuivant;
     private JButton boutonCorrection;
+    private JButton boutonRevenir;
 
     //Enoncé
-    private JLabel QUESTION;
-    //private int numeroQuestion = 1;
+    private JLabel lQuestion;
+    private JLabel lNumeroQuestion;
     private JLabel enoncer;
     private JTextArea question;
+    private JTextArea resultat;
 
 
     //Reponse
@@ -39,17 +45,22 @@ public class FenetreFaireTests {
     private JLabel reponse2;
     private JLabel reponse3;
     private JLabel reponse4;
+    private JLabel lResult;
     private JTextField reponseUn;
     private JTextField reponseDeux;
     private JTextField reponseTrois;
     private JTextField reponseQuatre;
+    private int []tabRep;
+
+    private JScrollPane spQuestion;
+    private JScrollPane spResultat;
 
     //Boutons radio
     private JCheckBox repBout1;
     private JCheckBox repBout2;
     private JCheckBox repBout3;
     private JCheckBox repBout4;
-
+    private ButtonGroup groupBouton;
     //test
     private Test testFenetre;
     private String []choixReponseTest;
@@ -57,13 +68,14 @@ public class FenetreFaireTests {
     public FenetreFaireTests(Test test){
         testFenetre = test;
         choixReponseTest = new String[4];
+        tabRep  = new int[testFenetre.getNbQuestion()];
         init(testFenetre);
     }
 
     private void init(Test test){
 
-        fenetreFaireTest = new JFrame("Faire un test");
-        fenetreFaireTest.setBounds(400,300,LARGEUX_FENTRE,HAUTEUR_FENETRE);
+        fenetreFaireTest = new JFrame("Passer un test");
+        fenetreFaireTest.setBounds(400,300,LARGEUR_FENTRE,HAUTEUR_FENETRE);
         fenetreFaireTest.setResizable(false);
         fenetreFaireTest.setLocationRelativeTo(null);
 
@@ -75,8 +87,8 @@ public class FenetreFaireTests {
         nomDuTest = new JLabel("Nom du test ");
         nomTests = new JTextField();
 
-        nomDuTest.setBounds(fenetreFaireTest.getWidth() / 12 , fenetreFaireTest.getHeight() / 13 - HAUT_BTN, 200, HAUT_BTN);
-        nomTests.setBounds(fenetreFaireTest.getWidth() / 12 * 3, fenetreFaireTest.getHeight() / 13 - HAUT_BTN, 350, HAUT_BTN);
+        nomDuTest.setBounds(20 , fenetreFaireTest.getHeight() / 13 -20, 200, HAUT_BTN);
+        nomTests.setBounds(fenetreFaireTest.getWidth() / 12 * 3, fenetreFaireTest.getHeight() / 13 - 20, 350, HAUT_BTN);
         nomTests.setText(testFenetre.getName());
         nomTests.setEditable(false);
         fenetreFaireTest.getContentPane().add(nomDuTest);
@@ -84,56 +96,94 @@ public class FenetreFaireTests {
 
 
         //Enoncer
-        QUESTION = new JLabel("Question " + testFenetre.getQuestionCourante());
-        QUESTION.setBounds(10, 10, 200, HAUT_BTN);
+        lQuestion = new JLabel("QUESTION");
+        lQuestion.setBounds(30, 80, 200, HAUT_BTN);
+        lQuestion.setFont(new Font(lQuestion.getFont().getFamily(),Font.PLAIN,15));
+
+        lNumeroQuestion = new JLabel("0");
+        lNumeroQuestion.setBounds(130, 80, 200, HAUT_BTN);
+        lNumeroQuestion.setFont(new Font(lQuestion.getFont().getFamily(),Font.BOLD,15));
+
         enoncer = new JLabel("Énoncé ");
-        enoncer.setBounds(25, 40, 200, HAUT_BTN);
+        enoncer.setBounds(20, 4, 200, HAUT_BTN);
         question = new JTextArea();
         question.setLineWrap(true);
         question.setEditable(false);
-        question.setBounds(25, 80, 400, HAUT_BTN * 2);
+        testFenetre.setQuestionCourante(0);
         question.setText(testFenetre.getQuestion().get(testFenetre.getQuestionCourante()));
+        question.setWrapStyleWord(true);
+        question.setLineWrap(true);
 
+        spQuestion = new JScrollPane(question);
+        spQuestion.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        spQuestion.setBounds(20, 35, 480, HAUT_BTN * 2);
+
+        resultat = new JTextArea();
+        resultat.setEditable(false);
+
+        spResultat = new JScrollPane(resultat);
+        spResultat.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        spResultat.setBounds(30,120,490,310);
+        spResultat.setBorder(BorderFactory.createLineBorder(Color.black,1));
+        spResultat.setVisible(false);
 
         panneauDesQuestion = new JPanel();
-        panneauDesQuestion.setBounds(50,50, 450, 350);
-        panneauDesQuestion.setOpaque(true);
+        panneauDesQuestion.setBounds(20,110, 510, 285);
         panneauDesQuestion.setLayout(null);
+        panneauDesQuestion.setBorder(BorderFactory.createLineBorder(Color.black,1));
 
 
-        panneauDesQuestion.add(QUESTION);
         panneauDesQuestion.add(enoncer);
-        panneauDesQuestion.add(question);
+        panneauDesQuestion.add(spQuestion);
 
+        panRes = new JPanel();
+        panRes.setBounds(20,110, 510, 330);
+        panRes.setBorder(BorderFactory.createLineBorder(Color.black,1));
+        panRes.setVisible(false);
+
+        ligne = new JPanel();
+        encadreHaut = new JPanel();
+
+        lResult = new JLabel("RÉSULTAT DU TEST");
+        lResult.setFont(new Font(lQuestion.getFont().getFamily(),Font.BOLD,15));
+        encadreHaut.setBounds(20,80,510,250);
+        encadreHaut.setBorder(BorderFactory.createLineBorder(Color.black,1));
+        encadreHaut.add(lResult);
+        lResult.setBounds(encadreHaut.getWidth()/2,80,100,20);
+        lResult.setVisible(false);
 
         //Reponse
-        reponse = new JLabel("Choix de réponses (Cocher la bonne réponse) ");
-        reponse.setBounds(10, 150, 400, HAUT_BTN);
+        reponse = new JLabel("Choix de réponses (cochez la bonne réponse) ");
+        reponse.setBounds(20, 100, 400, HAUT_BTN);
         reponse1 = new JLabel("1) ");
-        reponse1.setBounds(10, 190, LARG_BTN, HAUT_BTN);
+        reponse1.setBounds(30, 137, LARG_BTN, HAUT_BTN);
         reponse2 = new JLabel("2) ");
-        reponse2.setBounds(10, 230, LARG_BTN, HAUT_BTN);
+        reponse2.setBounds(30, 167, LARG_BTN, HAUT_BTN);
         reponse3 = new JLabel("3) ");
-        reponse3.setBounds(10, 270, LARG_BTN, HAUT_BTN);
+        reponse3.setBounds(30, 197, LARG_BTN, HAUT_BTN);
         reponse4 = new JLabel("4) ");
-        reponse4.setBounds(10, 310, LARG_BTN, HAUT_BTN);
+        reponse4.setBounds(30, 227, LARG_BTN, HAUT_BTN);
         reponseUn = new JTextField(35);
-        reponseUn.setBounds(70, 190, 310, HAUT_BTN);
+        reponseUn.setBounds(50, 139, 365, 25);
+        reponseUn.setEditable(false);
         reponseDeux = new JTextField(35);
-        reponseDeux.setBounds(70, 230, 310, HAUT_BTN);
+        reponseDeux.setBounds(50, 169, 365, 25);
+        reponseDeux.setEditable(false);
         reponseTrois = new JTextField(35);
-        reponseTrois.setBounds(70, 270, 310, HAUT_BTN);
+        reponseTrois.setBounds(50, 199, 365, 25);
+        reponseTrois.setEditable(false);
         reponseQuatre = new JTextField(35);
-        reponseQuatre.setBounds(70, 310, 310, HAUT_BTN);
+        reponseQuatre.setEditable(false);
+        reponseQuatre.setBounds(50, 229, 365, 25);
         repBout1 = new JCheckBox();
-        repBout1.setBounds(390, 190, LARG_BTN, HAUT_BTN);
+        repBout1.setBounds(420, 137, LARG_BTN, HAUT_BTN);
         repBout2 = new JCheckBox();
-        repBout2.setBounds(390, 230, LARG_BTN, HAUT_BTN);
+        repBout2.setBounds(420, 167, LARG_BTN, HAUT_BTN);
         repBout3 = new JCheckBox();
-        repBout3.setBounds(390, 270, LARG_BTN, HAUT_BTN);
+        repBout3.setBounds(420, 197, LARG_BTN, HAUT_BTN);
         repBout4 = new JCheckBox();
-        repBout4.setBounds(390, 310, LARG_BTN,HAUT_BTN);
-        ButtonGroup groupBouton = new ButtonGroup();
+        repBout4.setBounds(420, 227, LARG_BTN,HAUT_BTN);
+        groupBouton = new ButtonGroup();
         groupBouton.add(repBout1);
         groupBouton.add(repBout2);
         groupBouton.add(repBout3);
@@ -156,39 +206,103 @@ public class FenetreFaireTests {
         panneauDesQuestion.add(repBout4);
 
 
-        panneauDesQuestion.add(QUESTION);
-        panneauDesQuestion.add(enoncer);
-        panneauDesQuestion.add(question);
-
-        //nom du test a faire
-        //nomDuTest = new JLabel(nomTest);
-        nomDuTest.setBounds(fenetreFaireTest.getWidth() / 12, fenetreFaireTest.getHeight() / 13 - HAUT_BTN,
-                450, HAUT_BTN);
         fenetreFaireTest.getContentPane().add(nomDuTest);
 
         //Boutons
         boutonPrecedent = new JButton("<");
         boutonSuivant = new JButton(">");
+        boutonPrecedent.setEnabled(false);
         boutonCorrection = new JButton("Corriger le test");
+        boutonRevenir = new JButton("Revenir au test");
 
-        boutonPrecedent.setBounds(fenetreFaireTest.getWidth() / 12 * 5 - LARG_BTN / 2, fenetreFaireTest.getHeight() / 13 * 11 - HAUT_BTN,
-                LARG_BTN, HAUT_BTN);
-        boutonSuivant.setBounds(fenetreFaireTest.getWidth() / 12 * 7 - LARG_BTN / 2, fenetreFaireTest.getHeight() / 13 * 11 - HAUT_BTN,
-                LARG_BTN, HAUT_BTN);
+
+        boutonPrecedent.setBounds((fenetreFaireTest.getWidth() / 12 * 5 - LARG_BTN / 2 )-10, fenetreFaireTest.getHeight() / 13 * 11 - 45,
+                80, HAUT_BTN);
+        boutonSuivant.setBounds((fenetreFaireTest.getWidth() / 12 * 7 - LARG_BTN / 2)-10, fenetreFaireTest.getHeight() / 13 * 11 - 45,
+                80, HAUT_BTN);
         boutonCorrection.setBounds(fenetreFaireTest.getWidth() / 2 - LARG_BTN_CORR / 2 - 4, fenetreFaireTest.getHeight() / 13 * 12 - HAUT_BTN,
                 LARG_BTN_CORR, HAUT_BTN);
+        boutonRevenir.setBounds(fenetreFaireTest.getWidth() / 2 - LARG_BTN_CORR / 2 - 4, fenetreFaireTest.getHeight() / 13 * 12 - HAUT_BTN,
+                LARG_BTN_CORR, HAUT_BTN);
 
+        boutonRevenir.setVisible(false);
+        boutonCorrection.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                String strRes = "\n", strQuestion = "                        ";
+                double resTotal = 0;
+                int bonneRep = 0;
+                for (int i = 0; i < tabRep.length; i++) {
+                    if (tabRep[i] == 0) {
+                        JOptionPane.showMessageDialog(null,
+                                "Vous n'avez pas répondu à la question no " + (i + 1) + " !",
+                                "ERREUR",
+                                JOptionPane.ERROR_MESSAGE);
+                        return;
+                    }
+                }
+
+                for(int j=0;j<testFenetre.getNbQuestion();j++){
+                    if(j > 8)
+                        strQuestion += "QUESTION "+ (j+1)+"      :    ";
+                    else
+                        strQuestion += "QUESTION "+ (j+1)+"      :      ";
+
+                    if(tabRep[j]-1 == testFenetre.getReponses().get(j)) {
+                        strQuestion+= "            1/1\n                        ";
+                        bonneRep++;
+                    }else{
+                        strQuestion+= "            0/1\n                        ";
+                    }
+                }
+                strQuestion+="\n                        TOTAL              :                   "+bonneRep+"/"+testFenetre.getNbQuestion();
+                resTotal = (bonneRep * 1.0 /testFenetre.getNbQuestion())*100;
+
+                strRes+="      NOTE  FINALE  : "+ (int)resTotal+ " %\n\n";
+                strRes += strQuestion;
+                resultat.setText(strRes);
+                cacherComposantQuestion();
+                afficherComposantResultat();
+
+            }
+        });
+        boutonRevenir.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cacherComposantResultat();
+                afficherComposantQuestion();
+            }
+        });
         boutonSuivant.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(repBout1.isSelected() || repBout2.isSelected() || repBout3.isSelected() || repBout4.isSelected()){
 
-                    if (testFenetre.getQuestionCourante() + 1 == testFenetre.getNbQuestion())
-                        System.out.println("nop");
-                    else
+                    if(testFenetre.getQuestionCourante() + 1 != testFenetre.getNbQuestion())
                         testFenetre.setQuestionCourante(testFenetre.getQuestionCourante() + 1);
-
+                    if(repBout1.isSelected()){
+                        tabRep[testFenetre.getQuestionCourante()-1]=1;
+                    }
+                    if(repBout2.isSelected()){
+                        tabRep[testFenetre.getQuestionCourante()-1]=2;
+                    }
+                    if(repBout3.isSelected()){
+                        tabRep[testFenetre.getQuestionCourante()-1]=3;
+                    }
+                    if(repBout4.isSelected()){
+                        tabRep[testFenetre.getQuestionCourante()-1]=4;
+                    }
+                    if(!boutonPrecedent.isEnabled())
+                        boutonPrecedent.setEnabled(true);
+                    if(testFenetre.getQuestionCourante() + 1 == testFenetre.getNbQuestion())
+                        boutonSuivant.setEnabled(false);
                     afficherQuestion(testFenetre.getQuestionCourante());
+                }else{
+                    JOptionPane.showMessageDialog(null,
+                            "Vous n'avez pas répondu à cette question !\n Cochez une des réponses.",
+                            "Erreur",
+                            JOptionPane.ERROR_MESSAGE);
                 }
             }
         });
@@ -198,33 +312,116 @@ public class FenetreFaireTests {
             public void actionPerformed(ActionEvent e) {
                 if(repBout1.isSelected() || repBout2.isSelected() || repBout3.isSelected() || repBout4.isSelected()){
 
-                    if (testFenetre.getQuestionCourante() -1 < 0 )
-                        System.out.println("Petit");
-                    else
+                    if (!(testFenetre.getQuestionCourante() -1 < 0) )
                         testFenetre.setQuestionCourante(testFenetre.getQuestionCourante()-1);
 
+                    if(tabRep[testFenetre.getQuestionCourante()+1] == 0) {
+                        if (repBout1.isSelected()) {
+                            tabRep[testFenetre.getQuestionCourante() + 1] = 1;
+                        }
+                        if (repBout2.isSelected()) {
+                            tabRep[testFenetre.getQuestionCourante() + 1] = 2;
+                        }
+                        if (repBout3.isSelected()) {
+                            tabRep[testFenetre.getQuestionCourante() + 1] = 3;
+                        }
+                        if (repBout4.isSelected()) {
+                            tabRep[testFenetre.getQuestionCourante() + 1] = 4;
+                        }
+                    }
+                    if(!boutonSuivant.isEnabled())
+                        boutonSuivant.setEnabled(true);
+                    if(testFenetre.getQuestionCourante() -1  < 0)
+                        boutonPrecedent.setEnabled(false);
                     afficherQuestion(testFenetre.getQuestionCourante());
+                }else{
+                    JOptionPane.showMessageDialog(null,
+                            "Vous n'avez pas répondu à cette question !\n Cochez une des réponses.",
+                            "Erreur",
+                            JOptionPane.ERROR_MESSAGE);
                 }
             }
         });
 
+        repBout1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                tabRep[testFenetre.getQuestionCourante()] = 1;
+            }
+        });
+        repBout2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                tabRep[testFenetre.getQuestionCourante()] = 2;
+            }
+        });
+        repBout3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                tabRep[testFenetre.getQuestionCourante()] = 3;
+            }
+        });
+        repBout4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                tabRep[testFenetre.getQuestionCourante()] = 4;
+            }
+        });
+        fenetreFaireTest.getContentPane().add(spResultat);
+        fenetreFaireTest.getContentPane().add(panRes);
         fenetreFaireTest.getContentPane().add(boutonPrecedent);
         fenetreFaireTest.getContentPane().add(boutonSuivant);
         fenetreFaireTest.getContentPane().add(boutonCorrection);
-        fenetreFaireTest.add(panneauDesQuestion);
+        fenetreFaireTest.getContentPane().add(boutonRevenir);
+        fenetreFaireTest.getContentPane().add(lQuestion);
+        fenetreFaireTest.getContentPane().add(lNumeroQuestion);
+        fenetreFaireTest.getContentPane().add(panneauDesQuestion);
+        fenetreFaireTest.getContentPane().add(encadreHaut);
 
         fenetreFaireTest.setVisible(true);
     }
     private void afficherQuestion(int numeroQuestion){
-        //String[] chx = values.split("\\|",-1);
-        System.out.println("question courante = "+testFenetre.getQuestionCourante());
-        QUESTION.setText("Question "+ (testFenetre.getQuestionCourante()+1));
+        groupBouton.clearSelection();
+        lNumeroQuestion.setText(""+ (testFenetre.getQuestionCourante()+1));
         question.setText(testFenetre.getQuestion(numeroQuestion));
         choixReponseTest = testFenetre.getChoixReponse().get(numeroQuestion).split("<>");
         reponseUn.setText(choixReponseTest[0]);
         reponseDeux.setText(choixReponseTest[1]);
         reponseTrois.setText(choixReponseTest[2]);
         reponseQuatre.setText(choixReponseTest[3]);
-        //testFenetre.getChoixReponse().s
+        if(tabRep[numeroQuestion] == 1)
+            repBout1.setSelected(true);
+        if(tabRep[numeroQuestion] == 2)
+            repBout2.setSelected(true);
+        if(tabRep[numeroQuestion] == 3)
+            repBout3.setSelected(true);
+        if(tabRep[numeroQuestion] == 4)
+            repBout4.setSelected(true);
+    }
+    private void cacherComposantQuestion(){
+        panneauDesQuestion.setVisible(false);
+        lQuestion.setVisible(false);
+        spQuestion.setVisible(false);
+        lNumeroQuestion.setVisible(false);
+        boutonCorrection.setVisible(false);
+    }
+    private void afficherComposantQuestion(){
+        panneauDesQuestion.setVisible(true);
+        lQuestion.setVisible(true);
+        spQuestion.setVisible(true);
+        lNumeroQuestion.setVisible(true);
+        boutonCorrection.setVisible(true);
+    }
+    private void cacherComposantResultat(){
+        spResultat.setVisible(false);
+        panRes.setVisible(false);
+        lResult.setVisible(false);
+        boutonRevenir.setVisible(false);
+    }
+    private void afficherComposantResultat(){
+        spResultat.setVisible(true);
+        panRes.setVisible(true);
+        lResult.setVisible(true);
+        boutonRevenir.setVisible(true);
     }
 }

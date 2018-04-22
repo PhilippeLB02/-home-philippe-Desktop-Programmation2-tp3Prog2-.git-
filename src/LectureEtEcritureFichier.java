@@ -82,68 +82,62 @@ public class LectureEtEcritureFichier {
         ArrayList<Test> listeTests= new ArrayList<>();
 
         try{
-        // FileReader reads text files in the default encoding.
-        FileReader fileReader =
-                new FileReader(tests);
-        // Always wrap FileReader in BufferedReader.
-        BufferedReader bufferedReader =
-                new BufferedReader(fileReader);
+            FileReader fileReader =
+                    new FileReader(tests);
 
-        //lit une série de test
-        while (line != null) {
-            listeTests.add(new Test());
-            //lire un test a la fois
-            line = bufferedReader.readLine();
+            BufferedReader bufferedReader =
+                    new BufferedReader(fileReader);
 
-            if (line != null && !line.isEmpty()) {
-                listeTests.get(listeTests.size() - 1).setName(line);
-            }else{
-                listeTests.remove(listeTests.size() - 1);
-                break;
-            }
+            //lit une série de test
+            while (line != null) {
+                listeTests.add(new Test());
+                //lire un test a la fois
+                line = bufferedReader.readLine();
+
+                if (line != null && !line.isEmpty()) {
+                    listeTests.get(listeTests.size() - 1).setName(line);
+                }else{
+                    listeTests.remove(listeTests.size() - 1);
+                    break;
+                }
 
 
-            line = bufferedReader.readLine();
-            //System.out.println("????? "+line);
-            if (line != null) {
-                listeTests.get(listeTests.size() - 1).setNbQuestion(Integer.parseInt(line));
-            }
-            line = bufferedReader.readLine(); // --
-            for (int i = 0; i < listeTests.get(listeTests.size() - 1).getNbQuestion(); i++) {
-                line = bufferedReader.readLine(); // enonce
-                while (!line.equals(SÉPARATEUR_QUESTIONS)) {
-                    tempStr += line;
+                line = bufferedReader.readLine();
+                if (line != null) {
+                    listeTests.get(listeTests.size() - 1).setNbQuestion(Integer.parseInt(line));
+                }
+                line = bufferedReader.readLine(); // --
+                for (int i = 0; i < listeTests.get(listeTests.size() - 1).getNbQuestion(); i++) {
+                    line = bufferedReader.readLine(); // enonce
+                    while (!line.equals(SÉPARATEUR_QUESTIONS)) {
+                        if(line.isEmpty())
+                            tempStr += "\n\n";
+                        else
+                            tempStr += line;
+
+                        line = bufferedReader.readLine();
+                    }
+                    listeTests.get(listeTests.size() - 1).getQuestion().add(tempStr);
+                    tempStr = "";
+                    line = bufferedReader.readLine();
+                    listeTests.get(listeTests.size() - 1).getChoixReponse().add(line);
+                    line = bufferedReader.readLine();// ----
+                    line = bufferedReader.readLine();//reponse
+                    listeTests.get(listeTests.size() - 1).getReponses().add(Integer.parseInt(line));
                     line = bufferedReader.readLine();
                 }
-                listeTests.get(listeTests.size() - 1).getQuestion().add(tempStr);
-                tempStr = "";
-                line = bufferedReader.readLine();
-                listeTests.get(listeTests.size() - 1).getChoixReponse().add(line);
-                line = bufferedReader.readLine();// ----
-                line = bufferedReader.readLine();//reponse
-                listeTests.get(listeTests.size() - 1).getReponses().add(Integer.parseInt(line));
-                line = bufferedReader.readLine();
+
             }
-
-            System.out.println("line? "+line);
-            //System.out.println("reponses " + listeTests.get(listeTests.size() - 1).getRepones().get(1));
-            //System.out.println("questions " + listeTests.get(listeTests.size() - 1).getQuestion().get(1));
-            //System.out.println("chx " + listeTests.get(listeTests.size() - 1).getChoixReponse());
-            //System.out.println("titre " + listeTests.get(listeTests.size() - 1).getName());
-
-        }
-        System.out.println("FIN "+listeTests.size());
-    }catch(FileNotFoundException ex) {
+        }catch(FileNotFoundException ex) {
             System.out.println(
-                    "Unable to open file '" +
+                    "impossible d'ouvrir le fichier'" +
                             tests + "'");
         }
         catch(IOException ex) {
             System.out.println(
-                    "Error reading file '"
+                    "Erreur en lisant le fichier'"
                             + tests + "'");
-            // Or we could just do this:
-            // ex.printStackTrace();
+
         }
 
         return listeTests;
