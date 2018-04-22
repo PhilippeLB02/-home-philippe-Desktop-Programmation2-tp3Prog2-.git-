@@ -58,6 +58,10 @@ public class FenetreNewTests {
     private JButton boutonSuivant;
     private JButton boutonSave;
 
+    //test
+    private Test testFenetre;
+    private String []choixReponseTest;
+
     //Ecouteur
     private ActionListener ecouteur;
 
@@ -97,10 +101,14 @@ public class FenetreNewTests {
      * Contructeur qui initialise la fenetre de creation
      */
     public FenetreNewTests(){
-        init();
+        testFenetre = new Test();
+        testFenetre.setQuestionCourante(0);
+        testFenetre.setNbQuestion(0);
+        choixReponseTest = new String[4];
+        init(testFenetre);
     }
 
-    private void init() {
+    private void init(Test test) {
 
         fenetreNewTests = new JFrame("Créer un nouveau test");
 
@@ -225,8 +233,11 @@ public class FenetreNewTests {
                 int questionCouante = test.getQuestionCourante();
 
                 if (evenement.getSource() == buttonPrecedent){
-                    if (questionCouante != 0){
-                        questionCouante --;
+                    if (testFenetre.getQuestionCourante() -1 < 0 )
+                        JOptionPane.showMessageDialog(null, "Il n'y a pas d'autre question.");
+                    else {
+                        testFenetre.setQuestionCourante(testFenetre.getQuestionCourante() - 1);
+                        afficherQuestion(testFenetre.getQuestionCourante());
                     }
 
                 } else if (evenement.getSource() == boutonAjoutQuestion){
@@ -254,11 +265,13 @@ public class FenetreNewTests {
                     test.getQuestion().remove(questionCouante);
                     numeroQuestion --;
 
-
                 } else if (evenement.getSource() == boutonSuivant){
-                    if (questionCouante < test.getQuestion().size()){
-                        questionCouante ++;
-                    }
+                        if (testFenetre.getQuestionCourante() + 1 > testFenetre.getNbQuestion())
+                            JOptionPane.showMessageDialog(null, "Il n'y a pas d'autre question.");
+                        else {
+                            testFenetre.setQuestionCourante(testFenetre.getQuestionCourante() + 1);
+                            afficherQuestion(testFenetre.getQuestionCourante());
+                        }
 
                 } else if (evenement.getSource() == boutonSave){
 
@@ -302,6 +315,17 @@ public class FenetreNewTests {
         fenetreNewTests.add(cadreSuperieur);
 
         fenetreNewTests.setVisible(true);
+    }
+
+    private void afficherQuestion(int numeroQuestion){
+        System.out.println("question courante = "+testFenetre.getQuestionCourante());
+        QUESTION.setText("Question "+ (testFenetre.getQuestionCourante()+1));
+        question.setText(testFenetre.getQuestion(numeroQuestion));
+        choixReponseTest = testFenetre.getChoixReponse().get(numeroQuestion).split("<>");
+        reponseUn.setText(choixReponseTest[0]);
+        reponseDeux.setText(choixReponseTest[1]);
+        reponseTrois.setText(choixReponseTest[2]);
+        reponseQuatre.setText(choixReponseTest[3]);
     }
 
     private void ajouterQuestion(){
