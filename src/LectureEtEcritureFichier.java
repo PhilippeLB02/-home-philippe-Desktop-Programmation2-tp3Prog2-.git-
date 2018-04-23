@@ -34,24 +34,22 @@ public class LectureEtEcritureFichier {
         int reponse;
 
         //boucle for print question et choix de reponses
-        int j = 0;
-        int y = 0;
+        //int j = 0;
+        //int y = 0;
         for (int i = 0; i < test.getQuestion().size(); i ++) {
             question = test.getQuestion().get(i);
             pw.println(question);
             pw.println(SÉPARATEUR_QUESTIONS);
-            choixReponse = test.getChoixReponse().get(j);
+            choixReponse = test.getChoixReponse().get(i);
             pw.println(choixReponse);
             pw.println(SÉPARATEUR_QUESTIONS);
-            reponse = test.getReponses().get(y);
+            reponse = test.getReponses().get(i);
             pw.println(reponse);
             if (test.getQuestion().size() == i + 1){
                 pw.println(SÉPARATEUR_TESTS);
             }else {
                 pw.println(SÉPARATEUR_QUESTIONS);
             }
-            j= 0;
-            y= 0;
         }
 
 
