@@ -286,6 +286,7 @@ public class FenetreNewTests {
 
 
                         System.out.println(testNouveau.getQuestionCourante());
+                        System.out.println(testNouveau.getQuestion().get(testNouveau.getQuestionCourante() - 1));
                     }
 
                 } else if (evenement.getSource() == boutonSuppQuestion){
@@ -298,6 +299,11 @@ public class FenetreNewTests {
                     } else if (!repBout1.isSelected() && !repBout2.isSelected() && !repBout3.isSelected() && !repBout4.isSelected()){
                         JOptionPane.showMessageDialog(null, "Erreur aucune bonne reponse de selectionner.");
                     } else {
+                        testNouveau.getQuestion().remove(testNouveau.getQuestionCourante());
+                        testNouveau.getChoixReponse().remove(testNouveau.getQuestionCourante());
+                        testNouveau.getReponses().remove(testNouveau.getQuestionCourante());
+                        testNouveau.setQuestionCourante(testNouveau.getQuestionCourante() - 1);
+                        afficherQuestion();
 
                     }
                 } else if (evenement.getSource() == boutonSuivant){
@@ -311,7 +317,7 @@ public class FenetreNewTests {
                         JOptionPane.showMessageDialog(null, "Erreur aucune bonne reponse de selectionnerSUIV.");
                     } else {
 
-                        if (testNouveau.getQuestionCourante() + 1 <= testNouveau.getQuestion().size()) {
+                        if (testNouveau.getQuestionCourante() + 1 < testNouveau.getQuestion().size()) {
                             //modifierQuestionCourante(testNouveau.getQuestionCourante());
 
                             testNouveau.setQuestionCourante(testNouveau.getQuestionCourante() + 1);
@@ -332,7 +338,7 @@ public class FenetreNewTests {
                         JOptionPane.showMessageDialog(null, "Erreur énoucé invalide.");
                     } else if (reponseUn.getText().trim().isEmpty() && reponseDeux.getText().trim().isEmpty() && reponseTrois.getText().isEmpty() && reponseQuatre.getText().trim().isEmpty()){
                         JOptionPane.showMessageDialog(null, "Erreur reponse invalide.");
-                    } else if (!repBout1.isSelected() || !repBout2.isSelected() || !repBout3.isSelected() || !repBout4.isSelected()){
+                    } else if (!repBout1.isSelected() && !repBout2.isSelected() && !repBout3.isSelected() && !repBout4.isSelected()){
                         JOptionPane.showMessageDialog(null, "Erreur aucune bonne reponse de selectionner.");
                     } else {
                         if(testNouveau.getNbQuestion() < 1)
