@@ -29,10 +29,6 @@ public class LectureEtEcritureFichier {
         int nbQuestion = test.getNbQuestion();
         pw.println(nbQuestion);
         pw.println(SÉPARATEUR_QUESTIONS);
-        //TODO Enoncer n'est jamais utilisier
-        //String enoncer = test.getEnonce();
-        //pw.println(enoncer);
-        //pw.println(SÉPARATEUR_QUESTIONS);
         String question;
         String choixReponse;
         int reponse;
@@ -40,70 +36,6 @@ public class LectureEtEcritureFichier {
         //boucle for print question et choix de reponses
         int j = 0;
         int y = 0;
-        int x = 4;
-        int z = 1;
-        for (int i = 0; i < test.getQuestion().size(); i ++) {
-            question = test.getQuestion().get(i);
-            pw.println(question);
-            pw.println(SÉPARATEUR_QUESTIONS);
-            while (j < x) {
-                choixReponse = test.getChoixReponse().get(j);
-                pw.print(choixReponse);
-                if (j + 1 < x) {
-                    pw.print(SÉPARATEUR_CHOIX_REPONSES);
-                } else if (j + 1 == x){
-                    pw.println();
-                }
-                j ++;
-            }
-            x = x + 4;
-            pw.println(SÉPARATEUR_QUESTIONS);
-            while (y < z) {
-                reponse = test.getReponses().get(y);
-                pw.println(reponse);
-                if (test.getReponses().size() - 1 != y) {
-                    pw.println(SÉPARATEUR_QUESTIONS);
-                } else {
-                    pw.println(SÉPARATEUR_TESTS);
-                }
-                y ++;
-            }
-            z ++;
-        }
-
-
-        pw.close();
-
-    }
-
-    public static void supprimerTest(Test test) throws IOException {
-
-        if (!SAUVEGARDETEST.exists()){
-            SAUVEGARDETEST.createNewFile();
-        }
-
-        FileWriter fw = new FileWriter(SAUVEGARDETEST, true);
-        BufferedWriter bw = new BufferedWriter(fw);
-        PrintWriter pw = new PrintWriter(bw);
-
-        String nomTest = test.getName();
-        pw.println(nomTest);
-        int nbQuestion = test.getNbQuestion();
-        pw.println(nbQuestion);
-        pw.println(SÉPARATEUR_QUESTIONS);
-        //TODO Enoncer n'est jamais utilisier
-        //String enoncer = test.getEnonce();
-        //pw.println(enoncer);
-        //pw.println(SÉPARATEUR_QUESTIONS);
-        String question;
-        String choixReponse;
-        int reponse;
-
-        //boucle for print question et choix de reponses
-        int j = 0;
-        int y = 0;
-        int x = 4;
-        int z = 1;
         for (int i = 0; i < test.getQuestion().size(); i ++) {
             question = test.getQuestion().get(i);
             pw.println(question);
@@ -118,7 +50,6 @@ public class LectureEtEcritureFichier {
             }else {
                 pw.println(SÉPARATEUR_QUESTIONS);
             }
-            z ++;
             j= 0;
             y= 0;
         }

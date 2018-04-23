@@ -140,7 +140,7 @@ public class GenerateurTests {
                         try {
                             for (int i = 0; i < lTests.size(); i++) {
                                 if (lTests.get(i) != null) {
-                                    LectureEtEcritureFichier.supprimerTest(lTests.get(i));
+                                    LectureEtEcritureFichier.ecriture(lTests.get(i));
                                 }
                             }
                         }catch (IOException e){
