@@ -294,12 +294,6 @@ public class FenetreNewTests {
                     } else if (!repBout1.isSelected() || !repBout2.isSelected() || !repBout3.isSelected() || !repBout4.isSelected()){
                         JOptionPane.showMessageDialog(null, "Erreur aucune bonne reponse de selectionner.");
                     } else {
-                        if (testNouveau.getNbQuestion() == null){
-                            arrayListTest.add(arrayListTest.size(), sauvegarde());
-                        } else if (question.getText().trim() != testNouveau.getQuestion(testNouveau.getQuestionCourante())){
-                            arrayListTest.add(arrayListTest.size(), sauvegarde());
-                        }
-
                         try {
                             for (int i = 0; i < arrayListTest.size(); i ++) {
                                 testNouveau = arrayListTest.get(i);

@@ -8,7 +8,7 @@ public class LectureEtEcritureFichier {
     private static final String SÉPARATEUR_TESTS = "=====";
     private static final String SÉPARATEUR_QUESTIONS = "-----";
     private static final String SÉPARATEUR_CHOIX_REPONSES = "<>";
-    private static File SAUVEGARDETEST = new File("/home/philippe/Desktop/Programmation2/tp3Prog2/src/tests");
+    private static File SAUVEGARDETEST = new File(GenerateurTests.class.getProtectionDomain().getCodeSource().getLocation().getPath() + "tests");
 
     public static File getSAUVEGARDETEST() {
         return SAUVEGARDETEST;
@@ -201,20 +201,7 @@ public class LectureEtEcritureFichier {
     }
 
     public static void main(String[] args) throws IOException {
-        ArrayList<Test> liste;
-        liste = lecture();
-        System.out.println(liste.get(0).getName());
-        System.out.println(liste.get(1).getName());
-        System.out.println(liste.get(2).getName());
 
-        liste.remove(liste.get(0));
-        SAUVEGARDETEST.delete();
-
-        for (int i = 0; i < liste.size(); i ++){
-            if (liste.get(i) != null){
-                supprimerTest(liste.get(i));
-            }
-        }
 
     }
 }

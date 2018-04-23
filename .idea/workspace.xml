@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a1572fe-84ac-4388-93e6-9d41172bf516" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tp3Prog2/GenerateurTests$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp3Prog2/GenerateurTests$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tp3Prog2/GenerateurTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp3Prog2/GenerateurTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tp3Prog2/LectureEtEcritureFichier.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp3Prog2/LectureEtEcritureFichier.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tp3Prog2/tests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp3Prog2/tests.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GenerateurTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GenerateurTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LectureEtEcritureFichier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LectureEtEcritureFichier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,40 +17,8 @@
       <file leaf-file-name="GenerateurTests.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GenerateurTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="139" selection-start-line="139" selection-end-line="139" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Test.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Test.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FenetreNewTests.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/FenetreNewTests.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4496">
-              <caret line="333" column="20" selection-start-line="333" selection-start-column="20" selection-end-line="333" selection-end-column="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1915#3248#0" />
-                <element signature="e#3254#3322#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FenetreFaireTests.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/FenetreFaireTests.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1753">
-              <caret line="314" column="20" selection-start-line="314" selection-start-column="20" selection-end-line="314" selection-end-column="20" />
+            <state relative-caret-position="259">
+              <caret line="130" column="116" selection-start-line="130" selection-start-column="116" selection-end-line="130" selection-end-column="116" />
             </state>
           </provider>
         </entry>
@@ -65,21 +26,13 @@
       <file leaf-file-name="LectureEtEcritureFichier.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/LectureEtEcritureFichier.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="10" column="107" selection-start-line="10" selection-start-column="107" selection-end-line="10" selection-end-column="107" />
+            <state relative-caret-position="396">
+              <caret line="203" selection-start-line="203" selection-end-line="203" />
               <folding>
                 <element signature="method#ecriture#0;class#LectureEtEcritureFichier#0" />
+                <element signature="method#supprimerTest#0;class#LectureEtEcritureFichier#0" />
                 <element signature="method#lecture#0;class#LectureEtEcritureFichier#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tests" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tests">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2934">
-              <caret line="163" selection-start-line="163" selection-end-line="163" />
             </state>
           </provider>
         </entry>
@@ -118,8 +71,8 @@
         <option value="$PROJECT_DIR$/src/FenetreFaireTests.java" />
         <option value="$PROJECT_DIR$/src/FenetreNewTests.java" />
         <option value="$PROJECT_DIR$/src/tests.txt" />
-        <option value="$PROJECT_DIR$/src/GenerateurTests.java" />
         <option value="$PROJECT_DIR$/src/tests" />
+        <option value="$PROJECT_DIR$/src/GenerateurTests.java" />
         <option value="$PROJECT_DIR$/src/LectureEtEcritureFichier.java" />
       </list>
     </option>
@@ -133,7 +86,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="2880" />
     <option name="y" value="-4" />
     <option name="width" value="1920" />
@@ -313,12 +266,12 @@
       <workItem from="1524254100015" duration="280000" />
       <workItem from="1524405130829" duration="2531000" />
       <workItem from="1524447118101" duration="2765000" />
-      <workItem from="1524487864876" duration="9878000" />
+      <workItem from="1524487864876" duration="10241000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111008000" />
+    <option name="totallyTimeSpent" value="111371000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2880" y="-4" width="1920" height="1084" extended-state="6" />
@@ -338,7 +291,7 @@
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.32948583" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="0" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.14479166" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.14479166" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="6" weight="0.32786885" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
@@ -707,13 +660,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GenerateurTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="139" selection-start-line="139" selection-end-line="139" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Test.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
@@ -728,12 +674,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/GenerateurTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="130" column="116" selection-start-line="130" selection-start-column="116" selection-end-line="130" selection-end-column="116" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/LectureEtEcritureFichier.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="10" column="107" selection-start-line="10" selection-start-column="107" selection-end-line="10" selection-end-column="107" />
+        <state relative-caret-position="396">
+          <caret line="203" selection-start-line="203" selection-end-line="203" />
           <folding>
             <element signature="method#ecriture#0;class#LectureEtEcritureFichier#0" />
+            <element signature="method#supprimerTest#0;class#LectureEtEcritureFichier#0" />
             <element signature="method#lecture#0;class#LectureEtEcritureFichier#0" />
           </folding>
         </state>
