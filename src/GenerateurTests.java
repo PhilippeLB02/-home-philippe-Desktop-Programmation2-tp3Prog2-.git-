@@ -121,14 +121,32 @@ public class GenerateurTests {
                             }
 
                         }
-                        //new FenetreFaireTests((String) selected);
                     }else {
                         JOptionPane.showMessageDialog(null, "Aucun test sélectionner!");
                     }
                 }else if (evenement.getSource() == boutonSuppTests){
                     Object selected = listeTests.getSelectedItem();
+                    listeTests.removeItem(selected);
                     if (selected != null){
-                        listeTests.removeItem(selected);
+                        String testChoisi = selected.toString().substring(0,selected.toString().lastIndexOf('(')-1);
+                        for (int i=0;i< lTests.size();i++){
+                            if(lTests.get(i).getName().equals(testChoisi)){
+                                lTests.remove(i);
+                                LectureEtEcritureFichier.getSAUVEGARDETEST().delete();
+                                break;
+                            }
+                        }
+
+                        try {
+                            for (int i = 0; i < lTests.size(); i++) {
+                                if (lTests.get(i) != null) {
+                                    LectureEtEcritureFichier.supprimerTest(lTests.get(i));
+                                }
+                            }
+                        }catch (IOException e){
+                            e.printStackTrace();
+                        }
+
                     } else {
                         JOptionPane.showMessageDialog(null, "Aucun test sélectionner!");
                     }

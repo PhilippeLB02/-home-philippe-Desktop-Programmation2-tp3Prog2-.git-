@@ -8,7 +8,11 @@ public class LectureEtEcritureFichier {
     private static final String SÉPARATEUR_TESTS = "=====";
     private static final String SÉPARATEUR_QUESTIONS = "-----";
     private static final String SÉPARATEUR_CHOIX_REPONSES = "<>";
-    private static File SAUVEGARDETEST = new File("/home/philippe/Desktop/Programmation2/tp3Prog2/src/tests.txt");
+    private static File SAUVEGARDETEST = new File("/home/philippe/Desktop/Programmation2/tp3Prog2/src/tests");
+
+    public static File getSAUVEGARDETEST() {
+        return SAUVEGARDETEST;
+    }
 
     public static void ecriture(Test test) throws IOException {
 
@@ -72,10 +76,63 @@ public class LectureEtEcritureFichier {
 
     }
 
+    public static void supprimerTest(Test test) throws IOException {
+
+        if (!SAUVEGARDETEST.exists()){
+            SAUVEGARDETEST.createNewFile();
+        }
+
+        FileWriter fw = new FileWriter(SAUVEGARDETEST, true);
+        BufferedWriter bw = new BufferedWriter(fw);
+        PrintWriter pw = new PrintWriter(bw);
+
+        String nomTest = test.getName();
+        pw.println(nomTest);
+        int nbQuestion = test.getNbQuestion();
+        pw.println(nbQuestion);
+        pw.println(SÉPARATEUR_QUESTIONS);
+        //TODO Enoncer n'est jamais utilisier
+        //String enoncer = test.getEnonce();
+        //pw.println(enoncer);
+        //pw.println(SÉPARATEUR_QUESTIONS);
+        String question;
+        String choixReponse;
+        int reponse;
+
+        //boucle for print question et choix de reponses
+        int j = 0;
+        int y = 0;
+        int x = 4;
+        int z = 1;
+        for (int i = 0; i < test.getQuestion().size(); i ++) {
+            question = test.getQuestion().get(i);
+            pw.println(question);
+            pw.println(SÉPARATEUR_QUESTIONS);
+            choixReponse = test.getChoixReponse().get(j);
+            pw.println(choixReponse);
+            pw.println(SÉPARATEUR_QUESTIONS);
+            reponse = test.getReponses().get(y);
+            pw.println(reponse);
+            if (test.getQuestion().size() == i + 1){
+                pw.println(SÉPARATEUR_TESTS);
+            }else {
+                pw.println(SÉPARATEUR_QUESTIONS);
+            }
+            z ++;
+            j= 0;
+            y= 0;
+        }
+
+
+        pw.close();
+
+    }
+
+
     //Lecture des fichiers
     public static ArrayList<Test> lecture() throws IOException {
 
-        String tests = GenerateurTests.class.getProtectionDomain().getCodeSource().getLocation().getPath() + "tests.txt";
+        String tests = GenerateurTests.class.getProtectionDomain().getCodeSource().getLocation().getPath() + "tests";
         String line="";
         String tempStr=line;
 
@@ -144,6 +201,20 @@ public class LectureEtEcritureFichier {
     }
 
     public static void main(String[] args) throws IOException {
-        lecture();
+        ArrayList<Test> liste;
+        liste = lecture();
+        System.out.println(liste.get(0).getName());
+        System.out.println(liste.get(1).getName());
+        System.out.println(liste.get(2).getName());
+
+        liste.remove(liste.get(0));
+        SAUVEGARDETEST.delete();
+
+        for (int i = 0; i < liste.size(); i ++){
+            if (liste.get(i) != null){
+                supprimerTest(liste.get(i));
+            }
+        }
+
     }
 }
