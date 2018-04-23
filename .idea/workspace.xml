@@ -2,15 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a1572fe-84ac-4388-93e6-9d41172bf516" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tp3Prog2/FenetreFaireTests$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp3Prog2/FenetreFaireTests$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tp3Prog2/FenetreFaireTests$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp3Prog2/FenetreFaireTests$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tp3Prog2/FenetreFaireTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp3Prog2/FenetreFaireTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tp3Prog2/FenetreNewTests$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp3Prog2/FenetreNewTests$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tp3Prog2/FenetreNewTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp3Prog2/FenetreNewTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tp3Prog2/GenerateurTests$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp3Prog2/GenerateurTests$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tp3Prog2/GenerateurTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp3Prog2/GenerateurTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tp3Prog2/LectureEtEcritureFichier.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp3Prog2/LectureEtEcritureFichier.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FenetreNewTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FenetreNewTests.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -26,7 +17,7 @@
       <file leaf-file-name="GenerateurTests.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GenerateurTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
+            <state>
               <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
             </state>
           </provider>
@@ -35,11 +26,12 @@
       <file leaf-file-name="FenetreNewTests.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/FenetreNewTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-980">
-              <caret line="253" column="75" selection-start-line="253" selection-start-column="75" selection-end-line="253" selection-end-column="75" />
+            <state relative-caret-position="1537">
+              <caret line="333" column="20" selection-start-line="333" selection-start-column="20" selection-end-line="333" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="docComment;method#FenetreNewTests#0;class#FenetreNewTests#0" />
+                <element signature="e#1915#3248#0" />
+                <element signature="e#3254#3322#0" />
               </folding>
             </state>
           </provider>
@@ -93,10 +85,10 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="65" />
+    <option name="x" value="2880" />
     <option name="y" value="-4" />
-    <option name="width" value="1375" />
-    <option name="height" value="904" />
+    <option name="width" value="1920" />
+    <option name="height" value="1084" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -104,8 +96,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -123,6 +113,8 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -270,14 +262,15 @@
       <workItem from="1524254100015" duration="280000" />
       <workItem from="1524405130829" duration="2531000" />
       <workItem from="1524447118101" duration="2765000" />
+      <workItem from="1524487864876" duration="6479000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101130000" />
+    <option name="totallyTimeSpent" value="107609000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1375" height="904" extended-state="6" />
+    <frame x="2880" y="-4" width="1920" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="5" />
@@ -290,24 +283,24 @@
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="3" />
-      <window_info anchor="bottom" id="Run" order="7" weight="0.25879398" />
+      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.25717214" />
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.32948583" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="0" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.20218182" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.14479166" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Find" order="6" weight="0.32788944" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
       <window_info id="UI Designer" order="1" />
       <window_info anchor="right" id="Theme Preview" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="8" weight="0.40400845" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.40368852" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
       <window_info anchor="right" id="Commander" order="6" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="6" weight="0.32788944" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,7 +314,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="43" />
+      <option name="time" value="62" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -338,7 +331,8 @@
           <caret line="306" column="34" selection-start-line="306" selection-start-column="34" selection-end-line="306" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;method#FenetreNewTests#0;class#FenetreNewTests#0" />
+            <element signature="e#1915#3248#0" />
+            <element signature="e#3254#3322#0" />
           </folding>
         </state>
       </provider>
@@ -363,7 +357,8 @@
           <caret line="231" selection-start-line="231" selection-end-line="231" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;method#FenetreNewTests#0;class#FenetreNewTests#0" />
+            <element signature="e#1915#3248#0" />
+            <element signature="e#3254#3322#0" />
           </folding>
         </state>
       </provider>
@@ -395,7 +390,8 @@
           <caret line="112" column="56" lean-forward="true" selection-start-line="112" selection-start-column="56" selection-end-line="112" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;method#FenetreNewTests#0;class#FenetreNewTests#0" />
+            <element signature="e#1915#3248#0" />
+            <element signature="e#3254#3322#0" />
           </folding>
         </state>
       </provider>
@@ -427,7 +423,8 @@
           <caret line="132" column="97" selection-start-line="132" selection-start-column="97" selection-end-line="132" selection-end-column="97" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;method#FenetreNewTests#0;class#FenetreNewTests#0" />
+            <element signature="e#1915#3248#0" />
+            <element signature="e#3254#3322#0" />
           </folding>
         </state>
       </provider>
@@ -459,7 +456,8 @@
           <caret line="132" column="97" selection-start-line="132" selection-start-column="97" selection-end-line="132" selection-end-column="97" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;method#FenetreNewTests#0;class#FenetreNewTests#0" />
+            <element signature="e#1915#3248#0" />
+            <element signature="e#3254#3322#0" />
           </folding>
         </state>
       </provider>
@@ -477,7 +475,8 @@
           <caret line="217" selection-start-line="217" selection-end-line="217" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;method#FenetreNewTests#0;class#FenetreNewTests#0" />
+            <element signature="e#1915#3248#0" />
+            <element signature="e#3254#3322#0" />
           </folding>
         </state>
       </provider>
@@ -502,7 +501,8 @@
           <caret line="54" selection-start-line="54" selection-end-line="54" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;method#FenetreNewTests#0;class#FenetreNewTests#0" />
+            <element signature="e#1915#3248#0" />
+            <element signature="e#3254#3322#0" />
           </folding>
         </state>
       </provider>
@@ -534,7 +534,8 @@
           <caret line="216" column="44" selection-start-line="216" selection-start-column="44" selection-end-line="216" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;method#FenetreNewTests#0;class#FenetreNewTests#0" />
+            <element signature="e#1915#3248#0" />
+            <element signature="e#3254#3322#0" />
           </folding>
         </state>
       </provider>
@@ -566,7 +567,8 @@
           <caret line="226" column="82" selection-start-line="226" selection-start-column="82" selection-end-line="226" selection-end-column="82" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;method#FenetreNewTests#0;class#FenetreNewTests#0" />
+            <element signature="e#1915#3248#0" />
+            <element signature="e#3254#3322#0" />
           </folding>
         </state>
       </provider>
@@ -585,7 +587,8 @@
           <caret line="65" column="17" lean-forward="true" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;method#FenetreNewTests#0;class#FenetreNewTests#0" />
+            <element signature="e#1915#3248#0" />
+            <element signature="e#3254#3322#0" />
           </folding>
         </state>
       </provider>
@@ -617,7 +620,8 @@
           <caret line="128" column="55" selection-start-line="128" selection-start-column="55" selection-end-line="128" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;method#FenetreNewTests#0;class#FenetreNewTests#0" />
+            <element signature="e#1915#3248#0" />
+            <element signature="e#3254#3322#0" />
           </folding>
         </state>
       </provider>
@@ -658,15 +662,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GenerateurTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
+        <state>
           <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-360">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -677,13 +674,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/FenetreNewTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-980">
-          <caret line="253" column="75" selection-start-line="253" selection-start-column="75" selection-end-line="253" selection-end-column="75" />
+        <state relative-caret-position="1537">
+          <caret line="333" column="20" selection-start-line="333" selection-start-column="20" selection-end-line="333" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;method#FenetreNewTests#0;class#FenetreNewTests#0" />
+            <element signature="e#1915#3248#0" />
+            <element signature="e#3254#3322#0" />
           </folding>
         </state>
       </provider>

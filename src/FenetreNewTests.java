@@ -248,6 +248,8 @@ public class FenetreNewTests {
                     if (testNouveau.getQuestionCourante() - 1 >= 0 ){
                         testNouveau.setQuestionCourante(testNouveau.getQuestionCourante() - 1);
                         afficherQuestion();
+                        boutonSuivant.setEnabled(true);
+                        System.out.println(testNouveau.getQuestionCourante());
                     }
                     if(testNouveau.getQuestionCourante() == 0)
                         boutonPrecedent.setEnabled(false);
@@ -265,27 +267,20 @@ public class FenetreNewTests {
                         JOptionPane.showMessageDialog(null, "Erreur aucune bonne reponse de selectionner.");
                     } else {
                         ajouterQuestion();
+                        System.out.println(testNouveau.getQuestionCourante());
                     }
 
                 } else if (evenement.getSource() == boutonSuppQuestion){
-                    if (testNouveau.getQuestionCourante() + 1 > testNouveau.getNbQuestion())
-                        JOptionPane.showMessageDialog(null, "Il n'y a pas d'autre question.");
-                    else {
-                        testNouveau.setQuestionCourante(testNouveau.getQuestionCourante() + 1);
-                        testNouveau.getQuestion().remove(testNouveau.getQuestionCourante());
-                        numeroQuestion --;
-                        testNouveau.setNbQuestion(numeroQuestion);
-                        testNouveau.setQuestionCourante(testNouveau.getNbQuestion() - 1);
-                    }
 
 
                 } else if (evenement.getSource() == boutonSuivant){
-                        /*if (testNouveau.getQuestionCourante() + 1 > testNouveau.getNbQuestion())
-                            JOptionPane.showMessageDialog(null, "Il n'y a pas d'autre question.");
-                        else {
-                            testNouveau.setQuestionCourante(testNouveau.getQuestionCourante() + 1);
-                            afficherQuestion(testNouveau.getQuestionCourante());
-                        }*/
+                    if (testNouveau.getQuestionCourante() + 1 <= testNouveau.getQuestion().size()){
+                        afficherQuestion();
+                        testNouveau.setQuestionCourante(testNouveau.getQuestionCourante() + 1);
+                        System.out.println(testNouveau.getQuestionCourante());
+                    }
+                    if (testNouveau.getQuestionCourante() + 1 <= testNouveau.getQuestion().size())
+                        boutonSuivant.setEnabled(false);
 
 
                 } else if (evenement.getSource() == boutonSave){
@@ -351,7 +346,17 @@ public class FenetreNewTests {
         if(testNouveau.getReponses().get(testNouveau.getQuestionCourante()) == 3)
             repBout4.setSelected(true);
     }
-    private void modifierQuestion(){}
+
+    private void questionSuivsnte(){
+        lQuestion.setText("QUESTION "+(testNouveau.getQuestionCourante() + 1));
+
+        reponseDeux.setText("");
+        reponseQuatre.setText("");
+        reponseTrois.setText("");
+        reponseUn.setText("");
+        question.setText("");
+        btnGroup.clearSelection();
+    }
 
     private void ajouterQuestion(){
 
@@ -367,7 +372,7 @@ public class FenetreNewTests {
         if(repBout4.isSelected())
             testNouveau.getReponses().add(3);
         testNouveau.setQuestionCourante(testNouveau.getQuestionCourante()+1);
-        System.out.println(testNouveau.getQuestion().get(testNouveau.getQuestionCourante()-1));
+        //System.out.println(testNouveau.getQuestion().get(testNouveau.getQuestionCourante()-1));
 
         boutonPrecedent.setEnabled(true);
         boutonSuppQuestion.setEnabled(true);
