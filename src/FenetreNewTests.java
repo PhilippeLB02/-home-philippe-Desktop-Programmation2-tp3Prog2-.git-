@@ -398,5 +398,5 @@ public class FenetreNewTests {
         if(repBout4.isSelected())
             testNouveau.getReponses().set(iemeQuestion,3);
     }
-    
+
 }

@@ -4,13 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/src/Test.java" line="114" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a1572fe-84ac-4388-93e6-9d41172bf516" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/FenetreFaireTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FenetreFaireTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FenetreNewTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FenetreNewTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GenerateurTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GenerateurTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LectureEtEcritureFichier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LectureEtEcritureFichier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
-    </list>
+    <list default="true" id="0a1572fe-84ac-4388-93e6-9d41172bf516" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,8 +18,8 @@
       <file leaf-file-name="FenetreNewTests.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/FenetreNewTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3593">
-              <caret line="400" column="4" selection-start-line="400" selection-start-column="4" selection-end-line="400" selection-end-column="4" />
+            <state relative-caret-position="443">
+              <caret line="163" column="31" lean-forward="true" selection-start-line="163" selection-start-column="31" selection-end-line="163" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;method#FenetreNewTests#0;class#FenetreNewTests#0" />
@@ -272,12 +266,12 @@
       <workItem from="1524447118101" duration="2765000" />
       <workItem from="1524487864876" duration="10241000" />
       <workItem from="1524504336501" duration="4643000" />
-      <workItem from="1524531549586" duration="3042000" />
+      <workItem from="1524531549586" duration="3693000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119056000" />
+    <option name="totallyTimeSpent" value="119707000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2880" y="-4" width="1920" height="1084" extended-state="6" />
@@ -808,8 +802,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FenetreNewTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3593">
-          <caret line="400" column="4" selection-start-line="400" selection-start-column="4" selection-end-line="400" selection-end-column="4" />
+        <state relative-caret-position="443">
+          <caret line="163" column="31" lean-forward="true" selection-start-line="163" selection-start-column="31" selection-end-line="163" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;method#FenetreNewTests#0;class#FenetreNewTests#0" />
