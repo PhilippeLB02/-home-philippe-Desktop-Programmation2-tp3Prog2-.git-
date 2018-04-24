@@ -1,14 +1,12 @@
 import javax.swing.*;
-import javax.swing.border.BevelBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
-import java.util.ArrayList;
 
 public class FenetreNewTests {
 
-    //Atribut d'instance
+    //Atribut d'instance pour la fenetre de creation de test
     private final static int LARGEUX_FENTRE = 550;
     private final static int HAUTEUR_FENETRE = 540;
     private final static int LARG_BTN = 50;
@@ -27,7 +25,6 @@ public class FenetreNewTests {
     private JPanel panneauDesQuestion;
     private JPanel cadreSuperieur;
     private JPanel cadreInferieur;
-
 
     //Enoncer
     private JLabel lQuestion;
@@ -81,6 +78,9 @@ public class FenetreNewTests {
         init();
     }
 
+    /**
+     * Construteur de la fenetre de creation de test
+     */
     private void init() {
 
         fenetreNewTests = new JFrame("Créer un nouveau test");
@@ -328,6 +328,9 @@ public class FenetreNewTests {
         fenetreNewTests.setVisible(true);
     }
 
+    /**
+     * permet d'afficher les questions
+     */
     private void afficherQuestion(){
 
         lQuestion.setText("Question "+ (testNouveau.getQuestionCourante()+1));
@@ -348,6 +351,9 @@ public class FenetreNewTests {
             repBout4.setSelected(true);
     }
 
+    /**
+     * permet d'ajouter une question
+     */
     private void ajouterQuestion(){
 
         testNouveau.getQuestion().add(question.getText());
@@ -373,6 +379,11 @@ public class FenetreNewTests {
         question.setText("");
         btnGroup.clearSelection();
     }
+
+    /**
+     * permet de modifier une question courante a la ieme position
+     * @param iemeQuestion l'index ou changer la question
+     */
     private void modifierQuestionCourante(int iemeQuestion){
         testNouveau.getQuestion().set(iemeQuestion,question.getText());
 
@@ -386,6 +397,6 @@ public class FenetreNewTests {
             testNouveau.getReponses().set(iemeQuestion,2);
         if(repBout4.isSelected())
             testNouveau.getReponses().set(iemeQuestion,3);
-
     }
+    
 }

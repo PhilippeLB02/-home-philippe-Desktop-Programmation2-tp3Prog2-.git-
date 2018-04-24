@@ -2,20 +2,20 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 public class FenetreFaireTests {
 
+    //Atributs d'instence pour les dimension de la fenetre
     private final static int LARGEUR_FENTRE = 550;
     private final static int HAUTEUR_FENETRE = 540;
     private final static int LARG_BTN = 50;
     private final static int HAUT_BTN = 30;
     private final static int LARG_BTN_CORR = 150;
 
-
+    //Nom de la fenetre pour faire un test
     private JFrame fenetreFaireTest;
 
-
+    //le nom du test a faire
     private JLabel nomDuTest;
     private JTextField nomTests;
 
@@ -25,7 +25,7 @@ public class FenetreFaireTests {
     private JPanel panRes;
     private JPanel ligne;
 
-
+    //JButton pour naviger dans les question
     private JButton boutonPrecedent;
     private JButton boutonSuivant;
     private JButton boutonCorrection;
@@ -61,10 +61,15 @@ public class FenetreFaireTests {
     private JCheckBox repBout3;
     private JCheckBox repBout4;
     private ButtonGroup groupBouton;
-    //test
+
+    //test a réaliser
     private Test testFenetre;
     private String []choixReponseTest;
 
+    /**
+     * initialise la fenetre pour faire un test
+     * @param test le test a réaliser
+     */
     public FenetreFaireTests(Test test){
         testFenetre = test;
         choixReponseTest = new String[4];
@@ -72,16 +77,19 @@ public class FenetreFaireTests {
         init(testFenetre);
     }
 
+    /**
+     * créer la fenetre du test a faire et met les question et les choix de reponse dans la fenetre
+     * @param test le test qui va etre réaliser
+     */
     private void init(Test test){
 
+        //Dimension et position de la fenetre
         fenetreFaireTest = new JFrame("Passer un test");
         fenetreFaireTest.setBounds(400,300,LARGEUR_FENTRE,HAUTEUR_FENETRE);
         fenetreFaireTest.setResizable(false);
         fenetreFaireTest.setLocationRelativeTo(null);
-
         fenetreFaireTest.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         fenetreFaireTest.setLayout(null);
-
 
         //Titre test
         nomDuTest = new JLabel("Nom du test ");
@@ -226,6 +234,7 @@ public class FenetreFaireTests {
                 LARG_BTN_CORR, HAUT_BTN);
 
         boutonRevenir.setVisible(false);
+
         boutonCorrection.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -380,6 +389,11 @@ public class FenetreFaireTests {
 
         fenetreFaireTest.setVisible(true);
     }
+
+    /**
+     * Permet d'afficher la question
+     * @param numeroQuestion le numero de la question ou ils sont rendu
+     */
     private void afficherQuestion(int numeroQuestion){
         groupBouton.clearSelection();
         lNumeroQuestion.setText(""+ (testFenetre.getQuestionCourante()+1));
@@ -398,6 +412,10 @@ public class FenetreFaireTests {
         if(tabRep[numeroQuestion] == 4)
             repBout4.setSelected(true);
     }
+
+    /**
+     * Cache certaines composantes de la question courrente
+     */
     private void cacherComposantQuestion(){
         panneauDesQuestion.setVisible(false);
         lQuestion.setVisible(false);
@@ -405,6 +423,10 @@ public class FenetreFaireTests {
         lNumeroQuestion.setVisible(false);
         boutonCorrection.setVisible(false);
     }
+
+    /**
+     * Affiche certaines composantes de la question courente
+     */
     private void afficherComposantQuestion(){
         panneauDesQuestion.setVisible(true);
         lQuestion.setVisible(true);
@@ -412,16 +434,25 @@ public class FenetreFaireTests {
         lNumeroQuestion.setVisible(true);
         boutonCorrection.setVisible(true);
     }
+
+    /**
+     * Cache les composantes de la reponse de la question courente
+     */
     private void cacherComposantResultat(){
         spResultat.setVisible(false);
         panRes.setVisible(false);
         lResult.setVisible(false);
         boutonRevenir.setVisible(false);
     }
+
+    /**
+     * Affiche les composantes de la reponse de la question courente
+     */
     private void afficherComposantResultat(){
         spResultat.setVisible(true);
         panRes.setVisible(true);
         lResult.setVisible(true);
         boutonRevenir.setVisible(true);
     }
+
 }

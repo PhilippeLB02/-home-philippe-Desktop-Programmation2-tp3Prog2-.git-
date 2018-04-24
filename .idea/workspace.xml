@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/Test.java" line="114" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="0a1572fe-84ac-4388-93e6-9d41172bf516" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FenetreFaireTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FenetreFaireTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FenetreNewTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FenetreNewTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GenerateurTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GenerateurTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LectureEtEcritureFichier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LectureEtEcritureFichier.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
     </list>
@@ -17,36 +21,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FenetreNewTests.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FenetreNewTests.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/FenetreNewTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="379" column="72" selection-start-line="379" selection-start-column="72" selection-end-line="379" selection-end-column="72" />
+            <state relative-caret-position="3593">
+              <caret line="400" column="4" selection-start-line="400" selection-start-column="4" selection-end-line="400" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Test.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Test.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-18">
-              <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LectureEtEcritureFichier.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/LectureEtEcritureFichier.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="972">
-              <caret line="55" selection-start-line="55" selection-end-line="55" />
-              <folding>
-                <element signature="e#498#499#0" expanded="true" />
-                <element signature="e#535#536#0" expanded="true" />
-                <element signature="method#lecture#0;class#LectureEtEcritureFichier#0" />
+                <element signature="docComment;method#FenetreNewTests#0;class#FenetreNewTests#0" />
+                <element signature="docComment;method#init#0;class#FenetreNewTests#0" />
+                <element signature="docComment;method#afficherQuestion#0;class#FenetreNewTests#0" />
+                <element signature="method#afficherQuestion#0;class#FenetreNewTests#0" />
+                <element signature="docComment;method#ajouterQuestion#0;class#FenetreNewTests#0" />
+                <element signature="method#ajouterQuestion#0;class#FenetreNewTests#0" />
+                <element signature="docComment;method#modifierQuestionCourante#0;class#FenetreNewTests#0" />
+                <element signature="method#modifierQuestionCourante#0;class#FenetreNewTests#0" />
               </folding>
             </state>
           </provider>
@@ -82,13 +71,13 @@
         <option value="$PROJECT_DIR$/src/nomDesTests" />
         <option value="$PROJECT_DIR$/src/teste.form" />
         <option value="$PROJECT_DIR$/src/tests2.txt" />
-        <option value="$PROJECT_DIR$/src/FenetreFaireTests.java" />
         <option value="$PROJECT_DIR$/src/tests.txt" />
         <option value="$PROJECT_DIR$/src/tests" />
-        <option value="$PROJECT_DIR$/src/GenerateurTests.java" />
         <option value="$PROJECT_DIR$/src/LectureEtEcritureFichier.java" />
-        <option value="$PROJECT_DIR$/src/FenetreNewTests.java" />
+        <option value="$PROJECT_DIR$/src/FenetreFaireTests.java" />
+        <option value="$PROJECT_DIR$/src/GenerateurTests.java" />
         <option value="$PROJECT_DIR$/src/Test.java" />
+        <option value="$PROJECT_DIR$/src/FenetreNewTests.java" />
       </list>
     </option>
   </component>
@@ -283,12 +272,12 @@
       <workItem from="1524447118101" duration="2765000" />
       <workItem from="1524487864876" duration="10241000" />
       <workItem from="1524504336501" duration="4643000" />
-      <workItem from="1524531549586" duration="891000" />
+      <workItem from="1524531549586" duration="3042000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116905000" />
+    <option name="totallyTimeSpent" value="119056000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2880" y="-4" width="1920" height="1084" extended-state="6" />
@@ -308,7 +297,7 @@
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.32948583" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="0" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.14479166" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.14479166" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
@@ -344,6 +333,11 @@
         <state relative-caret-position="3654">
           <caret line="203" selection-start-line="203" selection-end-line="203" />
           <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;method#getSAUVEGARDETEST#0;class#LectureEtEcritureFichier#0" />
+            <element signature="docComment;method#ecriture#0;class#LectureEtEcritureFichier#0" />
+            <element signature="method#ecriture#0;class#LectureEtEcritureFichier#0" />
+            <element signature="docComment;method#lecture#0;class#LectureEtEcritureFichier#0" />
             <element signature="method#lecture#0;class#LectureEtEcritureFichier#0" />
           </folding>
         </state>
@@ -362,6 +356,14 @@
           <caret line="231" selection-start-line="231" selection-end-line="231" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="docComment;method#FenetreNewTests#0;class#FenetreNewTests#0" />
+            <element signature="docComment;method#init#0;class#FenetreNewTests#0" />
+            <element signature="docComment;method#afficherQuestion#0;class#FenetreNewTests#0" />
+            <element signature="method#afficherQuestion#0;class#FenetreNewTests#0" />
+            <element signature="docComment;method#ajouterQuestion#0;class#FenetreNewTests#0" />
+            <element signature="method#ajouterQuestion#0;class#FenetreNewTests#0" />
+            <element signature="docComment;method#modifierQuestionCourante#0;class#FenetreNewTests#0" />
+            <element signature="method#modifierQuestionCourante#0;class#FenetreNewTests#0" />
           </folding>
         </state>
       </provider>
@@ -393,6 +395,14 @@
           <caret line="112" column="56" lean-forward="true" selection-start-line="112" selection-start-column="56" selection-end-line="112" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="docComment;method#FenetreNewTests#0;class#FenetreNewTests#0" />
+            <element signature="docComment;method#init#0;class#FenetreNewTests#0" />
+            <element signature="docComment;method#afficherQuestion#0;class#FenetreNewTests#0" />
+            <element signature="method#afficherQuestion#0;class#FenetreNewTests#0" />
+            <element signature="docComment;method#ajouterQuestion#0;class#FenetreNewTests#0" />
+            <element signature="method#ajouterQuestion#0;class#FenetreNewTests#0" />
+            <element signature="docComment;method#modifierQuestionCourante#0;class#FenetreNewTests#0" />
+            <element signature="method#modifierQuestionCourante#0;class#FenetreNewTests#0" />
           </folding>
         </state>
       </provider>
@@ -424,6 +434,14 @@
           <caret line="132" column="97" selection-start-line="132" selection-start-column="97" selection-end-line="132" selection-end-column="97" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="docComment;method#FenetreNewTests#0;class#FenetreNewTests#0" />
+            <element signature="docComment;method#init#0;class#FenetreNewTests#0" />
+            <element signature="docComment;method#afficherQuestion#0;class#FenetreNewTests#0" />
+            <element signature="method#afficherQuestion#0;class#FenetreNewTests#0" />
+            <element signature="docComment;method#ajouterQuestion#0;class#FenetreNewTests#0" />
+            <element signature="method#ajouterQuestion#0;class#FenetreNewTests#0" />
+            <element signature="docComment;method#modifierQuestionCourante#0;class#FenetreNewTests#0" />
+            <element signature="method#modifierQuestionCourante#0;class#FenetreNewTests#0" />
           </folding>
         </state>
       </provider>
@@ -455,6 +473,14 @@
           <caret line="132" column="97" selection-start-line="132" selection-start-column="97" selection-end-line="132" selection-end-column="97" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="docComment;method#FenetreNewTests#0;class#FenetreNewTests#0" />
+            <element signature="docComment;method#init#0;class#FenetreNewTests#0" />
+            <element signature="docComment;method#afficherQuestion#0;class#FenetreNewTests#0" />
+            <element signature="method#afficherQuestion#0;class#FenetreNewTests#0" />
+            <element signature="docComment;method#ajouterQuestion#0;class#FenetreNewTests#0" />
+            <element signature="method#ajouterQuestion#0;class#FenetreNewTests#0" />
+            <element signature="docComment;method#modifierQuestionCourante#0;class#FenetreNewTests#0" />
+            <element signature="method#modifierQuestionCourante#0;class#FenetreNewTests#0" />
           </folding>
         </state>
       </provider>
@@ -472,6 +498,14 @@
           <caret line="217" selection-start-line="217" selection-end-line="217" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="docComment;method#FenetreNewTests#0;class#FenetreNewTests#0" />
+            <element signature="docComment;method#init#0;class#FenetreNewTests#0" />
+            <element signature="docComment;method#afficherQuestion#0;class#FenetreNewTests#0" />
+            <element signature="method#afficherQuestion#0;class#FenetreNewTests#0" />
+            <element signature="docComment;method#ajouterQuestion#0;class#FenetreNewTests#0" />
+            <element signature="method#ajouterQuestion#0;class#FenetreNewTests#0" />
+            <element signature="docComment;method#modifierQuestionCourante#0;class#FenetreNewTests#0" />
+            <element signature="method#modifierQuestionCourante#0;class#FenetreNewTests#0" />
           </folding>
         </state>
       </provider>
@@ -496,6 +530,14 @@
           <caret line="54" selection-start-line="54" selection-end-line="54" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="docComment;method#FenetreNewTests#0;class#FenetreNewTests#0" />
+            <element signature="docComment;method#init#0;class#FenetreNewTests#0" />
+            <element signature="docComment;method#afficherQuestion#0;class#FenetreNewTests#0" />
+            <element signature="method#afficherQuestion#0;class#FenetreNewTests#0" />
+            <element signature="docComment;method#ajouterQuestion#0;class#FenetreNewTests#0" />
+            <element signature="method#ajouterQuestion#0;class#FenetreNewTests#0" />
+            <element signature="docComment;method#modifierQuestionCourante#0;class#FenetreNewTests#0" />
+            <element signature="method#modifierQuestionCourante#0;class#FenetreNewTests#0" />
           </folding>
         </state>
       </provider>
@@ -527,6 +569,14 @@
           <caret line="216" column="44" selection-start-line="216" selection-start-column="44" selection-end-line="216" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="docComment;method#FenetreNewTests#0;class#FenetreNewTests#0" />
+            <element signature="docComment;method#init#0;class#FenetreNewTests#0" />
+            <element signature="docComment;method#afficherQuestion#0;class#FenetreNewTests#0" />
+            <element signature="method#afficherQuestion#0;class#FenetreNewTests#0" />
+            <element signature="docComment;method#ajouterQuestion#0;class#FenetreNewTests#0" />
+            <element signature="method#ajouterQuestion#0;class#FenetreNewTests#0" />
+            <element signature="docComment;method#modifierQuestionCourante#0;class#FenetreNewTests#0" />
+            <element signature="method#modifierQuestionCourante#0;class#FenetreNewTests#0" />
           </folding>
         </state>
       </provider>
@@ -558,6 +608,14 @@
           <caret line="226" column="82" selection-start-line="226" selection-start-column="82" selection-end-line="226" selection-end-column="82" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="docComment;method#FenetreNewTests#0;class#FenetreNewTests#0" />
+            <element signature="docComment;method#init#0;class#FenetreNewTests#0" />
+            <element signature="docComment;method#afficherQuestion#0;class#FenetreNewTests#0" />
+            <element signature="method#afficherQuestion#0;class#FenetreNewTests#0" />
+            <element signature="docComment;method#ajouterQuestion#0;class#FenetreNewTests#0" />
+            <element signature="method#ajouterQuestion#0;class#FenetreNewTests#0" />
+            <element signature="docComment;method#modifierQuestionCourante#0;class#FenetreNewTests#0" />
+            <element signature="method#modifierQuestionCourante#0;class#FenetreNewTests#0" />
           </folding>
         </state>
       </provider>
@@ -576,6 +634,14 @@
           <caret line="65" column="17" lean-forward="true" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="docComment;method#FenetreNewTests#0;class#FenetreNewTests#0" />
+            <element signature="docComment;method#init#0;class#FenetreNewTests#0" />
+            <element signature="docComment;method#afficherQuestion#0;class#FenetreNewTests#0" />
+            <element signature="method#afficherQuestion#0;class#FenetreNewTests#0" />
+            <element signature="docComment;method#ajouterQuestion#0;class#FenetreNewTests#0" />
+            <element signature="method#ajouterQuestion#0;class#FenetreNewTests#0" />
+            <element signature="docComment;method#modifierQuestionCourante#0;class#FenetreNewTests#0" />
+            <element signature="method#modifierQuestionCourante#0;class#FenetreNewTests#0" />
           </folding>
         </state>
       </provider>
@@ -607,6 +673,14 @@
           <caret line="128" column="55" selection-start-line="128" selection-start-column="55" selection-end-line="128" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="docComment;method#FenetreNewTests#0;class#FenetreNewTests#0" />
+            <element signature="docComment;method#init#0;class#FenetreNewTests#0" />
+            <element signature="docComment;method#afficherQuestion#0;class#FenetreNewTests#0" />
+            <element signature="method#afficherQuestion#0;class#FenetreNewTests#0" />
+            <element signature="docComment;method#ajouterQuestion#0;class#FenetreNewTests#0" />
+            <element signature="method#ajouterQuestion#0;class#FenetreNewTests#0" />
+            <element signature="docComment;method#modifierQuestionCourante#0;class#FenetreNewTests#0" />
+            <element signature="method#modifierQuestionCourante#0;class#FenetreNewTests#0" />
           </folding>
         </state>
       </provider>
@@ -652,44 +726,101 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GenerateurTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2358">
-          <caret line="142" column="70" selection-start-line="142" selection-start-column="70" selection-end-line="142" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/FenetreFaireTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5580">
-          <caret line="314" column="20" selection-start-line="314" selection-start-column="20" selection-end-line="314" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/LectureEtEcritureFichier.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="972">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
+        <state relative-caret-position="108">
+          <caret line="6" column="46" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
           <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;method#getSAUVEGARDETEST#0;class#LectureEtEcritureFichier#0" />
+            <element signature="docComment;method#ecriture#0;class#LectureEtEcritureFichier#0" />
+            <element signature="method#ecriture#0;class#LectureEtEcritureFichier#0" />
+            <element signature="docComment;method#lecture#0;class#LectureEtEcritureFichier#0" />
             <element signature="method#lecture#0;class#LectureEtEcritureFichier#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FenetreNewTests.java">
+    <entry file="file://$PROJECT_DIR$/src/FenetreFaireTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="379" column="72" selection-start-line="379" selection-start-column="72" selection-end-line="379" selection-end-column="72" />
+        <state relative-caret-position="2283">
+          <caret line="456" column="4" selection-start-line="456" selection-start-column="4" selection-end-line="456" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1851#1889#0" />
+            <element signature="e#2154#2192#0" />
+            <element signature="e#14351#14352#0" expanded="true" />
+            <element signature="e#14428#14429#0" expanded="true" />
+            <element signature="e#14577#14578#0" expanded="true" />
+            <element signature="e#14654#14655#0" expanded="true" />
+            <element signature="e#14803#14804#0" expanded="true" />
+            <element signature="e#14880#14881#0" expanded="true" />
+            <element signature="e#15029#15030#0" expanded="true" />
+            <element signature="e#15106#15107#0" expanded="true" />
+            <element signature="e#15973#16021#0" />
+            <element signature="e#16952#16971#0" />
+            <element signature="e#17285#17304#0" />
+            <element signature="e#17616#17635#0" />
+            <element signature="e#17897#17916#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GenerateurTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-785">
+          <caret line="48" column="34" selection-start-line="48" selection-start-column="34" selection-end-line="48" selection-end-column="34" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#1018#1019#0" expanded="true" />
+            <element signature="e#1044#1045#0" expanded="true" />
+            <element signature="class#3371:5658" />
+            <element signature="e#5941#5942#0" expanded="true" />
+            <element signature="e#5978#5979#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-18">
-          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+        <state relative-caret-position="1008">
+          <caret line="120" column="4" selection-start-line="120" selection-start-column="4" selection-end-line="120" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#1786#0" expanded="true" />
+            <element signature="docComment;method#Test#0;class#Test#0" />
+            <element signature="method#Test#0;class#Test#0" />
+            <element signature="docComment;method#getReponses#0;class#Test#0" />
+            <element signature="docComment;method#setReponses#0;class#Test#0" />
+            <element signature="docComment;method#getName#0;class#Test#0" />
+            <element signature="docComment;method#setName#0;class#Test#0" />
+            <element signature="docComment;method#getNbQuestion#0;class#Test#0" />
+            <element signature="docComment;method#setNbQuestion#0;class#Test#0" />
+            <element signature="docComment;method#getQuestion#0;class#Test#0" />
+            <element signature="docComment;method#getQuestion#1;class#Test#0" />
+            <element signature="docComment;method#setQuestion#0;class#Test#0" />
+            <element signature="docComment;method#getChoixReponse#0;class#Test#0" />
+            <element signature="docComment;method#setChoixReponse#0;class#Test#0" />
+            <element signature="docComment;method#getQuestionCourante#0;class#Test#0" />
+            <element signature="docComment;method#setQuestionCourante#0;class#Test#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FenetreNewTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3593">
+          <caret line="400" column="4" selection-start-line="400" selection-start-column="4" selection-end-line="400" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;method#FenetreNewTests#0;class#FenetreNewTests#0" />
+            <element signature="docComment;method#init#0;class#FenetreNewTests#0" />
+            <element signature="docComment;method#afficherQuestion#0;class#FenetreNewTests#0" />
+            <element signature="method#afficherQuestion#0;class#FenetreNewTests#0" />
+            <element signature="docComment;method#ajouterQuestion#0;class#FenetreNewTests#0" />
+            <element signature="method#ajouterQuestion#0;class#FenetreNewTests#0" />
+            <element signature="docComment;method#modifierQuestionCourante#0;class#FenetreNewTests#0" />
+            <element signature="method#modifierQuestionCourante#0;class#FenetreNewTests#0" />
+          </folding>
         </state>
       </provider>
     </entry>

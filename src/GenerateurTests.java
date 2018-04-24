@@ -1,16 +1,18 @@
+/**
+ * Kismony Ladouceur LADK03119402
+ * Philippe Lemay-Bourbeau LEMP02119605
+ */
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class GenerateurTests {
 
+    //Atribut d'instance de la fenetre principale
     private final static int LARGEUX_FENTRE = 380;
     private final static int HAUTEUR_FENETRE = 360;
     private final static int LARG_BTN = 300;
@@ -18,8 +20,8 @@ public class GenerateurTests {
 
     //Fenetre principale
     private JFrame fenetre;
-
     private JPanel  ligne;
+
     //Boutons
     private JButton boutonNewTests;
     private JButton boutonFaireTests;
@@ -43,6 +45,9 @@ public class GenerateurTests {
         initMenu();
     }
 
+    /**
+     * Créer la fenetre principale
+     */
     private void initMenu()  {
 
         fenetre = new JFrame("Générateur de tests");
@@ -160,9 +165,8 @@ public class GenerateurTests {
 
         fenetre.setVisible(true);
     }
+
     public static void main (String[]args){
-
-
         new GenerateurTests();
     }
 }

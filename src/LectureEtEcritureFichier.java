@@ -4,15 +4,26 @@ import java.util.ArrayList;
 
 public class LectureEtEcritureFichier {
 
-    //Écriture de fichier
+    //Atribut d'instence pour écrire les tests
     private static final String SÉPARATEUR_TESTS = "=====";
     private static final String SÉPARATEUR_QUESTIONS = "-----";
+
+    //nom du fichier a utiliser
     private static File SAUVEGARDETEST = new File(GenerateurTests.class.getProtectionDomain().getCodeSource().getLocation().getPath() + "tests");
 
+    /**
+     * getters pour aller chercher le nom du fichier
+     * @return le nom du fichier
+     */
     public static File getSAUVEGARDETEST() {
         return SAUVEGARDETEST;
     }
 
+    /**
+     * Methode qui ecrit tout les informations d'un test dans tests.txt
+     * @param test prend en parametre un test
+     * @throws IOException si le fichier est introuvable
+     */
     public static void ecriture(Test test) throws IOException {
 
         if (!SAUVEGARDETEST.exists()) {
@@ -54,7 +65,11 @@ public class LectureEtEcritureFichier {
 
     }
 
-    //Lecture des fichiers
+    /**
+     * Lit le fichier txt et retourne tous les tests qui si trouve
+     * @return tous les tests dans une arrayliste de tests.
+     * @throws IOException lance l'exception s'il n'y a pas de fichier s'il ne peut pas l'ouvrire
+     */
     public static ArrayList<Test> lecture() throws IOException {
 
         String tests = GenerateurTests.class.getProtectionDomain().getCodeSource().getLocation().getPath() + "tests";
@@ -124,4 +139,5 @@ public class LectureEtEcritureFichier {
 
         return listeTests;
     }
+
 }
