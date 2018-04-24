@@ -312,7 +312,6 @@ public class FenetreNewTests {
                                 ajouterQuestion();
                             }
                             boutonSuivant.setEnabled(false);
-                            System.out.println(testNouveau.getQuestionCourante());
                     }
                 } else if (evenement.getSource() == boutonSuppQuestion) {
 
@@ -362,9 +361,7 @@ public class FenetreNewTests {
                                 testNouveau.setNbQuestion(testNouveau.getQuestion().size());
 
                             try {
-                                for (int i = 0; i < testNouveau.getNbQuestion(); i++) {
                                     LectureEtEcritureFichier.ecriture(testNouveau);
-                                }
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }

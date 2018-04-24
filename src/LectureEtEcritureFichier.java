@@ -29,7 +29,6 @@ public class LectureEtEcritureFichier {
         if (!SAUVEGARDETEST.exists()) {
             SAUVEGARDETEST.createNewFile();
         }
-
         FileWriter fw = new FileWriter(SAUVEGARDETEST, true);
         BufferedWriter bw = new BufferedWriter(fw);
         PrintWriter pw = new PrintWriter(bw);
