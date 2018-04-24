@@ -5,22 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a1572fe-84ac-4388-93e6-9d41172bf516" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tp3Prog2/FenetreFaireTests$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp3Prog2/FenetreFaireTests$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tp3Prog2/FenetreFaireTests$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp3Prog2/FenetreFaireTests$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tp3Prog2/FenetreFaireTests$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp3Prog2/FenetreFaireTests$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tp3Prog2/FenetreFaireTests$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp3Prog2/FenetreFaireTests$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tp3Prog2/FenetreFaireTests$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp3Prog2/FenetreFaireTests$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tp3Prog2/FenetreFaireTests$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp3Prog2/FenetreFaireTests$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tp3Prog2/FenetreFaireTests$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp3Prog2/FenetreFaireTests$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tp3Prog2/FenetreFaireTests$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp3Prog2/FenetreFaireTests$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tp3Prog2/FenetreFaireTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp3Prog2/FenetreFaireTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tp3Prog2/FenetreNewTests$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp3Prog2/FenetreNewTests$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tp3Prog2/FenetreNewTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp3Prog2/FenetreNewTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tp3Prog2/GenerateurTests$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp3Prog2/GenerateurTests$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tp3Prog2/GenerateurTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp3Prog2/GenerateurTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tp3Prog2/LectureEtEcritureFichier.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp3Prog2/LectureEtEcritureFichier.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tp3Prog2/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp3Prog2/Test.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FenetreNewTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FenetreNewTests.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -36,8 +20,8 @@
       <file leaf-file-name="FenetreNewTests.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/FenetreNewTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="461">
-              <caret line="133" column="60" lean-forward="true" selection-start-line="133" selection-start-column="60" selection-end-line="133" selection-end-column="60" />
+            <state relative-caret-position="1522">
+              <caret line="251" column="43" selection-start-line="251" selection-start-column="43" selection-end-line="251" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;method#FenetreNewTests#0;class#FenetreNewTests#0" />
@@ -299,12 +283,12 @@
       <workItem from="1524447118101" duration="2765000" />
       <workItem from="1524487864876" duration="10241000" />
       <workItem from="1524504336501" duration="4643000" />
-      <workItem from="1524531549586" duration="5431000" />
+      <workItem from="1524531549586" duration="5871000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121445000" />
+    <option name="totallyTimeSpent" value="121885000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2880" y="-4" width="1920" height="1084" extended-state="6" />
@@ -320,11 +304,11 @@
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="3" />
-      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.25717214" />
+      <window_info anchor="bottom" id="Run" order="7" weight="0.25717214" />
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.32948583" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="0" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.14479166" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.14479166" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
@@ -823,8 +807,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FenetreNewTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="133" column="60" lean-forward="true" selection-start-line="133" selection-start-column="60" selection-end-line="133" selection-end-column="60" />
+        <state relative-caret-position="1522">
+          <caret line="251" column="43" selection-start-line="251" selection-start-column="43" selection-end-line="251" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;method#FenetreNewTests#0;class#FenetreNewTests#0" />

@@ -61,7 +61,7 @@ public class FenetreNewTests {
     //test
     private Test testNouveau;
     private Test testTemp;
-    private String []choixReponseTest;
+    private String[] choixReponseTest;
 
     //Ecouteur
     private ActionListener ecouteur;
@@ -69,7 +69,7 @@ public class FenetreNewTests {
     /**
      * Contructeur qui initialise la fenetre de creation
      */
-    public FenetreNewTests(){
+    public FenetreNewTests() {
         testNouveau = new Test();
         testNouveau.setQuestionCourante(0);
         testNouveau.setNbQuestion(0);
@@ -87,7 +87,7 @@ public class FenetreNewTests {
         fenetreNewTests = new JFrame("Créer un nouveau test");
 
         //Dimention et position de la fenetre
-        fenetreNewTests.setSize(LARGEUX_FENTRE,HAUTEUR_FENETRE);
+        fenetreNewTests.setSize(LARGEUX_FENTRE, HAUTEUR_FENETRE);
         fenetreNewTests.setLocationRelativeTo(null);
         fenetreNewTests.setResizable(false);
 
@@ -96,7 +96,7 @@ public class FenetreNewTests {
 
         //JPANEL
         panneauDesQuestion = new JPanel();
-        panneauDesQuestion.setBounds(50,50, 450, 350);
+        panneauDesQuestion.setBounds(50, 50, 450, 350);
         panneauDesQuestion.setOpaque(true);
         panneauDesQuestion.setLayout(null);
         panneauDesQuestion.setBorder(BorderFactory.createLineBorder(Color.black, 1));
@@ -104,13 +104,13 @@ public class FenetreNewTests {
         cadreSuperieur = new JPanel();
         cadreInferieur = new JPanel();
 
-        cadreSuperieur.setBounds(50,40,300,1);
+        cadreSuperieur.setBounds(50, 40, 300, 1);
 
         //Titre test
         nomTest = new JLabel("Nom du test ");
         nomTests = new JTextField();
 
-        nomTest.setBounds(fenetreNewTests.getWidth() / 12 , fenetreNewTests.getHeight() / 13 - HAUT_BTN, 200, HAUT_BTN);
+        nomTest.setBounds(fenetreNewTests.getWidth() / 12, fenetreNewTests.getHeight() / 13 - HAUT_BTN, 200, HAUT_BTN);
         nomTests.setBounds(fenetreNewTests.getWidth() / 12 * 3, fenetreNewTests.getHeight() / 13 - HAUT_BTN, 200, HAUT_BTN);
 
         fenetreNewTests.getContentPane().add(nomTest);
@@ -120,7 +120,7 @@ public class FenetreNewTests {
         //Enoncer
         lQuestion = new JLabel("Question " + numeroQuestion);
         lQuestion.setBounds(10, 5, 200, HAUT_BTN);
-        lQuestion.setFont(new Font(lQuestion.getFont().getFamily(),Font.BOLD,15));
+        lQuestion.setFont(new Font(lQuestion.getFont().getFamily(), Font.BOLD, 15));
         enoncer = new JLabel("Énoncé ");
         enoncer.setBounds(25, 35, 200, HAUT_BTN);
         question = new JTextArea();
@@ -164,9 +164,9 @@ public class FenetreNewTests {
         repBout3 = new JCheckBox();
         repBout3.setBounds(390, 265, LARG_BTN, HAUT_BTN);
         repBout4 = new JCheckBox();
-        repBout4.setBounds(390, 305, LARG_BTN,HAUT_BTN);
+        repBout4.setBounds(390, 305, LARG_BTN, HAUT_BTN);
 
-        btnGroup    = new ButtonGroup();
+        btnGroup = new ButtonGroup();
         btnGroup.add(repBout1);
         btnGroup.add(repBout2);
         btnGroup.add(repBout3);
@@ -201,7 +201,7 @@ public class FenetreNewTests {
                 LARG_BTN, HAUT_BTN);
         boutonSuivant.setBounds(fenetreNewTests.getWidth() / 12 * 9 - LARG_BTN / 2, fenetreNewTests.getHeight() / 13 * 11 - HAUT_BTN,
                 LARG_BTN, HAUT_BTN);
-        boutonSave.setBounds(fenetreNewTests.getWidth() / 2 - LARG_BTN_SAVE / 2 -4, fenetreNewTests.getHeight() / 13 * 12 - HAUT_BTN,
+        boutonSave.setBounds(fenetreNewTests.getWidth() / 2 - LARG_BTN_SAVE / 2 - 4, fenetreNewTests.getHeight() / 13 * 12 - HAUT_BTN,
                 LARG_BTN_SAVE, HAUT_BTN);
 
         boutonPrecedent.setEnabled(false);
@@ -220,75 +220,54 @@ public class FenetreNewTests {
             public void actionPerformed(ActionEvent evenement) {
 
 
-                if (evenement.getSource() == boutonPrecedent){
-                    if (nomTests.getText().trim().isEmpty()){
+                if (evenement.getSource() == boutonPrecedent) {
+
+                    if (testNouveau.getQuestionCourante() - 1 >= 0) {
+                        if (testNouveau.getQuestionCourante() == testNouveau.getQuestion().size()) {
+                            testNouveau.getQuestion().add(question.getText());
+                            testNouveau.getChoixReponse().add(reponseUn.getText() + "<>" + reponseDeux.getText() + "<>" + reponseTrois.getText() + "<>" + reponseQuatre.getText());
+                            if (repBout1.isSelected())
+                                testNouveau.getReponses().add(0);
+                            if (repBout2.isSelected())
+                                testNouveau.getReponses().add(1);
+                            if (repBout3.isSelected())
+                                testNouveau.getReponses().add(2);
+                            if (repBout4.isSelected())
+                                testNouveau.getReponses().add(3);
+                        }
+                        modifierQuestionCourante(testNouveau.getQuestionCourante());
+                        testNouveau.setQuestionCourante(testNouveau.getQuestionCourante() - 1);
+                        afficherQuestion();
+                        boutonSuivant.setEnabled(true);
+                        lQuestion.setText("QUESTION " + (testNouveau.getQuestionCourante() + 1));
+                    }
+                    if (testNouveau.getQuestionCourante() == 0)
+                        boutonPrecedent.setEnabled(false);
+
+                } else if (evenement.getSource() == boutonSuivant) {
+
+                    if (testNouveau.getQuestionCourante() + 1 <= testNouveau.getQuestion().size()) {
+                        modifierQuestionCourante(testNouveau.getQuestionCourante());
+                        testNouveau.setQuestionCourante(testNouveau.getQuestionCourante() + 1);
+                        afficherQuestion();
+                        lQuestion.setText("QUESTION " + (testNouveau.getQuestionCourante() + 1));
+                        boutonPrecedent.setEnabled(true);
+                    }
+                    if (testNouveau.getQuestionCourante() + 1 >= testNouveau.getQuestion().size())
+                        boutonSuivant.setEnabled(false);
+
+                } else if (evenement.getSource() == boutonAjoutQuestion) {
+
+                    if (nomTests.getText().trim().isEmpty()) {
                         JOptionPane.showMessageDialog(null, "Erreur votre test doit avoir un nom.");
-                    } else if (question.getText().trim().isEmpty()){
+                    } else if (question.getText().trim().isEmpty()) {
                         JOptionPane.showMessageDialog(null, "Erreur énoncé invalide.");
-                    } else if (reponseUn.getText().trim().isEmpty() && reponseDeux.getText().trim().isEmpty() && reponseTrois.getText().isEmpty() && reponseQuatre.getText().trim().isEmpty()){
+                    } else if (reponseUn.getText().trim().isEmpty() && reponseDeux.getText().trim().isEmpty() && reponseTrois.getText().isEmpty() && reponseQuatre.getText().trim().isEmpty()) {
                         JOptionPane.showMessageDialog(null, "Erreur réponse invalide.");
-                    } else if (!repBout1.isSelected() && !repBout2.isSelected() && !repBout3.isSelected() && !repBout4.isSelected()){
+                    } else if (!repBout1.isSelected() && !repBout2.isSelected() && !repBout3.isSelected() && !repBout4.isSelected()) {
                         JOptionPane.showMessageDialog(null, "Erreur aucune bonne reponse de selectionner.");
                     } else {
-                        if (testNouveau.getQuestionCourante() - 1 >= 0) {
-                            if(testNouveau.getQuestionCourante() == testNouveau.getQuestion().size()){
-                                testNouveau.getQuestion().add(question.getText());
-                                testNouveau.getChoixReponse().add(reponseUn.getText()+"<>"+reponseDeux.getText()+"<>"+reponseTrois.getText()+"<>"+reponseQuatre.getText());
-                                if(repBout1.isSelected())
-                                    testNouveau.getReponses().add(0);
-                                if(repBout2.isSelected())
-                                    testNouveau.getReponses().add(1);
-                                if(repBout3.isSelected())
-                                    testNouveau.getReponses().add(2);
-                                if(repBout4.isSelected())
-                                    testNouveau.getReponses().add(3);
-                            }
-                            modifierQuestionCourante(testNouveau.getQuestionCourante());
-                            testNouveau.setQuestionCourante(testNouveau.getQuestionCourante() - 1);
-                            afficherQuestion();
-                            boutonSuivant.setEnabled(true);
-                            lQuestion.setText("QUESTION " + (testNouveau.getQuestionCourante() + 1));
-                        }
-                        if (testNouveau.getQuestionCourante() == 0)
-                            boutonPrecedent.setEnabled(false);
-
-                    }
-                }else if (evenement.getSource() == boutonSuivant){
-                    if (nomTests.getText().trim().isEmpty()){
-                        JOptionPane.showMessageDialog(null, "Erreur votre test doit avoir un nom.");
-                    } else if (question.getText().trim().isEmpty()){
-                        JOptionPane.showMessageDialog(null, "Erreur énoucé invalide.");
-                    } else if (reponseUn.getText().trim().isEmpty() && reponseDeux.getText().trim().isEmpty() && reponseTrois.getText().isEmpty() && reponseQuatre.getText().trim().isEmpty()){
-                        JOptionPane.showMessageDialog(null, "Erreur reponse invalide.");
-                    } else if (!repBout1.isSelected() && !repBout2.isSelected() && !repBout3.isSelected() && !repBout4.isSelected()){
-                        JOptionPane.showMessageDialog(null, "Erreur aucune bonne reponse de selectionnerSUIV.");
-                    } else {
-
-                        if (testNouveau.getQuestionCourante() + 1 <= testNouveau.getQuestion().size()) {
-                            modifierQuestionCourante(testNouveau.getQuestionCourante());
-                            testNouveau.setQuestionCourante(testNouveau.getQuestionCourante()+1);
-                            afficherQuestion();
-                            //testNouveau.setQuestionCourante(testNouveau.getQuestionCourante() + 1);
-                            //System.out.println(testNouveau.getQuestionCourante());
-                            lQuestion.setText("QUESTION " + (testNouveau.getQuestionCourante() + 1));
-                            boutonPrecedent.setEnabled(true);
-                        }
-                        if (testNouveau.getQuestionCourante() + 1 >= testNouveau.getQuestion().size())
-                            boutonSuivant.setEnabled(false);
-
-                    }
-                } else if (evenement.getSource() == boutonAjoutQuestion){
-
-                    if (nomTests.getText().trim().isEmpty()){
-                        JOptionPane.showMessageDialog(null, "Erreur votre test doit avoir un nom.");
-                    } else if (question.getText().trim().isEmpty()){
-                        JOptionPane.showMessageDialog(null, "Erreur énoncé invalide.");
-                    } else if (reponseUn.getText().trim().isEmpty() && reponseDeux.getText().trim().isEmpty() && reponseTrois.getText().isEmpty() && reponseQuatre.getText().trim().isEmpty()){
-                        JOptionPane.showMessageDialog(null, "Erreur réponse invalide.");
-                    } else if (!repBout1.isSelected() && !repBout2.isSelected() && !repBout3.isSelected() && !repBout4.isSelected()){
-                        JOptionPane.showMessageDialog(null, "Erreur aucune bonne reponse de selectionner.");
-                    } else {
-                        if(testNouveau.getQuestion().size() == 0)
+                        if (testNouveau.getQuestion().size() == 0)
                             ajouterQuestion();
                         else {
                             testNouveau.getQuestion().subList(testNouveau.getQuestionCourante(), testNouveau.getQuestion().size()).clear();
@@ -300,42 +279,38 @@ public class FenetreNewTests {
                         System.out.println(testNouveau.getQuestionCourante());
                     }
 
-                } else if (evenement.getSource() == boutonSuppQuestion){
-                    if (nomTests.getText().trim().isEmpty()){
-                        JOptionPane.showMessageDialog(null, "Erreur votre test doit avoir un nom.");
-                    } else if (question.getText().trim().isEmpty()){
-                        JOptionPane.showMessageDialog(null, "Erreur énoucé invalide.");
-                    } else if (reponseUn.getText().trim().isEmpty() && reponseDeux.getText().trim().isEmpty() && reponseTrois.getText().isEmpty() && reponseQuatre.getText().trim().isEmpty()){
-                        JOptionPane.showMessageDialog(null, "Erreur reponse invalide.");
-                    } else if (!repBout1.isSelected() && !repBout2.isSelected() && !repBout3.isSelected() && !repBout4.isSelected()){
-                        JOptionPane.showMessageDialog(null, "Erreur aucune bonne reponse de selectionner.");
+                } else if (evenement.getSource() == boutonSuppQuestion) {
+
+                    if (testNouveau.getQuestionCourante() == 0) {
+                        JOptionPane.showMessageDialog(null, "Aucune question a supprimer.");
                     } else {
                         testNouveau.getQuestion().remove(testNouveau.getQuestionCourante());
                         testNouveau.getChoixReponse().remove(testNouveau.getQuestionCourante());
                         testNouveau.getReponses().remove(testNouveau.getQuestionCourante());
                         testNouveau.setQuestionCourante(testNouveau.getQuestionCourante() - 1);
                         afficherQuestion();
-
                     }
-                } else if (evenement.getSource() == boutonSave){
 
-                    if (nomTests.getText().trim().isEmpty()){
+                } else if (evenement.getSource() == boutonSave) {
+
+                    if (nomTests.getText().trim().isEmpty()) {
                         JOptionPane.showMessageDialog(null, "Erreur votre test doit avoir un nom.");
-                    } else if (question.getText().trim().isEmpty()){
+                    } else if (question.getText().trim().isEmpty()) {
                         JOptionPane.showMessageDialog(null, "Erreur énoucé invalide.");
-                    } else if (reponseUn.getText().trim().isEmpty() && reponseDeux.getText().trim().isEmpty() && reponseTrois.getText().isEmpty() && reponseQuatre.getText().trim().isEmpty()){
+                    } else if (reponseUn.getText().trim().isEmpty() && reponseDeux.getText().trim().isEmpty() && reponseTrois.getText().isEmpty() && reponseQuatre.getText().trim().isEmpty()) {
                         JOptionPane.showMessageDialog(null, "Erreur reponse invalide.");
-                    } else if (!repBout1.isSelected() && !repBout2.isSelected() && !repBout3.isSelected() && !repBout4.isSelected()){
+                    } else if (!repBout1.isSelected() && !repBout2.isSelected() && !repBout3.isSelected() && !repBout4.isSelected()) {
                         JOptionPane.showMessageDialog(null, "Erreur aucune bonne reponse de selectionner.");
                     } else {
-                        if(testNouveau.getNbQuestion() < 1)
+
+                        if (testNouveau.getNbQuestion() < 1)
                             testNouveau.setNbQuestion(testNouveau.getQuestion().size());
 
                         try {
-                            for(int i=0;i<testNouveau.getNbQuestion();i++){
+                            for (int i = 0; i < testNouveau.getNbQuestion(); i++) {
                                 LectureEtEcritureFichier.ecriture(testNouveau);
                             }
-                        }catch (IOException e){
+                        } catch (IOException e) {
                             e.printStackTrace();
                         }
                         fenetreNewTests.dispose();
@@ -360,9 +335,9 @@ public class FenetreNewTests {
     /**
      * permet d'afficher les questions
      */
-    private void afficherQuestion(){
+    private void afficherQuestion() {
 
-        lQuestion.setText("Question "+ (testNouveau.getQuestionCourante()+1));
+        lQuestion.setText("Question " + (testNouveau.getQuestionCourante() + 1));
         question.setText(testNouveau.getQuestion(testNouveau.getQuestionCourante()));
         choixReponseTest = testNouveau.getChoixReponse().get(testNouveau.getQuestionCourante()).split(SÉPARATEUR_CHOIX_REPONSES);
         reponseUn.setText(choixReponseTest[0]);
@@ -370,36 +345,36 @@ public class FenetreNewTests {
         reponseTrois.setText(choixReponseTest[2]);
         reponseQuatre.setText(choixReponseTest[3]);
 
-        if(testNouveau.getReponses().get(testNouveau.getQuestionCourante()) == 0)
+        if (testNouveau.getReponses().get(testNouveau.getQuestionCourante()) == 0)
             repBout1.setSelected(true);
-        if(testNouveau.getReponses().get(testNouveau.getQuestionCourante()) == 1)
+        if (testNouveau.getReponses().get(testNouveau.getQuestionCourante()) == 1)
             repBout2.setSelected(true);
-        if(testNouveau.getReponses().get(testNouveau.getQuestionCourante()) == 2)
+        if (testNouveau.getReponses().get(testNouveau.getQuestionCourante()) == 2)
             repBout3.setSelected(true);
-        if(testNouveau.getReponses().get(testNouveau.getQuestionCourante()) == 3)
+        if (testNouveau.getReponses().get(testNouveau.getQuestionCourante()) == 3)
             repBout4.setSelected(true);
     }
 
     /**
      * permet d'ajouter une question
      */
-    private void ajouterQuestion(){
+    private void ajouterQuestion() {
 
         testNouveau.getQuestion().add(question.getText());
         testNouveau.getChoixReponse().add(reponseUn.getText() + SÉPARATEUR_CHOIX_REPONSES + reponseDeux.getText() + SÉPARATEUR_CHOIX_REPONSES
                 + reponseTrois.getText() + SÉPARATEUR_CHOIX_REPONSES + reponseQuatre.getText());
-        if(repBout1.isSelected())
+        if (repBout1.isSelected())
             testNouveau.getReponses().add(0);
-        if(repBout2.isSelected())
+        if (repBout2.isSelected())
             testNouveau.getReponses().add(1);
-        if(repBout3.isSelected())
+        if (repBout3.isSelected())
             testNouveau.getReponses().add(2);
-        if(repBout4.isSelected())
+        if (repBout4.isSelected())
             testNouveau.getReponses().add(3);
-        testNouveau.setQuestionCourante(testNouveau.getQuestionCourante()+1);
+        testNouveau.setQuestionCourante(testNouveau.getQuestionCourante() + 1);
         boutonPrecedent.setEnabled(true);
         boutonSuppQuestion.setEnabled(true);
-        lQuestion.setText("QUESTION "+(testNouveau.getQuestionCourante()+1));
+        lQuestion.setText("QUESTION " + (testNouveau.getQuestionCourante() + 1));
 
         reponseDeux.setText("");
         reponseQuatre.setText("");
@@ -411,21 +386,22 @@ public class FenetreNewTests {
 
     /**
      * permet de modifier une question courante a la ieme position
+     *
      * @param iemeQuestion l'index ou changer la question
      */
-    private void modifierQuestionCourante(int iemeQuestion){
-        testNouveau.getQuestion().set(iemeQuestion,question.getText());
+    private void modifierQuestionCourante(int iemeQuestion) {
+        testNouveau.getQuestion().set(iemeQuestion, question.getText());
 
-        testNouveau.getChoixReponse().set(iemeQuestion,reponseUn.getText() + SÉPARATEUR_CHOIX_REPONSES + reponseDeux.getText() + SÉPARATEUR_CHOIX_REPONSES
+        testNouveau.getChoixReponse().set(iemeQuestion, reponseUn.getText() + SÉPARATEUR_CHOIX_REPONSES + reponseDeux.getText() + SÉPARATEUR_CHOIX_REPONSES
                 + reponseTrois.getText() + SÉPARATEUR_CHOIX_REPONSES + reponseQuatre.getText());
-        if(repBout1.isSelected())
-            testNouveau.getReponses().set(iemeQuestion,0);
-        if(repBout2.isSelected())
-            testNouveau.getReponses().set(iemeQuestion,1);
-        if(repBout3.isSelected())
-            testNouveau.getReponses().set(iemeQuestion,2);
-        if(repBout4.isSelected())
-            testNouveau.getReponses().set(iemeQuestion,3);
+        if (repBout1.isSelected())
+            testNouveau.getReponses().set(iemeQuestion, 0);
+        if (repBout2.isSelected())
+            testNouveau.getReponses().set(iemeQuestion, 1);
+        if (repBout3.isSelected())
+            testNouveau.getReponses().set(iemeQuestion, 2);
+        if (repBout4.isSelected())
+            testNouveau.getReponses().set(iemeQuestion, 3);
     }
 
 }
