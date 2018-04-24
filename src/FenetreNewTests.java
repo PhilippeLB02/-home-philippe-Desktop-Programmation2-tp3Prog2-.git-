@@ -223,14 +223,50 @@ public class FenetreNewTests {
                         JOptionPane.showMessageDialog(null, "Erreur aucune bonne reponse de selectionner.");
                     } else {
                         if (testNouveau.getQuestionCourante() - 1 >= 0) {
+                            if(testNouveau.getQuestionCourante() == testNouveau.getQuestion().size()){
+                                testNouveau.getQuestion().add(question.getText());
+                                testNouveau.getChoixReponse().add(reponseUn.getText()+"<>"+reponseDeux.getText()+"<>"+reponseTrois.getText()+"<>"+reponseQuatre.getText());
+                                if(repBout1.isSelected())
+                                    testNouveau.getReponses().add(0);
+                                if(repBout2.isSelected())
+                                    testNouveau.getReponses().add(1);
+                                if(repBout3.isSelected())
+                                    testNouveau.getReponses().add(2);
+                                if(repBout4.isSelected())
+                                    testNouveau.getReponses().add(3);
+                            }
+                            modifierQuestionCourante(testNouveau.getQuestionCourante());
                             testNouveau.setQuestionCourante(testNouveau.getQuestionCourante() - 1);
                             afficherQuestion();
                             boutonSuivant.setEnabled(true);
-                            System.out.println(testNouveau.getQuestionCourante());
                             lQuestion.setText("QUESTION " + (testNouveau.getQuestionCourante() + 1));
                         }
                         if (testNouveau.getQuestionCourante() == 0)
                             boutonPrecedent.setEnabled(false);
+
+                    }
+                }else if (evenement.getSource() == boutonSuivant){
+                    if (nomTests.getText().trim().isEmpty()){
+                        JOptionPane.showMessageDialog(null, "Erreur votre test doit avoir un nom.");
+                    } else if (question.getText().trim().isEmpty()){
+                        JOptionPane.showMessageDialog(null, "Erreur énoucé invalide.");
+                    } else if (reponseUn.getText().trim().isEmpty() && reponseDeux.getText().trim().isEmpty() && reponseTrois.getText().isEmpty() && reponseQuatre.getText().trim().isEmpty()){
+                        JOptionPane.showMessageDialog(null, "Erreur reponse invalide.");
+                    } else if (!repBout1.isSelected() && !repBout2.isSelected() && !repBout3.isSelected() && !repBout4.isSelected()){
+                        JOptionPane.showMessageDialog(null, "Erreur aucune bonne reponse de selectionnerSUIV.");
+                    } else {
+
+                        if (testNouveau.getQuestionCourante() + 1 <= testNouveau.getQuestion().size()) {
+                            modifierQuestionCourante(testNouveau.getQuestionCourante());
+                            testNouveau.setQuestionCourante(testNouveau.getQuestionCourante()+1);
+                            afficherQuestion();
+                            //testNouveau.setQuestionCourante(testNouveau.getQuestionCourante() + 1);
+                            //System.out.println(testNouveau.getQuestionCourante());
+                            lQuestion.setText("QUESTION " + (testNouveau.getQuestionCourante() + 1));
+                            boutonPrecedent.setEnabled(true);
+                        }
+                        if (testNouveau.getQuestionCourante() + 1 >= testNouveau.getQuestion().size())
+                            boutonSuivant.setEnabled(false);
 
                     }
                 } else if (evenement.getSource() == boutonAjoutQuestion){
@@ -244,9 +280,16 @@ public class FenetreNewTests {
                     } else if (!repBout1.isSelected() && !repBout2.isSelected() && !repBout3.isSelected() && !repBout4.isSelected()){
                         JOptionPane.showMessageDialog(null, "Erreur aucune bonne reponse de selectionner.");
                     } else {
-                        ajouterQuestion();
+                        if(testNouveau.getQuestion().size() == 0)
+                            ajouterQuestion();
+                        else {
+                            testNouveau.getQuestion().subList(testNouveau.getQuestionCourante(), testNouveau.getQuestion().size()).clear();
+                            testNouveau.getChoixReponse().subList(testNouveau.getQuestionCourante(), testNouveau.getChoixReponse().size()).clear();
+                            testNouveau.getReponses().subList(testNouveau.getQuestionCourante(), testNouveau.getReponses().size()).clear();
+                            ajouterQuestion();
+                        }
+                        boutonSuivant.setEnabled(false);
                         System.out.println(testNouveau.getQuestionCourante());
-                        System.out.println(testNouveau.getQuestion().get(testNouveau.getQuestionCourante() - 1));
                     }
 
                 } else if (evenement.getSource() == boutonSuppQuestion){
@@ -264,28 +307,6 @@ public class FenetreNewTests {
                         testNouveau.getReponses().remove(testNouveau.getQuestionCourante());
                         testNouveau.setQuestionCourante(testNouveau.getQuestionCourante() - 1);
                         afficherQuestion();
-
-                    }
-                } else if (evenement.getSource() == boutonSuivant){
-                    if (nomTests.getText().trim().isEmpty()){
-                        JOptionPane.showMessageDialog(null, "Erreur votre test doit avoir un nom.");
-                    } else if (question.getText().trim().isEmpty()){
-                        JOptionPane.showMessageDialog(null, "Erreur énoucé invalide.");
-                    } else if (reponseUn.getText().trim().isEmpty() && reponseDeux.getText().trim().isEmpty() && reponseTrois.getText().isEmpty() && reponseQuatre.getText().trim().isEmpty()){
-                        JOptionPane.showMessageDialog(null, "Erreur reponse invalide.");
-                    } else if (!repBout1.isSelected() && !repBout2.isSelected() && !repBout3.isSelected() && !repBout4.isSelected()){
-                        JOptionPane.showMessageDialog(null, "Erreur aucune bonne reponse de selectionnerSUIV.");
-                    } else {
-
-                        if (testNouveau.getQuestionCourante() + 1 < testNouveau.getQuestion().size()) {
-                            testNouveau.setQuestionCourante(testNouveau.getQuestionCourante() + 1);
-                            afficherQuestion();
-                            System.out.println(testNouveau.getQuestionCourante());
-                            lQuestion.setText("QUESTION " + (testNouveau.getQuestionCourante() + 1));
-                            boutonPrecedent.setEnabled(true);
-                        }
-                        if (testNouveau.getQuestionCourante() + 1 >= testNouveau.getQuestion().size())
-                            boutonSuivant.setEnabled(false);
 
                     }
                 } else if (evenement.getSource() == boutonSave){
