@@ -7,7 +7,6 @@ public class LectureEtEcritureFichier {
     //Écriture de fichier
     private static final String SÉPARATEUR_TESTS = "=====";
     private static final String SÉPARATEUR_QUESTIONS = "-----";
-    private static final String SÉPARATEUR_CHOIX_REPONSES = "<>";
     private static File SAUVEGARDETEST = new File(GenerateurTests.class.getProtectionDomain().getCodeSource().getLocation().getPath() + "tests");
 
     public static File getSAUVEGARDETEST() {
@@ -34,8 +33,6 @@ public class LectureEtEcritureFichier {
         int reponse;
 
         //boucle for print question et choix de reponses
-        //int j = 0;
-        //int y = 0;
         for (int i = 0; i < test.getQuestion().size(); i ++) {
             question = test.getQuestion().get(i);
             pw.println(question);
@@ -56,7 +53,6 @@ public class LectureEtEcritureFichier {
         pw.close();
 
     }
-
 
     //Lecture des fichiers
     public static ArrayList<Test> lecture() throws IOException {
@@ -127,10 +123,5 @@ public class LectureEtEcritureFichier {
         }
 
         return listeTests;
-    }
-
-    public static void main(String[] args) throws IOException {
-
-
     }
 }

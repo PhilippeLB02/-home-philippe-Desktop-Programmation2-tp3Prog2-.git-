@@ -9,7 +9,6 @@ public class Test {
 
     private String name;
     private Integer nbQuestion;
-    //private String enonce;
     private ArrayList<String> question = new ArrayList();
     private ArrayList<String> choixReponse = new ArrayList();
     private ArrayList<Integer> reponses = new ArrayList();
@@ -41,14 +40,6 @@ public class Test {
     public void setNbQuestion(Integer nbQuestion) {
         this.nbQuestion = nbQuestion;
     }
-
-    /*public String getEnonce() {
-        return this.enonce;
-    }
-
-    public void setEnonce(String enonce) {
-        this.enonce = enonce;
-    }*/
 
     public ArrayList<String> getQuestion() {
         return this.question;

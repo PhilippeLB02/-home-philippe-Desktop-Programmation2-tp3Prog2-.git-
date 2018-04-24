@@ -14,6 +14,7 @@ public class FenetreNewTests {
     private final static int LARG_BTN = 50;
     private final static int LARG_BTN_SAVE = 140;
     private final static int HAUT_BTN = 30;
+    private static final String SÉPARATEUR_CHOIX_REPONSES = "<>";
 
     //fenetreNewTests
     private JFrame fenetreNewTests;
@@ -63,46 +64,9 @@ public class FenetreNewTests {
     private Test testNouveau;
     private Test testTemp;
     private String []choixReponseTest;
-    private ArrayList   <Test> arrayListTest;
-    private ArrayList   <String> questions;
-    private ArrayList   <String> listeReponse;
-    private ArrayList   <Integer> reponseQuestion;
 
     //Ecouteur
     private ActionListener ecouteur;
-
-    //sauvegarde des fichier
-    private Test sauvegarde(){
-        /*Test test = new Test();
-        questions = new ArrayList();
-        listeReponse = new ArrayList();
-        reponseQuestion = new ArrayList<>();
-        int compteurDeQuestion = 1;
-
-        test.setName(nomTests.getText().trim());
-        questions.add(question.getText().trim());
-        test.setQuestion(questions);
-        listeReponse.add(listeReponse.size(), reponseUn.getText().trim());
-        listeReponse.add(listeReponse.size(), reponseDeux.getText().trim());
-        listeReponse.add(listeReponse.size(), reponseTrois.getText().trim());
-        listeReponse.add(listeReponse.size(), reponseQuatre.getText().trim());
-        test.setChoixReponse(listeReponse);
-        /*if (repBout1.isSelected()) {
-            reponse.add(reponse.size(), 1);
-        } else if (repBout2.isSelected()) {
-            reponse.add(reponse.size(), 2);
-        } else if (repBout3.isSelected()) {
-            reponse.add(reponse.size(), 3);
-        } else if (repBout4.isSelected()){
-            reponse.add(reponse.size(), 4);
-        }
-        test.setReponses(lreponse);
-        test.setNbQuestion(compteurDeQuestion++);
-        test.setQuestionCourante(test.getQuestion().size() - 1);
-        test.setChoixReponse(listeReponse);
-        */
-        return  new Test();
-    }
 
     /**
      * Contructeur qui initialise la fenetre de creation
@@ -259,7 +223,6 @@ public class FenetreNewTests {
                         JOptionPane.showMessageDialog(null, "Erreur aucune bonne reponse de selectionner.");
                     } else {
                         if (testNouveau.getQuestionCourante() - 1 >= 0) {
-                            //modifierQuestionCourante(testTemp.getQuestionCourante()-1);
                             testNouveau.setQuestionCourante(testNouveau.getQuestionCourante() - 1);
                             afficherQuestion();
                             boutonSuivant.setEnabled(true);
@@ -281,10 +244,7 @@ public class FenetreNewTests {
                     } else if (!repBout1.isSelected() && !repBout2.isSelected() && !repBout3.isSelected() && !repBout4.isSelected()){
                         JOptionPane.showMessageDialog(null, "Erreur aucune bonne reponse de selectionner.");
                     } else {
-                        //if(testNouveau.getQuestion().size() ==0)
-                            ajouterQuestion();
-
-
+                        ajouterQuestion();
                         System.out.println(testNouveau.getQuestionCourante());
                         System.out.println(testNouveau.getQuestion().get(testNouveau.getQuestionCourante() - 1));
                     }
@@ -318,8 +278,6 @@ public class FenetreNewTests {
                     } else {
 
                         if (testNouveau.getQuestionCourante() + 1 < testNouveau.getQuestion().size()) {
-                            //modifierQuestionCourante(testNouveau.getQuestionCourante());
-
                             testNouveau.setQuestionCourante(testNouveau.getQuestionCourante() + 1);
                             afficherQuestion();
                             System.out.println(testNouveau.getQuestionCourante());
@@ -345,10 +303,6 @@ public class FenetreNewTests {
                             testNouveau.setNbQuestion(testNouveau.getQuestion().size());
 
                         try {
-                            /*for (int i = 0; i < arrayListTest.size(); i ++) {
-                                testNouveau = arrayListTest.get(i);
-                                LectureEtEcritureFichier.ecriture(testNouveau);
-                            }*/
                             for(int i=0;i<testNouveau.getNbQuestion();i++){
                                 LectureEtEcritureFichier.ecriture(testNouveau);
                             }
@@ -378,7 +332,7 @@ public class FenetreNewTests {
 
         lQuestion.setText("Question "+ (testNouveau.getQuestionCourante()+1));
         question.setText(testNouveau.getQuestion(testNouveau.getQuestionCourante()));
-        choixReponseTest = testNouveau.getChoixReponse().get(testNouveau.getQuestionCourante()).split("<>");
+        choixReponseTest = testNouveau.getChoixReponse().get(testNouveau.getQuestionCourante()).split(SÉPARATEUR_CHOIX_REPONSES);
         reponseUn.setText(choixReponseTest[0]);
         reponseDeux.setText(choixReponseTest[1]);
         reponseTrois.setText(choixReponseTest[2]);
@@ -396,10 +350,9 @@ public class FenetreNewTests {
 
     private void ajouterQuestion(){
 
-        //testNouveau est le test qui va etre ajoute
         testNouveau.getQuestion().add(question.getText());
-        //questions.add();
-        testNouveau.getChoixReponse().add(reponseUn.getText()+"<>"+reponseDeux.getText()+"<>"+reponseTrois.getText()+"<>"+reponseQuatre.getText());
+        testNouveau.getChoixReponse().add(reponseUn.getText() + SÉPARATEUR_CHOIX_REPONSES + reponseDeux.getText() + SÉPARATEUR_CHOIX_REPONSES
+                + reponseTrois.getText() + SÉPARATEUR_CHOIX_REPONSES + reponseQuatre.getText());
         if(repBout1.isSelected())
             testNouveau.getReponses().add(0);
         if(repBout2.isSelected())
@@ -409,23 +362,6 @@ public class FenetreNewTests {
         if(repBout4.isSelected())
             testNouveau.getReponses().add(3);
         testNouveau.setQuestionCourante(testNouveau.getQuestionCourante()+1);
-        //System.out.println(testNouveau.getQuestion().get(testNouveau.getQuestionCourante()-1));
-
-        //testTemp est utilise juste pour parcourir avec '<' et '>'
-       /*8 testTemp.getQuestion().add(question.getText());
-        //questions.add();
-        testTemp.getChoixReponse().add(reponseUn.getText()+"<>"+reponseDeux.getText()+"<>"+reponseTrois.getText()+"<>"+reponseQuatre.getText());
-        if(repBout1.isSelected())
-            testTemp.getReponses().add(0);
-        if(repBout2.isSelected())
-            testTemp.getReponses().add(1);
-        if(repBout3.isSelected())
-            testTemp.getReponses().add(2);
-        if(repBout4.isSelected())
-            testTemp.getReponses().add(3);
-        testTemp.setQuestionCourante(testTemp.getQuestionCourante()+1);
-
-*/
         boutonPrecedent.setEnabled(true);
         boutonSuppQuestion.setEnabled(true);
         lQuestion.setText("QUESTION "+(testNouveau.getQuestionCourante()+1));
@@ -440,7 +376,8 @@ public class FenetreNewTests {
     private void modifierQuestionCourante(int iemeQuestion){
         testNouveau.getQuestion().set(iemeQuestion,question.getText());
 
-        testNouveau.getChoixReponse().set(iemeQuestion,reponseUn.getText()+"<>"+reponseDeux.getText()+"<>"+reponseTrois.getText()+"<>"+reponseQuatre.getText());
+        testNouveau.getChoixReponse().set(iemeQuestion,reponseUn.getText() + SÉPARATEUR_CHOIX_REPONSES + reponseDeux.getText() + SÉPARATEUR_CHOIX_REPONSES
+                + reponseTrois.getText() + SÉPARATEUR_CHOIX_REPONSES + reponseQuatre.getText());
         if(repBout1.isSelected())
             testNouveau.getReponses().set(iemeQuestion,0);
         if(repBout2.isSelected())
