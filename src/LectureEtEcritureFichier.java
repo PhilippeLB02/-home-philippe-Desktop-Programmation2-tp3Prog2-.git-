@@ -9,7 +9,7 @@ public class LectureEtEcritureFichier {
     private static final String SÉPARATEUR_QUESTIONS = "-----";
 
     //nom du fichier a utiliser
-    private static File SAUVEGARDETEST = new File(GenerateurTests.class.getProtectionDomain().getCodeSource().getLocation().getPath() + "tests");
+    private static File SAUVEGARDETEST = new File(GenerateurTests.class.getProtectionDomain().getCodeSource().getLocation().getPath() + "tests.txt");
 
     /**
      * getters pour aller chercher le nom du fichier
@@ -72,7 +72,7 @@ public class LectureEtEcritureFichier {
      */
     public static ArrayList<Test> lecture() throws IOException {
 
-        String tests = GenerateurTests.class.getProtectionDomain().getCodeSource().getLocation().getPath() + "tests";
+        String tests = GenerateurTests.class.getProtectionDomain().getCodeSource().getLocation().getPath() + "tests.txt";
         String line="";
         String tempStr=line;
 
