@@ -31,6 +31,7 @@ public class FenetreNewTests {
     private int numeroQuestion = 1;
     private JLabel enoncer;
     private JTextArea question;
+    private JScrollPane spQuestion;
 
     //Reponse
     private JLabel reponse;
@@ -119,16 +120,23 @@ public class FenetreNewTests {
         //Enoncer
         lQuestion = new JLabel("Question " + numeroQuestion);
         lQuestion.setBounds(10, 5, 200, HAUT_BTN);
+        lQuestion.setFont(new Font(lQuestion.getFont().getFamily(),Font.BOLD,15));
         enoncer = new JLabel("Énoncé ");
         enoncer.setBounds(25, 35, 200, HAUT_BTN);
         question = new JTextArea();
         question.setLineWrap(true);
+        question.setWrapStyleWord(true);
         question.setEditable(true);
-        question.setBounds(25, 75, 400, HAUT_BTN * 2);
+        question.setBounds(25, 75, 385, HAUT_BTN * 2);
+
+        spQuestion = new JScrollPane(question);
+        spQuestion.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        spQuestion.setBounds(24, 74, 403, HAUT_BTN * 2 + 3);
 
         panneauDesQuestion.add(lQuestion);
         panneauDesQuestion.add(enoncer);
         panneauDesQuestion.add(question);
+        panneauDesQuestion.add(spQuestion);
 
         //Reponse
         reponse = new JLabel("Choix de réponses (Cocher la bonne réponse) ");
