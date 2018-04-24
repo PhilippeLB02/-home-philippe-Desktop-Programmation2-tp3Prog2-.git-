@@ -152,6 +152,8 @@ public class FenetreFaireTests {
         ligne = new JPanel();
         encadreHaut = new JPanel();
 
+        ligne.setBorder(BorderFactory.createLineBorder(Color.black,1));
+        ligne.setBounds(20,440,510,1);
         lResult = new JLabel("RÉSULTAT DU TEST");
         lResult.setFont(new Font(lQuestion.getFont().getFamily(),Font.BOLD,15));
         encadreHaut.setBounds(20,80,510,250);
@@ -228,7 +230,7 @@ public class FenetreFaireTests {
                 80, HAUT_BTN);
         boutonSuivant.setBounds((fenetreFaireTest.getWidth() / 12 * 7 - LARG_BTN / 2)-10, fenetreFaireTest.getHeight() / 13 * 11 - 45,
                 80, HAUT_BTN);
-        boutonCorrection.setBounds(fenetreFaireTest.getWidth() / 2 - LARG_BTN_CORR / 2 - 4, fenetreFaireTest.getHeight() / 13 * 12 - HAUT_BTN,
+        boutonCorrection.setBounds(fenetreFaireTest.getWidth() / 2 - 140 / 2 - 4, fenetreFaireTest.getHeight() / 13 * 12 - HAUT_BTN,
                 LARG_BTN_CORR, HAUT_BTN);
         boutonRevenir.setBounds(fenetreFaireTest.getWidth() / 2 - LARG_BTN_CORR / 2 - 4, fenetreFaireTest.getHeight() / 13 * 12 - HAUT_BTN,
                 LARG_BTN_CORR, HAUT_BTN);
@@ -386,6 +388,8 @@ public class FenetreFaireTests {
         fenetreFaireTest.getContentPane().add(lNumeroQuestion);
         fenetreFaireTest.getContentPane().add(panneauDesQuestion);
         fenetreFaireTest.getContentPane().add(encadreHaut);
+        fenetreFaireTest.getContentPane().add(ligne);
+
 
         fenetreFaireTest.setVisible(true);
     }
