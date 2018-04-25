@@ -140,4 +140,7 @@ public class LectureEtEcritureFichier {
         return listeTests;
     }
 
+    public static void main(String[]args){
+
+    }
 }
