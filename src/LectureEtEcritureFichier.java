@@ -1,4 +1,6 @@
 import java.io.*;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 
 
@@ -140,6 +142,7 @@ public class LectureEtEcritureFichier {
     }
 
     public static void main(String[]args){
-
+        Path p1 = Paths.get(SAUVEGARDETEST.toURI());
+        System.out.println(p1);
     }
 }

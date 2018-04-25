@@ -361,7 +361,13 @@ public class FenetreNewTests {
                                 testNouveau.setNbQuestion(testNouveau.getQuestion().size());
 
                             try {
-                                    LectureEtEcritureFichier.ecriture(testNouveau);
+                                testNouveau.setName(nomTests.getText().trim());
+                                if (testNouveau.getQuestionCourante() == testNouveau.getQuestion().size()) {
+                                    ajouterQuestion();
+                                } else {
+                                    modifierQuestionCourante(testNouveau.getQuestionCourante());
+                                }
+                                LectureEtEcritureFichier.ecriture(testNouveau);
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
