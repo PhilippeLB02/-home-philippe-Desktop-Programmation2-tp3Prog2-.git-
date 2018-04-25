@@ -221,64 +221,98 @@ public class FenetreNewTests {
 
 
                 if (evenement.getSource() == boutonPrecedent) {
-
-                    if (testNouveau.getQuestionCourante() - 1 >= 0) {
-                        if (testNouveau.getQuestionCourante() == testNouveau.getQuestion().size()) {
-                            testNouveau.getQuestion().add(question.getText());
-                            testNouveau.getChoixReponse().add(reponseUn.getText() + "<>" + reponseDeux.getText() + "<>" + reponseTrois.getText() + "<>" + reponseQuatre.getText());
-                            if (repBout1.isSelected())
-                                testNouveau.getReponses().add(0);
-                            if (repBout2.isSelected())
-                                testNouveau.getReponses().add(1);
-                            if (repBout3.isSelected())
-                                testNouveau.getReponses().add(2);
-                            if (repBout4.isSelected())
-                                testNouveau.getReponses().add(3);
-                        }
-                        modifierQuestionCourante(testNouveau.getQuestionCourante());
-                        testNouveau.setQuestionCourante(testNouveau.getQuestionCourante() - 1);
-                        afficherQuestion();
-                        boutonSuivant.setEnabled(true);
-                        lQuestion.setText("QUESTION " + (testNouveau.getQuestionCourante() + 1));
-                    }
-                    if (testNouveau.getQuestionCourante() == 0)
-                        boutonPrecedent.setEnabled(false);
-
-                } else if (evenement.getSource() == boutonSuivant) {
-
-                    if (testNouveau.getQuestionCourante() + 1 <= testNouveau.getQuestion().size()) {
-                        modifierQuestionCourante(testNouveau.getQuestionCourante());
-                        testNouveau.setQuestionCourante(testNouveau.getQuestionCourante() + 1);
-                        afficherQuestion();
-                        lQuestion.setText("QUESTION " + (testNouveau.getQuestionCourante() + 1));
-                        boutonPrecedent.setEnabled(true);
-                    }
-                    if (testNouveau.getQuestionCourante() + 1 >= testNouveau.getQuestion().size())
-                        boutonSuivant.setEnabled(false);
-
-                } else if (evenement.getSource() == boutonAjoutQuestion) {
-
-                    if (nomTests.getText().trim().isEmpty()) {
-                        JOptionPane.showMessageDialog(null, "Erreur votre test doit avoir un nom.");
-                    } else if (question.getText().trim().isEmpty()) {
-                        JOptionPane.showMessageDialog(null, "Erreur énoncé invalide.");
-                    } else if (reponseUn.getText().trim().isEmpty() && reponseDeux.getText().trim().isEmpty() && reponseTrois.getText().isEmpty() && reponseQuatre.getText().trim().isEmpty()) {
-                        JOptionPane.showMessageDialog(null, "Erreur réponse invalide.");
+                    if (question.getText().trim().isEmpty()) {
+                        JOptionPane.showMessageDialog(null,
+                                "La question courante n'est pas valide !\n L'énoncé de la question doit contenir entre 1 et 500 caractères.",
+                                "ERREUR",
+                                JOptionPane.ERROR_MESSAGE);
+                    } else if (reponseUn.getText().trim().isEmpty() || reponseDeux.getText().trim().isEmpty() || reponseTrois.getText().isEmpty() || reponseQuatre.getText().trim().isEmpty()) {
+                        JOptionPane.showMessageDialog(null,
+                                "La question courante n'est pas valide !\n Chacun des choix doit contenir entre 1 et 50 caractères.",
+                                "ERREUR",
+                                JOptionPane.ERROR_MESSAGE);
                     } else if (!repBout1.isSelected() && !repBout2.isSelected() && !repBout3.isSelected() && !repBout4.isSelected()) {
-                        JOptionPane.showMessageDialog(null, "Erreur aucune bonne reponse de selectionner.");
+                        JOptionPane.showMessageDialog(null,
+                                "La question courante n'est pas valide !\n La bonne réponse doit être cochée dans les choix de réponses.",
+                                "ERREUR",
+                                JOptionPane.ERROR_MESSAGE);
                     } else {
-                        if (testNouveau.getQuestion().size() == 0)
-                            ajouterQuestion();
-                        else {
-                            testNouveau.getQuestion().subList(testNouveau.getQuestionCourante(), testNouveau.getQuestion().size()).clear();
-                            testNouveau.getChoixReponse().subList(testNouveau.getQuestionCourante(), testNouveau.getChoixReponse().size()).clear();
-                            testNouveau.getReponses().subList(testNouveau.getQuestionCourante(), testNouveau.getReponses().size()).clear();
-                            ajouterQuestion();
+                        if (testNouveau.getQuestionCourante() - 1 >= 0) {
+                            if (testNouveau.getQuestionCourante() == testNouveau.getQuestion().size()) {
+                                testNouveau.getQuestion().add(question.getText());
+                                testNouveau.getChoixReponse().add(reponseUn.getText() + "<>" + reponseDeux.getText() + "<>" + reponseTrois.getText() + "<>" + reponseQuatre.getText());
+                                if (repBout1.isSelected())
+                                    testNouveau.getReponses().add(0);
+                                if (repBout2.isSelected())
+                                    testNouveau.getReponses().add(1);
+                                if (repBout3.isSelected())
+                                    testNouveau.getReponses().add(2);
+                                if (repBout4.isSelected())
+                                    testNouveau.getReponses().add(3);
+                            }
+                            modifierQuestionCourante(testNouveau.getQuestionCourante());
+                            testNouveau.setQuestionCourante(testNouveau.getQuestionCourante() - 1);
+                            afficherQuestion();
+                            boutonSuivant.setEnabled(true);
+                            lQuestion.setText("QUESTION " + (testNouveau.getQuestionCourante() + 1));
                         }
-                        boutonSuivant.setEnabled(false);
-                        System.out.println(testNouveau.getQuestionCourante());
+                        if (testNouveau.getQuestionCourante() == 0)
+                            boutonPrecedent.setEnabled(false);
                     }
-
+                } else if (evenement.getSource() == boutonSuivant) {
+                    if (question.getText().trim().isEmpty()) {
+                        JOptionPane.showMessageDialog(null,
+                                "La question courante n'est pas valide !\n L'énoncé de la question doit contenir entre 1 et 500 caractères.",
+                                "ERREUR",
+                                JOptionPane.ERROR_MESSAGE);
+                    } else if (reponseUn.getText().trim().isEmpty() || reponseDeux.getText().trim().isEmpty() || reponseTrois.getText().isEmpty() || reponseQuatre.getText().trim().isEmpty()) {
+                        JOptionPane.showMessageDialog(null,
+                                "La question courante n'est pas valide !\n Chacun des choix doit contenir entre 1 et 50 caractères.",
+                                "ERREUR",
+                                JOptionPane.ERROR_MESSAGE);
+                    } else if (!repBout1.isSelected() && !repBout2.isSelected() && !repBout3.isSelected() && !repBout4.isSelected()) {
+                        JOptionPane.showMessageDialog(null,
+                                "La question courante n'est pas valide !\n La bonne réponse doit être cochée dans les choix de réponses.",
+                                "ERREUR",
+                                JOptionPane.ERROR_MESSAGE);
+                    }else {
+                        if (testNouveau.getQuestionCourante() + 1 <= testNouveau.getQuestion().size()) {
+                            modifierQuestionCourante(testNouveau.getQuestionCourante());
+                            testNouveau.setQuestionCourante(testNouveau.getQuestionCourante() + 1);
+                            afficherQuestion();
+                            lQuestion.setText("QUESTION " + (testNouveau.getQuestionCourante() + 1));
+                            boutonPrecedent.setEnabled(true);
+                        }
+                        if (testNouveau.getQuestionCourante() + 1 >= testNouveau.getQuestion().size())
+                            boutonSuivant.setEnabled(false);
+                    }
+                } else if (evenement.getSource() == boutonAjoutQuestion) {
+                    if (question.getText().trim().isEmpty()) {
+                        JOptionPane.showMessageDialog(null,
+                                "La question courante n'est pas valide !\n L'énoncé de la question doit contenir entre 1 et 500 caractères.",
+                                "ERREUR",
+                                JOptionPane.ERROR_MESSAGE);
+                    } else if (reponseUn.getText().trim().isEmpty() || reponseDeux.getText().trim().isEmpty() || reponseTrois.getText().isEmpty() || reponseQuatre.getText().trim().isEmpty()) {
+                        JOptionPane.showMessageDialog(null,
+                                "La question courante n'est pas valide !\n Chacun des choix doit contenir entre 1 et 50 caractères.",
+                                "ERREUR",
+                                JOptionPane.ERROR_MESSAGE);
+                    } else if (!repBout1.isSelected() && !repBout2.isSelected() && !repBout3.isSelected() && !repBout4.isSelected()) {
+                        JOptionPane.showMessageDialog(null,
+                                "La question courante n'est pas valide !\n La bonne réponse doit être cochée dans les choix de réponses.",
+                                "ERREUR",
+                                JOptionPane.ERROR_MESSAGE);
+                    }else {
+                            if (testNouveau.getQuestion().size() == 0)
+                                ajouterQuestion();
+                            else {
+                                testNouveau.getQuestion().subList(testNouveau.getQuestionCourante(), testNouveau.getQuestion().size()).clear();
+                                testNouveau.getChoixReponse().subList(testNouveau.getQuestionCourante(), testNouveau.getChoixReponse().size()).clear();
+                                testNouveau.getReponses().subList(testNouveau.getQuestionCourante(), testNouveau.getReponses().size()).clear();
+                                ajouterQuestion();
+                            }
+                            boutonSuivant.setEnabled(false);
+                    }
                 } else if (evenement.getSource() == boutonSuppQuestion) {
 
                     if (testNouveau.getQuestionCourante() == 0) {
@@ -292,30 +326,48 @@ public class FenetreNewTests {
                     }
 
                 } else if (evenement.getSource() == boutonSave) {
-
                     if (nomTests.getText().trim().isEmpty()) {
-                        JOptionPane.showMessageDialog(null, "Erreur votre test doit avoir un nom.");
+                        JOptionPane.showMessageDialog(null,
+                                "Ce test est invalide et ne peut pas être enregistré !\n Le nom du test doit contenir entre 1 et 50 caractères.",
+                                "ERREUR",
+                                JOptionPane.ERROR_MESSAGE);
                     } else if (question.getText().trim().isEmpty()) {
-                        JOptionPane.showMessageDialog(null, "Erreur énoucé invalide.");
-                    } else if (reponseUn.getText().trim().isEmpty() && reponseDeux.getText().trim().isEmpty() && reponseTrois.getText().isEmpty() && reponseQuatre.getText().trim().isEmpty()) {
-                        JOptionPane.showMessageDialog(null, "Erreur reponse invalide.");
+                        JOptionPane.showMessageDialog(null,
+                                "La question courante n'est pas valide !\n L'énoncé de la question doit contenir entre 1 et 500 caractères.",
+                                "ERREUR",
+                                JOptionPane.ERROR_MESSAGE);
+                    } else if (reponseUn.getText().trim().isEmpty() || reponseDeux.getText().trim().isEmpty() || reponseTrois.getText().isEmpty() || reponseQuatre.getText().trim().isEmpty()) {
+                        JOptionPane.showMessageDialog(null,
+                                "La question courante n'est pas valide !\n Chacun des choix doit contenir entre 1 et 50 caractères.",
+                                "ERREUR",
+                                JOptionPane.ERROR_MESSAGE);
                     } else if (!repBout1.isSelected() && !repBout2.isSelected() && !repBout3.isSelected() && !repBout4.isSelected()) {
-                        JOptionPane.showMessageDialog(null, "Erreur aucune bonne reponse de selectionner.");
-                    } else {
+                        JOptionPane.showMessageDialog(null,
+                                "La question courante n'est pas valide !\n La bonne réponse doit être cochée dans les choix de réponses.",
+                                "ERREUR",
+                                JOptionPane.ERROR_MESSAGE);
+                    }else {
+                        if (nomTests.getText().trim().isEmpty()) {
+                            JOptionPane.showMessageDialog(null, "Erreur votre test doit avoir un nom.");
+                        } else if (question.getText().trim().isEmpty()) {
+                            JOptionPane.showMessageDialog(null, "Erreur énoucé invalide.");
+                        } else if (reponseUn.getText().trim().isEmpty() && reponseDeux.getText().trim().isEmpty() && reponseTrois.getText().isEmpty() && reponseQuatre.getText().trim().isEmpty()) {
+                            JOptionPane.showMessageDialog(null, "Erreur reponse invalide.");
+                        } else if (!repBout1.isSelected() && !repBout2.isSelected() && !repBout3.isSelected() && !repBout4.isSelected()) {
+                            JOptionPane.showMessageDialog(null, "Erreur aucune bonne reponse de selectionner.");
+                        } else {
 
-                        if (testNouveau.getNbQuestion() < 1)
-                            testNouveau.setNbQuestion(testNouveau.getQuestion().size());
+                            if (testNouveau.getNbQuestion() < 1)
+                                testNouveau.setNbQuestion(testNouveau.getQuestion().size());
 
-                        try {
-                            for (int i = 0; i < testNouveau.getNbQuestion(); i++) {
-                                LectureEtEcritureFichier.ecriture(testNouveau);
+                            try {
+                                    LectureEtEcritureFichier.ecriture(testNouveau);
+                            } catch (IOException e) {
+                                e.printStackTrace();
                             }
-                        } catch (IOException e) {
-                            e.printStackTrace();
+                            fenetreNewTests.dispose();
                         }
-                        fenetreNewTests.dispose();
                     }
-
                 }
             }
         };
